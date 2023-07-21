@@ -67,5 +67,5 @@ VALUES (
 
 INSERT INTO reviews (user_name, date_posted, review_body, game_id)
 VALUES
-('yasmin', '2023-07-16', 'eh youre better off trying something else', 2)
+('yasmin', '2023-07-16', 'eh youre better off trying something else', 2);
 
