@@ -11,14 +11,14 @@ CREATE TABLE game_info (
     game_id SERIAL PRIMARY KEY,
     game_title VARCHAR(30),
     game_genre VARCHAR(30),
-    game_release_date DATE;
+    game_release_date DATE,
     developer TEXT,
     publisher TEXT,
     languages TEXT,
     about_this_game TEXT,
     systems_requirements TEXT,
-    more_like_this ARRAY,
-    picture ARRAY,
+    more_like_this TEXT,
+    picture TEXT,
 );
 
 CREATE TABLE tags (
@@ -50,7 +50,7 @@ INSERT INTO game_info (game_title,
     picture
 )
 VALUES 
-('Spider', 'animated', '2023-01-23', 'idk', 'idk2', 'english', 'it is fun', 'OS', 'insert other games', ['hello', 'world']);
+('Spider', 'animated', '2023-01-23', 'idk', 'idk2', 'english', 'it is fun', 'OS', 'insert other games', 'hello');
 
 INSERT INTO tags (tag_title, tag_link, game_id)
 VALUES (
