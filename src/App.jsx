@@ -6,7 +6,7 @@ import TestComponent from "./components/TestComponent";
 function App() {
   const [testArr, setTestArr] = useState([]);
 
-  const url = "http://localhost:4000";
+  const url = "https://steam-clone-zf6a.onrender.com";
 
   useEffect(() => {
     try {
