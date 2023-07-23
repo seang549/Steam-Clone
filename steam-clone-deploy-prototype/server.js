@@ -34,6 +34,7 @@ const pool = new Pool({
 //body parser
 app.use(express.json());
 app.use(cors({ origin: "*" }));
+app.use(express.static("dist"));
 
 //routes
 //get all
