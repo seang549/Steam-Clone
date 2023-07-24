@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const GameArea() => {
+const GameArea = ()=> {
     <div id='GameArea'>
         <h1>GameArea</h1>
     </div>
