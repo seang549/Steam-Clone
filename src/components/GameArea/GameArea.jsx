@@ -1,9 +1,26 @@
 import { useState, useEffect } from 'react'
 
-const GameArea = ()=> {
-    <div id='GameArea'>
-        <h1>GameArea</h1>
-    </div>
+import Carousel from './Carousel/Carousel.jsx'
+import GameInfo from './GameInfo/GameInfo.jsx'
+import WishList from './WishList.jsx'
+
+const GameArea = () => {
+
+
+
+
+
+    return (
+        <div id='GameArea'>
+            <div>
+                <Carousel />
+                <GameInfo />
+            </div>
+            <div>
+                <WishList />
+            </div>
+        </div>
+    )
 }
 
 export default GameArea

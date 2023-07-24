@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import TestComponent from "./components/TestComponent";
-import GameBody from './components/GameArea/GameArea.jsx'
+import GameArea from './components/GameArea/GameArea.jsx'
 
 function App() {
   const [testArr, setTestArr] = useState([]);
