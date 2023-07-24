@@ -34,6 +34,7 @@ const pool = new Pool({
 //body parser
 app.use(express.json());
 app.use(cors({ origin: "*" }));
+app.use(express.static("dist"));
 
 //routes
 //get all
@@ -145,4 +146,8 @@ app.get("/reviews/:id", async (req, res) => {
     console.error(err);
     res.status(500).send("Internal Server Error");
   }
+});
+
+app.listen(port, () => {
+  console.log("listening on port:", port);
 });
