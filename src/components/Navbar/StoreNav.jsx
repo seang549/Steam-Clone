@@ -7,8 +7,8 @@ const StoreNav = () => {
   return (
     <>
       <ul className='menuTabs'>
-        {storeTabs.map((item, index) => (
-          <StoreTabs item={item} key={index} />
+        {storeTabs.map((menu, index) => (
+          <StoreTabs items={menu} key={index} />
         ))}
       </ul>
     </>

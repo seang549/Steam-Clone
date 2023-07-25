@@ -1,17 +1,15 @@
 import Dropdown from "./Dropdown";
-
-const StoreTabs = ({ item }) => {
+import { useState } from "react";
+const StoreTabs = ({ items }) => {
   return (
-    <li className='menuItems' style={{ listStyleType: "none" }}>
-      {item.submenu ? (
+    <li className='menu-items' style={{ listStyleType: "none" }}>
+      {items.submenu ? (
         <>
-          <button type='button' aria-haspopup='menu'>
-            {item.title}{" "}
-          </button>
-          <Dropdown submenus={item.submenu} />
+          <a href={items.url}>{items.title} </a>
+          <Dropdown submenus={items.submenu} />
         </>
       ) : (
-        <a href={item.url}>{item.title}</a>
+        <a href={items.url}>{items.title}</a>
       )}
     </li>
   );
