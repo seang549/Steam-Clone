@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import TestComponent from "./components/TestComponent";
+import GameArea from './components/GameArea/GameArea.jsx'
 
 function App() {
   const [testArr, setTestArr] = useState([]);
@@ -27,7 +28,8 @@ function App() {
       <h1>ドキドキ</h1>
       {testArr.map((elem) => (
         <TestComponent elem={elem} key={elem.game_id} />
-      ))}
+        ))}
+        <GameArea />
     </>
   );
 }
