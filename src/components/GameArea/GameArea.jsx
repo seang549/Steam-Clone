@@ -20,6 +20,8 @@ const GameArea = () => {
         }
         getData()
     }, [])
+
+    
     
     useEffect(() => {
         console.log(infoData)
@@ -30,6 +32,19 @@ const GameArea = () => {
     return (
         
         <div id='GameArea'>
+            <div id='gameAreaHeader'>
+                <div id='gameAreaBreadcrumbs'>
+                    <a href='#'>All games</a> &gt;
+                    <a href='#'>Indie Games</a> &gt;
+                    <a href='#'>Spider</a>
+                </div>
+                <div id='lowerGameHeader'>
+                    <div id='gameAreaTitle'>Spider</div>
+                    <div id='communityHubDiv'>
+                        <button id='communityHub'>Community Hub</button>
+                    </div>
+                </div>
+            </div>
             <div>
                 <Carousel />
                 <GameInfo infoData={infoData} />

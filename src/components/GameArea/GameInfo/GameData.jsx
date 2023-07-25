@@ -13,7 +13,6 @@ const GameData = ({ infoData }) => {
     }, [])
     useEffect(() => {
         const getData = async () => {
-            console.log('hit Review fetch')
             const response = await fetch('https://steam-clone-zf6a.onrender.com/reviews', {
                 headers: {
                     'Accept': 'application/json',
@@ -22,10 +21,8 @@ const GameData = ({ infoData }) => {
             })
             const data = await response.json();
             setReviews(data)
-            console.log('reviews set')
         }
         getData()
-        console.log(reviews)
     }, [])
     return (
         <div id='gameData'>

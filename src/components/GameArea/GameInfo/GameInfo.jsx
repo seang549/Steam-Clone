@@ -12,7 +12,7 @@ const GameInfo = ({ infoData }) => {
     return (
         <div id='gameInfo'>
             <h1>GameInfo</h1>
-            <TitlePic />
+            <TitlePic infoData={infoData} />
             <Summary infoData={infoData} />
             <GameData infoData={infoData} />
             <GameTags />
