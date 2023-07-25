@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import TestComponent from "./components/TestComponent";
 import GameArea from './components/GameArea/GameArea.jsx'
 
 function App() {
@@ -25,10 +24,6 @@ function App() {
 
   return (
     <>
-      <h1>ドキドキ</h1>
-      {testArr.map((elem) => (
-        <TestComponent elem={elem} key={elem.game_id} />
-        ))}
         <GameArea />
     </>
   );
