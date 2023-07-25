@@ -20,6 +20,18 @@ const Footer = () => {
                 </div>
                 <div className="logo-small">Image Here</div>
             </div>
+            <div className="valve_links" >
+                <a href="http://www.valvesoftware.com/about">About Valve</a>
+                &nbsp; | &nbsp;<a href="http://www.valvesoftware.com">Jobs</a>
+                &nbsp; | &nbsp;<a href="http://www.steampowered.com/steamworks/">Steamworks</a>
+                &nbsp; | &nbsp;<a href="https://partner.steamgames.com/steamdirect">Steam Distribution</a>
+                &nbsp; | &nbsp;<a href="https://help.steampowered.com/en/?snr=1_44_44_">Support</a>
+                &nbsp; | &nbsp;<a href="https://store.steampowered.com/hardware_recycling/?snr=1_44_44_">Recycling</a>
+                &nbsp; | &nbsp;<a href="https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_">Gift Cards</a>
+		        &nbsp; | &nbsp;<a href="https://steamcommunity.com/linkfilter/?url=http://www.facebook.com/Steam"> FACEBOOK IMAGE Steam</a>
+		        &nbsp; | &nbsp;<a href="http://twitter.com/steam"> TWITTER IMAGE @steam</a>
+            </div>
+
         </div>
     )
 }

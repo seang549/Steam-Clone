@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import TestComponent from "./components/TestComponent";
+// import TestComponent from "./components/TestComponent";
 import Header from "./components/HeaderFolder/Header"
 import Footer from "./components/FooterFolder/Footer"
 
@@ -30,9 +30,9 @@ function App() {
         <Header />
       </div>
       <h1>ドキドキ</h1>
-      {testArr.map((elem) => (
-        <TestComponent elem={elem} key={elem.game_id} />
-      ))}
+      {/* {testArr.map((elem) => (
+        // <TestComponent elem={elem} key={elem.game_id} />
+      ))} */}
       <Footer />
     </>
   );
