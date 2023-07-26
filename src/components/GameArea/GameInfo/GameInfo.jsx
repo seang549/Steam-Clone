@@ -15,7 +15,9 @@ const GameInfo = ({ infoData }) => {
             <TitlePic infoData={infoData} />
             <Summary infoData={infoData} />
             <GameData infoData={infoData} />
+            <div id='gameTags'>
             <GameTags />
+            </div>
         </div>
     )
 }

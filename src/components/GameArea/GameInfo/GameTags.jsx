@@ -19,17 +19,14 @@ const GameTags = () => {
         getData()
     }, [])
 
-    useEffect(() => {
-        console.log(tags[0])
-    }, [tags])
 
     return (
-        <div id='gameTags'>
+        <>
             {tags.map((tag) => (
-                <button>{tag.tag_title}</button>
+                <button key={tag.tag_id}>{tag.tag_title}</button>
             ))}
             <button>+</button>
-        </div>
+        </>
     )
 
 

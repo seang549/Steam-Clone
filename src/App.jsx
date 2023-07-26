@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import StoreNav from "./components/StoreNav";
-// import GameAreaCSS from "./components/GameArea";
+
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/GraphForReviews";
 import Reviews from "./components/Reviews";
@@ -23,9 +23,9 @@ function App() {
       <div className="game-bgd">
         <div className="game-area-bgd">
           <StoreNav />
+
           <GameArea />
         </div>
-        <GameBody />
         <div className="clear"></div>
         <div className="review-graph-area">
           <GraphForReviews />
