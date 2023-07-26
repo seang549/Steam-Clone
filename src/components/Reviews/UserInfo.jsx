@@ -3,7 +3,7 @@ const UserInfo = () => {
 
     return (
         <>
-        <div className="TopLeftMargin">
+        <div className="Icon">
         <h1>ICON</h1>
         </div>
         <div className="TopDown">

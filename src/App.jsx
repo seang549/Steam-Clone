@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./components/Reviews/Reviews.css"
 import StoreNav from "./components/Navbar/StoreNav";
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/GraphForReviews";
