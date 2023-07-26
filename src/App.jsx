@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 import Header from "./components/Header";
 import StoreNav from "./components/StoreNav";
-import GameArea from "./components/GameArea";
+import GameAreaCSS from "./components/GameArea";
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/GraphForReviews";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
+import GameArea from './components/GameArea/GameArea.jsx'
+
 
 function App() {
   const [testArr, setTestArr] = useState([]);
@@ -21,7 +24,7 @@ function App() {
       <div className="game-bgd">
         <div className="game-area-bgd">
           <StoreNav />
-          <GameArea />
+          <GameAreaCSS />
         </div>
         <GameBody />
         <div className="clear"></div>
@@ -37,6 +40,9 @@ function App() {
         <Footer />
       </div>
     </div>
+    <>
+        <GameArea />
+    </>
   );
 }
 
