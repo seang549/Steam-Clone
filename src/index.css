@@ -1,71 +1,104 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  background-color: #171d25;
   margin: 0;
+  color: #acb2b8;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+:root {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.header-area {
+  height: 104px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.game_body {
+  width: 940px;
+  font-size: 14px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.game-bgd {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #1b2838;
+  width: 100vw;
+  align-items: center;
+}
+
+.game-area-bgd {
+  background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/2433830/page_bg_generated_v6b.jpg?t=1686899598);
+  background-repeat: no-repeat;
+  background-position: center top;
+  min-width: 972px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+/* 
+.game_area_container {
+  width: 100%;
+} */
+
+.footer-area {
+  display: flex;
+  bottom: 0;
+  position: relative;
+  flex-direction: column;
+  height: 290px;
+  background-color: #1b2838;
+  place-content: end;
+  width: 100%;
+}
+
+.footer {
+  background-color: #171d25;
+  height: 184px;
+  padding-top: 16px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.store_nav_bar {
+  background: linear-gradient(
+    90deg,
+    #3c6592 11.5%,
+    #33699d 25.5%,
+    #0f216e 100%
+  );
+  width: 940px;
+  height: 35px;
+  align-self: center;
+}
+
+.review_item {
+  background-color: black;
+  width: 616px;
+  height: 310px;
+  margin-bottom: 26px;
+}
+
+.clear {
+  clear: both;
+  height: 1px;
+  background-color: black;
+  margin-top: 1rem;
+  width: 100vw;
 }
 
 
