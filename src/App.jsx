@@ -3,8 +3,7 @@ import axios from "axios";
 
 import Header from "./components/Header";
 import StoreNav from "./components/StoreNav";
-import GameAreaCSS from "./components/GameArea";
-import GameBody from "./components/GameBody";
+// import GameAreaCSS from "./components/GameArea";
 import GraphForReviews from "./components/GraphForReviews";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
@@ -24,9 +23,9 @@ function App() {
       <div className="game-bgd">
         <div className="game-area-bgd">
           <StoreNav />
-          <GameAreaCSS />
+          {/* <GameAreaCSS /> */}
+          <GameArea />
         </div>
-        <GameBody />
         <div className="clear"></div>
         <div className="review-graph-area">
           <GraphForReviews />
@@ -40,9 +39,8 @@ function App() {
         <Footer />
       </div>
     </div>
-    <>
-        <GameArea />
-    </>
+
+        
   );
 }
 
