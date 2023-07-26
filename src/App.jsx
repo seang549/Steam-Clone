@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 
-import StoreNav from "./components/StoreNav";
-
+// import StoreNav from "./components/StoreNav";
+import StoreNav from "./components/Navbar/StoreNav";
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/GraphForReviews";
 import Reviews from "./components/Reviews";
 import GameArea from "./components/GameArea/GameArea.jsx";
 import Header from "./components/HeaderFolder/Header";
 import Footer from "./components/FooterFolder/Footer";
+import axios from "axios";
+import "./Navbar.css";
 
 function App() {
   const [testArr, setTestArr] = useState([]);
