@@ -1,6 +1,6 @@
 const GameBody = () => {
   return (
-    <div>
+    <div className="game_body">
       A constant force, acting on a particle of mass m, will produce a constant
       acceleration a. Let us choose the x-axis to be in the common direction of
       F and a. What is the work done by this force on the particle in causing a
