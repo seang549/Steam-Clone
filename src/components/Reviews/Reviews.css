@@ -1,0 +1,19 @@
+div{
+    border-style: solid;
+}
+.TopDown{
+    color:blueviolet;
+    display: flex;
+    direction: column;
+}
+
+.SideBySide{
+    color:aquamarine;
+    display: flex;
+    direction: row;
+    
+}
+
+.TopLeftMargin{
+    color: red;
+}
