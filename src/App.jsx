@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import axios from "axios";
-import TestComponent from "./components/TestComponent";
+import "./Navbar.css";
 import StoreNav from "./components/Navbar/StoreNav";
 
 function App() {
