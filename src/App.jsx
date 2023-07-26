@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import StoreNav from "./components/Navbar/StoreNav";
 import GameBody from "./components/GameBody";
-import GraphForReviews from "./components/GraphForReviews";
+import GraphForReviews from "./components/ReviewGraph/GraphForReviews.jsx";
 import Reviews from "./components/Reviews";
 import GameArea from "./components/GameArea/GameArea.jsx";
 import Header from "./components/HeaderFolder/Header";

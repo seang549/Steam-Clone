@@ -8,7 +8,6 @@ const Carousel = ({ infoData }) => {
   
     useEffect(() => {
         if (infoData && infoData.length > 0) {
-            console.log(infoData)
             setActiveImg(infoData[0].game_img[1])
         }
     }, [infoData])
@@ -25,7 +24,6 @@ const Carousel = ({ infoData }) => {
     } else {
         return (
             <div id='carousel'>
-                <h1>Carousel</h1>
                 <CarouselBody activeImg={activeImg} />
                 <div id='carouselNav'>
                     <CarouselNav infoData={infoData} handleChange={handleChange} />
