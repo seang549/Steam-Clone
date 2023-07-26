@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-// import StoreNav from "./components/StoreNav";
 import StoreNav from "./components/Navbar/StoreNav";
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/GraphForReviews";
