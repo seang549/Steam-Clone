@@ -4,8 +4,9 @@ const TitlePic = ({infoData}) => {
     
 
     if (!infoData[0].game_img || infoData[0].game_img.length === 0) {
-        return
+        return (
         <div id='titlePic'>loading</div>
+        )
     }
     return (
         <div id='titlePic'>
