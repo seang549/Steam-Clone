@@ -18,7 +18,7 @@ CREATE TABLE game_info (
     about_this_game TEXT,
     systems_requirements TEXT,
     more_like_this TEXT ARRAY,
-    game_img TEXT ARRAY
+    game_img TEXT ARRAY,
     price VARCHAR(10)
 );
 

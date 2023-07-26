@@ -21,10 +21,8 @@ const GameArea = () => {
         getData()
     }, [])
 
-    
-    
+
     useEffect(() => {
-        console.log(infoData)
     }, [infoData])
 
 
@@ -46,7 +44,7 @@ const GameArea = () => {
                 </div>
             </div>
             <div>
-                <Carousel />
+                <Carousel infoData={infoData} />
                 <GameInfo infoData={infoData} />
             </div>
             <div>
