@@ -23,9 +23,9 @@ function App() {
       <div className="game-bgd">
         <div className="game-area-bgd">
           <StoreNav />
-
           <GameArea />
         </div>
+        <GameBody />
         <div className="clear"></div>
         <div className="review-graph-area">
           <GraphForReviews />
