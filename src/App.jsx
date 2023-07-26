@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import Header from "./components/Header";
 import StoreNav from "./components/StoreNav";
-import GameAreaCSS from "./components/GameArea";
+// import GameAreaCSS from "./components/GameArea";
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/GraphForReviews";
 import Reviews from "./components/Reviews";
-import Footer from "./components/Footer";
-import GameArea from './components/GameArea/GameArea.jsx'
-
+import GameArea from "./components/GameArea/GameArea.jsx";
+import Header from "./components/HeaderFolder/Header";
+import Footer from "./components/FooterFolder/Footer";
 
 function App() {
   const [testArr, setTestArr] = useState([]);
@@ -24,7 +23,7 @@ function App() {
       <div className="game-bgd">
         <div className="game-area-bgd">
           <StoreNav />
-          <GameAreaCSS />
+          <GameArea />
         </div>
         <GameBody />
         <div className="clear"></div>
@@ -40,9 +39,6 @@ function App() {
         <Footer />
       </div>
     </div>
-    <>
-        <GameArea />
-    </>
   );
 }
 
