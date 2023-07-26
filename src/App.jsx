@@ -1,34 +1,44 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+
+import StoreNav from "./components/Navbar/StoreNav";
+import GameBody from "./components/GameBody";
+import GraphForReviews from "./components/GraphForReviews";
+import Reviews from "./components/Reviews";
+import GameArea from "./components/GameArea/GameArea.jsx";
+import Header from "./components/HeaderFolder/Header";
+import Footer from "./components/FooterFolder/Footer";
 import axios from "axios";
-import TestComponent from "./components/TestComponent";
+import "./Navbar.css";
 
 function App() {
   const [testArr, setTestArr] = useState([]);
 
   const url = "https://steam-clone-zf6a.onrender.com";
 
-  useEffect(() => {
-    try {
-      const getData = async () => {
-        const response = await axios.get(url + "/game_info");
-        const data = response.data;
-        setTestArr(data);
-      };
-
-      getData();
-    } catch (err) {
-      console.error(err);
-    }
-  });
-
   return (
-    <>
-      <h1>ドキドキ</h1>
-      {testArr.map((elem) => (
-        <TestComponent elem={elem} key={elem.game_id} />
-      ))}
-    </>
+    <div>
+      <div className="header-area">
+        <Header />
+      </div>
+      <div className="game-bgd">
+        <div className="game-area-bgd">
+          <StoreNav />
+          <GameArea />
+        </div>
+        <GameBody />
+        <div className="clear"></div>
+        <div className="review-graph-area">
+          <GraphForReviews />
+        </div>
+        <div className="clear" style={{ width: "940px" }}></div>
+        <div className="reviews-area">
+          <Reviews />
+        </div>
+      </div>
+      <div className="footer-area">
+        <Footer />
+      </div>
+    </div>
   );
 }
 
