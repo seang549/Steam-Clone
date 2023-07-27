@@ -4,20 +4,20 @@ import Review from "./Review";
 import UserInfo from "./UserInfo";
 
 //import { useEffect, useState } from 'react'
-const ReviewCard = () => {
+const ReviewCard = ({review}) => {
 
     return (
         <>
         <div className="TopDown">
         <div className="SideBySide">
         <div>
-        <UserInfo/>
+        <UserInfo review={review}/>
         </div>
         <div>
             <div className="TopDown">
-        <Recomendations/>
-        <Review/>
-        <AwardList/>
+        <Recomendations review={review}/>
+        <Review review={review}/>
+        <AwardList review={review}/>
             </div>
         </div>
         </div>

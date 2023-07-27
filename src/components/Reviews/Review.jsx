@@ -1,13 +1,13 @@
 //import { useEffect, useState } from 'react'
-const Review = () => {
+const Review = ({review}) => {
 
     return (
         <>
         <div className="TopLeftMargin">
-        <h1>DATE MONTH DAY</h1>
+        <h1>{review["date_posted"]}</h1>
         </div>
         <div className="TopDown">
-        <p>REVIEW</p>
+        <p>{review["review_body"]}</p>
         </div> 
         </>
     );

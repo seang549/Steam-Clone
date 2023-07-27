@@ -1,6 +1,9 @@
 DROP TABLE IF EXISTS game_info CASCADE;
 DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS helpfull;
+DROP TABLE IF EXISTS award_reviews;
+DROP TABLE IF EXISTS awards;
 --one to many from game_info to tags
 --one to many from game to reviews 
 
@@ -31,8 +34,44 @@ CREATE TABLE tags (
     FOREIGN KEY (game_id) REFERENCES game_info(game_id) ON DELETE CASCADE
 );
 
+CREATE TABLE helpfull (
+    id SERIAL,
+    positive int,
+    negative int,
+    funny int,
+    award_reviews_table int
+);
+
+CREATE TABLE awards (
+    id SERIAL,
+    icon text,
+    animation text,
+    title text,
+    body  text,
+    points int,
+);
+
+CREATE TABLE award_reviews (
+    id serial,
+    award_ids ARRAY,
+    count ARRAY
+);
+
 CREATE TABLE reviews (
     review_id SERIAL PRIMARY KEY,
+    owned text,
+    user_icon TEXT,
+    recommendation BOOLEAN,
+    helpfull_table_id int,
+    developer_response BOOLEAN,
+    developer_date DATE,
+    developer_time Time,
+    conversations int,
+    total_time text,
+    at_review_time text,
+    xp int,
+    steam_level int,
+    rank text,
     user_name VARCHAR(30),
     user_product int,
     times_reviewed int,
@@ -92,26 +131,53 @@ INSERT INTO tags (tag_title, tag_link, game_id)
 VALUES 
     ('Indie', 'https://store.steampowered.com/tags/en/Indie/?snr=1_5_9__410', 1);
 
-INSERT INTO reviews (user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 
 VALUES
-    ('Tigerclone', 48 , 10, '2023-06-26', 'WHY DOESNT THE JUMP BUTTON WORK SOMETIMES!!!!!!! I HAVE SPEND SEVERAL HOURS ON JUST THE FIRST LEVEL!!!!! (i like this game) ', 1);
-INSERT INTO reviews (user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/11d7b0dba7687a0568945b41ae500aa815858cf0.jpg', true, 1, true, '2023-06-27','06:01',3,'29.6','13.3',100,13,'Tier 10', 'Tigerclone', 48 , 10, '2023-06-26', 'WHY DOESNT THE JUMP BUTTON WORK SOMETIMES!!!!!!! I HAVE SPEND SEVERAL HOURS ON JUST THE FIRST LEVEL!!!!! (i like this game) ', 1);
+INSERT INTO helpfull (positive,negative,funny,award_reviews_table)
+    VALUES (5,0,2,0);
+INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+VALUES
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/e14afa34b7b288659a90a8bc82037a974c6cdd66_medium.jpg', true, 2, false, 0, '0.9', 100, 29, 'Sarge', 'gaming4', 599 , 7, '2023-07-03', 'this game is pain ', 1);
+INSERT INTO helpfull (positive,negative,funny,award_reviews_table)
+    VALUES (3,0,1,1);
+INSERT INTO award_reviews(award_ids, count)
+    VALUES([1],[1]);
+INSERT INTO awards(icon,animation,title,body,points)
+    VALUES('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/5.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/5.png','Poetry', 'Such elegent prose! A literary feast.', 100);
+ INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, at_review_time, xp, steam_level, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+VALUES
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/2131b88f9be3ee20b5280fd3a84a28e006b58975.jpg', true, 3, false, 0, '18.1', '17.2', 0, 9, 'Chonny Jash', 0 , 2, '2023-07-19', 'ive been speedrunning this in my freetime and its actually grown on me quite a bit. after playing for 17 hours and beating the game in under 10 minutes i give it a full thumbs up ', 1);
+INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
+    Values(3,0,1,2);
+INSERT INTO award_reviews (award_ids, count)
+    VALUES ([2],[1]);
+INSERT INTO awards (icon, animation, title, body, points)
+    VALUES ('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/19.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/19.png','Jester','An important part of any royal court.', 200);
+INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 
 VALUES
-    ('gaming4', 599 , 7, '2023-07-03', 'this game is pain ', 1);
-    INSERT INTO reviews (user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/c60c15313cbc9187174a705a764023b581288189.jpg', true, 4, true, '2023-06-23', '10:43', 0, '47.9', '18.8' , 200, 12, 'Community Ambasador', 'heyhater', 0 , 2, '2023-06-22', 'this is the best game I have ever played in my entire life  ', 1);
+INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
+    Values(15,0,10,3);
+INSERT INTO award_reviews (award_ids, count)
+    VALUES ([3],[1]);
+INSERT INTO awards (icon, animation, title, body, points)
+    VALUES ('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/15.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/15.png', 'Saucy', 'Sometimes you just need to kick it up a notch', 400);
 
-VALUES
-    ('Chonny Jash', 0 , 2, '2023-07-19', 'ive been speedrunning this in my freetime and its actually grown on me quite a bit. after playing for 17 hours and beating the game in under 10 minutes i give it a full thumbs up ', 1);
-    INSERT INTO reviews (user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+    VALUES 
+        ('Product Key', 'https://avatars.cloudflare.steamstatic.com/735a7287e95f85f337f8c547903e3021038bc354_medium.jpg', true, 5, false, 0, '6.4', '0.6' , 450, 21, 'Years of Service', 'MaSH', 251 , 23, '2023-06-13', 'this is the worst game i have ever played in my entire life  ', 1);
+INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
+    Values(23,0,21,4);
+INSERT INTO award_reviews (award_ids, count)
+    VALUES ([4,5],[1,1]);
+INSERT INTO awards (icon, animation, title, body, points)
+    VALUES ('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/20.png?v=5', 'https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/20.png', 'Fancy Pants', 'Nothing says fancy like a well tailored pair of pants', 400);
+INSERT INTO awards (icon, animation, title, body, points)
+    VALUES ( 'https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/18.png?v=5', 'https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/18.png' , 'Wholesome', 'Like laying in the grass on a warm sunny day', 100);
 
-VALUES
-    ('heyhater', 0 , 2, '2023-06-22', 'this is the best game I have ever played in my entire life  ', 1);
-    INSERT INTO reviews (user_name, user_product, times_reviewed, date_posted, review_body, game_id)
-
-VALUES
-    ('MaSH', 251 , 23, '2023-06-13', 'this is the worst game i have ever played in my entire life  ', 1);
     INSERT INTO reviews (user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 
 VALUES

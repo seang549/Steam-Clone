@@ -1,5 +1,5 @@
 //import { useEffect, useState } from 'react'
-const Recomendations = () => {
+const Recomendations = ({review}) => {
 
     return (
         <>

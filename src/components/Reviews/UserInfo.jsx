@@ -1,5 +1,5 @@
 //import { useEffect, useState } from 'react'
-const UserInfo = () => {
+const UserInfo = ({review}) => {
 
     return (
         <>
@@ -7,9 +7,9 @@ const UserInfo = () => {
         <h1>ICON</h1>
         </div>
         <div className="TopDown">
-        <h1>name</h1>
-        <h1>products</h1>
-        <h1>reviews</h1>
+        <h1>{review["user_name"]}</h1>
+        <h1>{review["user_product"]} products in account</h1>
+        <h1>{review["times_reviewed"]} reviews</h1>
         </div>
         </>
     );
