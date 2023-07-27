@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "./components/Reviews/Reviews.css"
+import "./components/Reviews/Reviews.css";
 import StoreNav from "./components/Navbar/StoreNav";
-import GameBody from "./components/GameBody";
+import GameBody from "./components/GameBody/GameBody";
 import GraphForReviews from "./components/ReviewGraph/GraphForReviews.jsx";
 import Reviews from "./components/Reviews";
 import GameArea from "./components/GameArea/GameArea.jsx";
