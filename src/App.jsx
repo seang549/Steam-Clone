@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import "./components/Reviews/Reviews.css"
+import "./components/Reviews/Reviews.css";
 import StoreNav from "./components/Navbar/StoreNav";
-import GameBody from "./components/GameBody";
-import GraphForReviews from "./components/ReviewGraph/GraphForReviews.jsx";
-import Reviews from "./components/Reviews";
+import GamerJuice from "./components/GameBodyFolder/GamerJuice";
+// import GraphForReviews from "./components/ReviewGraph/GraphForReviews.jsx";
+// import Reviews from "./components/Reviews";
 import GameArea from "./components/GameArea/GameArea.jsx";
 import Header from "./components/HeaderFolder/Header";
 import Footer from "./components/FooterFolder/Footer";
@@ -26,11 +26,9 @@ function App() {
           <StoreNav />
           <GameArea />
         </div>
-        <GameBody />
+        <GamerJuice />
         <div className="clear"></div>
-        <div className="review-graph-area">
-          <GraphForReviews />
-        </div>
+        <div className="review-graph-area">{/* <GraphForReviews /> */}</div>
         <div className="clear" style={{ width: "940px" }}></div>
         <div className="reviews-area">
           <ReviewCards />
