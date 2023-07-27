@@ -1,12 +1,12 @@
 //import { useEffect, useState } from 'react'
 const Recomendations = ({review}) => {
-    if(review[recommendation])
+    if(review["recommendation"])
     {
     return (
         <>
         <div className="SideBySide">
         <div>
-        <h1>https://store.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp_v6.png</h1>
+        <img src="https://store.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp_v6.png"></img>
         </div>
         <div className="TopDown">
             <div>

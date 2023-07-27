@@ -4,7 +4,7 @@ const UserInfo = ({review}) => {
     return (
         <>
         <div className="Icon">
-        <h1>{review["user_icon"]}</h1>
+        <img src={review["user_icon"]}></img>
         </div>
         <div className="TopDown">
         <h1>{review["user_name"]}</h1>

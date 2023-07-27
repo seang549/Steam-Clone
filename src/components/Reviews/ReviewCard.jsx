@@ -2,7 +2,7 @@ import AwardList from "./AwardList";
 import Recomendations from "./Recomendations";
 import Review from "./Review";
 import UserInfo from "./UserInfo";
-import Helpfull from "./ReviewReactions";
+import Helpfull from "./Helpfull";
 
 //import { useEffect, useState } from 'react'
 const ReviewCard = ({review}) => {
@@ -23,7 +23,7 @@ const ReviewCard = ({review}) => {
         </div>
         </div>
         <div>
-            <h1>DEV RESPONSE</h1>
+            <h1>A developer has responded on {review["developer_date"]} @ {review["developer_time"]}</h1>
             <h1>VIEW RESPONSE</h1>
         </div>
         </div>
