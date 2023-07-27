@@ -9,18 +9,14 @@
 body {
   background-color: #171d25;
   margin: 0;
-  color: #acb2b8;
-  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
-  font-size: 12px;
+  /* color: #acb2b8; */
+  /* font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font-size: 12px; */
 }
 
 :root {
   display: flex;
   align-items: center;
-}
-
-.header-area {
-  height: 104px;
 }
 
 .game_body {
@@ -37,14 +33,15 @@ body {
   background-color: #1b2838;
   width: 100vw;
   align-items: center;
+  background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/2433830/page_bg_generated_v6b.jpg?t=1686899598);
+  background-repeat: no-repeat;
 }
 
 .game-area-bgd {
-  background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/2433830/page_bg_generated_v6b.jpg?t=1686899598);
   background-repeat: no-repeat;
   background-position: center top;
-  min-width: 972px;
-  width: 100vw;
+  width: 940px;
+  /* width: 100vw; */
   display: flex;
   flex-direction: column;
   align-items: center;

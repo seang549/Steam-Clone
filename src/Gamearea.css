@@ -1,0 +1,308 @@
+#gameInfo {
+  width: 305px;
+  margin-left: 0px;
+  display: block;
+  float: right;
+}
+
+#lowerGameHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+}
+
+#gameAreaTitle {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  padding-left: 0px;
+  color: white;
+  font-size: 26px;
+  line-height: 32px;
+  text-overflow: ellipsis;
+}
+
+#communityHubDiv {
+  display: block;
+  line-height: 30px;
+  padding-bottom: 15px;
+}
+
+#communityHub {
+  padding: 0 15px;
+  font-size: 15px;
+  background-color: rgba(51, 83, 114, 0.5);
+  border-radius: 2px;
+  border: none;
+  height: 35px;
+  color: #67c1f5;
+  cursor: pointer;
+}
+
+#communityHub:hover {
+  color: #67c1f5;
+  background: rgba(103, 193, 245, 0.2);
+}
+
+#carousel {
+  margin-right: 16px;
+  width: 616px;
+  float: left;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+#carousel-imgs {
+  width: 550px;
+}
+
+#videoThumb {
+  float: left;
+  height: 65px;
+  width: 116px;
+  cursor: pointer;
+  text-align: center;
+  margin: 2px;
+  background-color: #000000;
+  position: relative;
+}
+
+#activeCarouselImg {
+  width: 100%;
+  display: block;
+  opacity: 1;
+  background-color: #000;
+  text-align: center;
+}
+
+.title-stuff {
+  color: #56707f;
+  font-size: 12px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+#gameAreaBreadcrumbs {
+  padding-top: 30px;
+  padding-bottom: 5px;
+  color: #56707f;
+  font-size: 12px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+#container-carousel {
+  width: 940px;
+  margin: 0 auto;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: block;
+  padding-bottom: 12px;
+}
+
+#carousel-holder-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#spider-titlePic {
+  width: 305px;
+  height: 151px;
+  display: grid;
+  grid-row-end: auto;
+}
+
+#titlePic {
+  margin-bottom: 7px;
+}
+
+#summary {
+  max-height: 111px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 18px;
+  padding-right: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c6d4df;
+}
+
+#carousel-imgs {
+  height: 65px;
+  width: 116px;
+  cursor: pointer;
+  text-align: center;
+  margin: 2px;
+  background-color: #000000;
+  position: relative;
+}
+
+#carouselNav {
+  display: block;
+  width: 722px;
+  position: relative;
+  margin-top: 4px;
+  height: 69px;
+  margin-bottom: 4px;
+  z-index: 40;
+}
+
+#carousel-scrollbar {
+  position: relative;
+  height: 18px;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+#left-arrow {
+  background-color: rgba(35, 60, 81, 0.4);
+  position: absolute;
+  width: 38px;
+  top: 0;
+  bottom: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  left: 0;
+}
+
+#right-arrow {
+  background-color: rgba(35, 60, 81, 0.4);
+  position: absolute;
+  width: 38px;
+  top: 0;
+  bottom: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  right: 0;
+}
+
+#scroll-slider {
+  position: absolute;
+  left: 39px;
+  right: 39px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  scroll-snap-type: center;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  overflow: scroll;
+  display: none;
+}
+
+#slider-handle {
+  position: absolute;
+  left: 0px;
+  background-color: rgba(35, 60, 81, 0.4);
+  border-radius: 3px;
+  height: 18px;
+  width: 60px;
+  cursor: pointer;
+  top: 0;
+}
+
+#wishList {
+  width: 940px;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 0px auto;
+  margin-bottom: 16px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c6d4df;
+  font-size: 12px;
+  padding: 16px;
+}
+
+#gameData {
+  padding: 0;
+  margin: 0;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c6d4df;
+  font-size: 12px;
+}
+
+.gameDataRow-releaseData {
+  display: flex;
+  padding-top: 9px;
+  padding-bottom: 13px;
+}
+
+.header-review-gameInfo {
+  font-size: 12px;
+  color: #556772;
+  margin-top: 10px;
+  display: flex;
+}
+
+.first-p {
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-right: 10px;
+  min-width: 94px;
+}
+
+.second-p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.release-p-tag {
+  color: #556772;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-right: 10px;
+  min-width: 94px;
+}
+
+.release-p-tag2 {
+  max-height: 30px;
+  overflow: hidden;
+  color: #8f98a0;
+}
+
+.gameDataRow {
+  display: flex;
+  line-height: 16px;
+}
+
+.subTitle-tag {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #556772;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-right: 10px;
+  min-width: 94px;
+}
+
+.subTitle-tag2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #67c1f5;
+}
+
+#gameTags {
+  margin: 10px 0px 0px 0px;
+  font-size: 11px;
+}
+
+.tags-intro {
+  line-height: 19px;
+  font-size: 12px;
+  color: #556772;
+  font-family: Arial, Helvetica, sans-serif;
+}
