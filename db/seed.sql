@@ -48,13 +48,13 @@ CREATE TABLE awards (
     animation text,
     title text,
     body  text,
-    points int,
+    points int
 );
 
 CREATE TABLE award_reviews (
     id serial,
-    award_ids ARRAY,
-    count ARRAY
+    award_ids int ARRAY,
+    count int ARRAY
 );
 
 CREATE TABLE reviews (
@@ -143,7 +143,7 @@ VALUES
 INSERT INTO helpfull (positive,negative,funny,award_reviews_table)
     VALUES (3,0,1,1);
 INSERT INTO award_reviews(award_ids, count)
-    VALUES([1],[1]);
+    VALUES(ARRAY [1],ARRAY [1]);
 INSERT INTO awards(icon,animation,title,body,points)
     VALUES('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/5.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/5.png','Poetry', 'Such elegent prose! A literary feast.', 100);
  INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, at_review_time, xp, steam_level, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
@@ -152,7 +152,7 @@ VALUES
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(3,0,1,2);
 INSERT INTO award_reviews (award_ids, count)
-    VALUES ([2],[1]);
+    VALUES (ARRAY [2], ARRAY [1]);
 INSERT INTO awards (icon, animation, title, body, points)
     VALUES ('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/19.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/19.png','Jester','An important part of any royal court.', 200);
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
@@ -162,7 +162,7 @@ VALUES
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(15,0,10,3);
 INSERT INTO award_reviews (award_ids, count)
-    VALUES ([3],[1]);
+    VALUES (ARRAY [3], ARRAY [1]);
 INSERT INTO awards (icon, animation, title, body, points)
     VALUES ('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/15.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/15.png', 'Saucy', 'Sometimes you just need to kick it up a notch', 400);
 
@@ -172,7 +172,7 @@ INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, develo
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(23,0,21,4);
 INSERT INTO award_reviews (award_ids, count)
-    VALUES ([4,5],[1,1]);
+    VALUES (ARRAY [4,5], ARRAY [1,1]);
 INSERT INTO awards (icon, animation, title, body, points)
     VALUES ('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/20.png?v=5', 'https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/20.png', 'Fancy Pants', 'Nothing says fancy like a well tailored pair of pants', 400);
 INSERT INTO awards (icon, animation, title, body, points)
