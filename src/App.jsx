@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./components/Reviews/Reviews.css"
 import StoreNav from "./components/Navbar/StoreNav";
 import GameBody from "./components/GameBody";
 import GraphForReviews from "./components/ReviewGraph/GraphForReviews.jsx";
@@ -7,6 +7,7 @@ import Reviews from "./components/Reviews";
 import GameArea from "./components/GameArea/GameArea.jsx";
 import Header from "./components/HeaderFolder/Header";
 import Footer from "./components/FooterFolder/Footer";
+import ReviewCards from "./components/Reviews/ReviewCards.jsx";
 import axios from "axios";
 import "./Navbar.css";
 
@@ -32,7 +33,7 @@ function App() {
         </div>
         <div className="clear" style={{ width: "940px" }}></div>
         <div className="reviews-area">
-          <Reviews />
+          <ReviewCards />
         </div>
       </div>
       <div className="footer-area">

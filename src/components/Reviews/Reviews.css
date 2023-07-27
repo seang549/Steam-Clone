@@ -1,0 +1,30 @@
+/* div{
+    border-style: solid;
+} */
+.TopDown{
+    color:blueviolet;
+    
+}
+
+.SideBySide{
+    color:aquamarine;
+    display: flex;
+    direction: row;
+    
+}
+
+.TopLeftMargin{
+    color: red;
+    margin-right: 75%;
+    top: 0px;
+    left: 0px;
+}
+
+.Icon
+{
+        color: goldenrod;
+        float: left;
+        margin-right: 75%;
+        top: 0px;
+        left: 0px;
+}
