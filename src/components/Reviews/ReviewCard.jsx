@@ -2,6 +2,7 @@ import AwardList from "./AwardList";
 import Recomendations from "./Recomendations";
 import Review from "./Review";
 import UserInfo from "./UserInfo";
+import Helpfull from "./ReviewReactions";
 
 //import { useEffect, useState } from 'react'
 const ReviewCard = ({review}) => {
@@ -17,7 +18,7 @@ const ReviewCard = ({review}) => {
             <div className="TopDown">
         <Recomendations review={review}/>
         <Review review={review}/>
-        <AwardList review={review}/>
+        <Helpfull review={review}/>
             </div>
         </div>
         </div>
