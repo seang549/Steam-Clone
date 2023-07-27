@@ -96,11 +96,11 @@ INSERT INTO game_info (
     price
 )
 VALUES
-    (9, 'Spider','Indie Games', '2023-06-13', 'undownsidable', 'undownsidable', 'English,Simplified Chinese', 'Spider is a unique puzzle game that puts players in the role of a brave spider, exploring a variety of stunning environments and overcoming challenges. Players need to use the spider''s special abilities and intelligence to solve puzzles and complete the objectives of each level.
-Game Features:
-Rich and diverse levels: There will be multiple levels in the game, each with unique terrain, traps and puzzles, providing players with challenges and fun.
-
-Spider Abilities: Players can use the spider''s special abilities such as climbing walls, spinning silk, and jumping to explore the level', '{MINIMUM: {OS: ''windows'', Storage: ''881 MB available space''}, RECOMMENDED: {Storage: ''881 MB available space''}}', ARRAY ['''Bread & Fred','Stardew Valley','Terraria','MapleStory'], ARRAY ['https://cdn.akamai.steamstatic.com/steam/apps/2433830/header.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_d159c293408b69cc1a1365abfadf0555a5904fe5.116x65.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_690c723e1d044a804afe9c63869c094cb186bd6d.600x338.jpg?t=1686899598', 'https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_66a2c80bcd7cc0e35ccb835e025c159a95f9cb90.600x338.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_126e263dd9d120deca0c622df9fb4471846b6fcd.1920x1080.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_a15017b1c4cffa81d3636588927c5949cbfa8f07.1920x1080.jpg?t=1686899598'], '1.99');
+    (9, 'Spider','Indie Games', '2023-06-13', 'undownsidable', 'undownsidable', 'English,Simplified Chinese', 'Spider is a unique puzzle game that puts players in the role of a brave spider, exploring a variety of stunning environments and overcoming challenges. Players need to use the spider''s special abilities and intelligence to solve puzzles and complete the objectives of each level.\
+Game Features:\
+Rich and diverse levels: There will be multiple levels in the game, each with unique terrain, traps and puzzles, providing players with challenges and fun.\
+\
+Spider Abilities: Players can use the spider''s special abilities such as climbing walls, spinning silk, and jumping to explore the level\', 'MINIMUM:\OS: windows\Storage: 881 MB available space\RECOMMENDED:\Storage: 881 MB available space\', ARRAY ['''Bread & Fred','Stardew Valley','Terraria','MapleStory'], ARRAY ['https://cdn.akamai.steamstatic.com/steam/apps/2433830/header.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_d159c293408b69cc1a1365abfadf0555a5904fe5.116x65.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_690c723e1d044a804afe9c63869c094cb186bd6d.600x338.jpg?t=1686899598', 'https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_66a2c80bcd7cc0e35ccb835e025c159a95f9cb90.600x338.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_126e263dd9d120deca0c622df9fb4471846b6fcd.1920x1080.jpg?t=1686899598','https://cdn.cloudflare.steamstatic.com/steam/apps/2433830/ss_a15017b1c4cffa81d3636588927c5949cbfa8f07.1920x1080.jpg?t=1686899598'], '1.99');
 
 
 INSERT INTO tags (tag_title, tag_link, game_id)
