@@ -13,31 +13,29 @@ import "./Gamearea.css";
 import "./App.css";
 
 function App() {
-  const [testArr, setTestArr] = useState([]);
-
-  const url = "https://steam-clone-zf6a.onrender.com";
-
   return (
     <div>
-      <div className="header-area">
+      <div className='header-area'>
         <Header />
       </div>
-      <div className="game-bgd">
-        <div className="game-area-bgd">
+      <div className='game-bgd'>
+        <div className='game-area-bgd'>
           <StoreNav />
           <GameArea />
         </div>
         <GamerJuice />
-        <div className="clear"></div>
-        <div className="review-graph-area">
+    
+        <div className='clear'></div>
+        <div className='review-graph-area'>
           <GraphForReviews />
         </div>
-        <div className="clear" style={{ width: "940px" }}></div>
-        <div className="reviews-area">
+        <div className='clear' style={{ width: "940px" }}></div>
+        <div className='reviews-area'>
+
           <ReviewCards />
         </div>
       </div>
-      <div className="footer-area">
+      <div className='footer-area'>
         <Footer />
       </div>
     </div>
