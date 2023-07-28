@@ -12,7 +12,6 @@ const GameBody = () => {
       "https://steam-clone-zf6a.onrender.com/game_info"
     );
     const data = await response.data;
-    console.log(data);
     setGameList(data);
   };
 
@@ -47,7 +46,6 @@ const GameBody = () => {
     store = sysReqs[2];
 
     rec = sysReqs[3];
-    console.log(sysReqs);
   }
 
   // console.log(gameList[0].systems_requirements.indexOf("},"));

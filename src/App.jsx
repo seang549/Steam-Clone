@@ -24,12 +24,14 @@ function App() {
           <GameArea />
         </div>
         <GamerJuice />
+    
         <div className='clear'></div>
         <div className='review-graph-area'>
           <GraphForReviews />
         </div>
         <div className='clear' style={{ width: "940px" }}></div>
         <div className='reviews-area'>
+
           <ReviewCards />
         </div>
       </div>
