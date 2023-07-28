@@ -19,15 +19,13 @@ body {
   align-items: center;
 }
 
-.header-area {
-  height: 104px;
-}
-
 .game_body {
   width: 940px;
   font-size: 14px;
   font-family: "Motiva Sans", Sans-serif;
   font-weight: normal;
+  gap: 16px;
+  margin-top: 1.2rem;
 }
 
 .game-bgd {
@@ -37,14 +35,15 @@ body {
   background-color: #1b2838;
   width: 100vw;
   align-items: center;
+  background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/2433830/page_bg_generated_v6b.jpg?t=1686899598);
+  background-repeat: no-repeat;
 }
 
 .game-area-bgd {
-  background-image: url(https://cdn.akamai.steamstatic.com/steam/apps/2433830/page_bg_generated_v6b.jpg?t=1686899598);
   background-repeat: no-repeat;
   background-position: center top;
-  min-width: 972px;
-  width: 100vw;
+  width: 940px;
+  /* width: 100vw; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,8 +99,3 @@ body {
   margin-top: 1rem;
   width: 100vw;
 }
-
-/* GORDY CSS STARTS HERE */
-/* Game area */
-
-/* Carousel */

@@ -4,17 +4,31 @@ body {
   min-height: 100vh;
 }
 
+/* dropdown is the background color and such for the submenus */
 .dropdown {
   list-style: none;
   padding: 0;
   margin: 0;
+  position: absolute;
   display: none;
+  border: 3px solid darkmagenta;
+  /* height: 600px; */
+  width: 700px;
+}
+
+/* dropdownitem is the actual submenu titles  */
+.dropdown-item {
+  position: relative;
+  display: inline-flex;
+  padding: 8px;
+  text-decoration: none;
+  color: #e5e5e5;
+  border: 3px solid pink;
 }
 
 .store-nav {
   display: flex;
   height: 35px;
-  /* flex-direction: row; */
 }
 
 .flex-spacer {
@@ -68,18 +82,49 @@ body {
   display: block;
 }
 
-.dropdown-item {
-  position: relative;
+.menu-items {
+  padding-right: 10px;
+  margin-right: 0px;
+  background: none;
   display: inline-block;
-  padding: 8px;
+  position: relative;
 }
 
-.dropdown-item a {
-  text-decoration: none;
-  color: #e5e5e5;
+/* come back to background color when fixed */
+.menu-items:hover .dropdown {
+  display: block;
+  background: linear-gradient(
+    180deg,
+    rgba(86, 90, 99) 13.5%,
+    rgba(58, 74, 86) 25.23%,
+    rgb(45, 53, 63) 80%
+  );
 }
 
-.submenu {
+.store-nav .tab span.pulldown {
+  padding-right: 10px;
+  margin-right: 0px;
+  background: none;
+}
+
+.store-nav
+  .tab
+  .pulldown
+  .pulldown-desktop
+  .menu-items
+  a[href*="Categories"]
+  + .dropdown {
+  width: 100px;
+}
+
+/* .header-nav .header-nav-item--folder .header-nav-folder-title[href*="portfolio-1"] + .header-nav-folder-content {
+  width: 100px;
+}
+.header-nav .header-nav-item--folder .header-nav-folder-title[href*="pricing"] + .header-nav-folder-content {
+  width: 150px;
+} */
+
+/* .submenu {
   display: block;
   position: absolute;
   top: 100%;
@@ -87,7 +132,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f0f0f0;
-}
+} */
 
 #store-header {
   height: 66px;
@@ -103,24 +148,8 @@ body {
   width: 940px;
   margin: 0 auto;
   z-index: 300;
+  padding-top: 30px;
 }
-
-.menu-items {
-  padding-right: 10px;
-  margin-right: 0px;
-  background: none;
-  justify-content: space-between;
-}
-
-.menu-items:hover .dropdown {
-  display: block;
-}
-
-/* .searchBar {
-  float: none;
-  padding: 3px 4px 2px;
-  height: 30px;
-} */
 
 .search-box {
   background-image: none;

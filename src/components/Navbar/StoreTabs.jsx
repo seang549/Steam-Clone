@@ -2,7 +2,7 @@ import Dropdown from "./Dropdown";
 import { useState } from "react";
 const StoreTabs = ({ items }) => {
   return (
-    <li className='menu-items' style={{ listStyleType: "none" }}>
+    <div className='menu-items'>
       {items.submenu ? (
         <>
           <a href={items.url}>{items.title} </a>
@@ -11,7 +11,7 @@ const StoreTabs = ({ items }) => {
       ) : (
         <a href={items.url}>{items.title}</a>
       )}
-    </li>
+    </div>
   );
 };
 

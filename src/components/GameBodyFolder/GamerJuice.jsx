@@ -12,7 +12,6 @@ const GameBody = () => {
       "https://steam-clone-zf6a.onrender.com/game_info"
     );
     const data = await response.data;
-    console.log(data);
     setGameList(data);
   };
 
@@ -47,35 +46,58 @@ const GameBody = () => {
     store = sysReqs[2];
 
     rec = sysReqs[3];
-    console.log(sysReqs);
   }
 
   // console.log(gameList[0].systems_requirements.indexOf("},"));
 
   return (
-    <div className="game_body" style={{ display: "flex" }}>
+    <div className='game_body' style={{ display: "block" }}>
       {gameList.length > 0 ? (
         <>
-          <div>
-            <div>
+          <div id='buy-game-container'>
+            <div className='buy-section'>
               <BuyGame />
             </div>
+
             <div>ABOUT THIS GAME</div>
-            {paraOne}
-            <br />
-            {features} <br />
-            {paraTwo} <br />
-            {abilities}
+            <div className="hr"></div>
+            <div style={{ marginBottom: "3rem" }}>
+              {paraOne}
+              <br />
+              {features} <br />
+              {paraTwo} <br />
+              {abilities}
+            </div>
+
             <div>SYSTEM REQUIREMENTS</div>
-            <div style={{ display: "flex" }}>
-              <div>
-                {mins} <br />
-                {os} <br />
-                {store} <br />
+            <div className="hr"></div>
+            <div
+              style={{
+                display: "flex",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                marginBottom: "3rem",
+              }}
+            >
+              <div className="sysReq">
+                <div>{mins}</div>
+                <div style={{ fontSize: "12px" }} data-highlightword="OS:">
+                  {os}
+                </div>
+                <div
+                  style={{ fontSize: "12px" }}
+                  data-highlightword="Storage: "
+                >
+                  {store}
+                </div>
               </div>
-              <div>
-                {rec} <br />
-                {store}
+              <div className="sysReq">
+                <div>{rec}</div>
+                <div
+                  style={{ fontSize: "12px" }}
+                  data-highlightword="Storage: "
+                >
+                  {store}
+                </div>
               </div>
             </div>
             <MoreLikeThis />
