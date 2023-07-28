@@ -51,13 +51,14 @@ const GameBody = () => {
   // console.log(gameList[0].systems_requirements.indexOf("},"));
 
   return (
-    <div className="game_body" style={{ display: "flex" }}>
+    <div className='game_body' style={{ display: "block" }}>
       {gameList.length > 0 ? (
         <>
-          <div>
-            <div>
+          <div id='buy-game-container'>
+            <div className='buy-section'>
               <BuyGame />
             </div>
+
             <div>ABOUT THIS GAME</div>
             <div className="hr"></div>
             <div style={{ marginBottom: "3rem" }}>
@@ -67,6 +68,7 @@ const GameBody = () => {
               {paraTwo} <br />
               {abilities}
             </div>
+
             <div>SYSTEM REQUIREMENTS</div>
             <div className="hr"></div>
             <div

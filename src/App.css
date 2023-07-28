@@ -112,14 +112,6 @@
   justify-content: center;
 }
 
-.logo {
-  float: left;
-  padding-top: 30px;
-  margin-right: 40px;
-  width: 176px;
-  height: 44px;
-}
-
 .header {
   background: #171d25;
   background-position: center top;
@@ -133,9 +125,5 @@
   margin: 0;
   position: relative;
   min-height: 100%;
-  display: flex;
-}
-
-.global-action {
   display: flex;
 }

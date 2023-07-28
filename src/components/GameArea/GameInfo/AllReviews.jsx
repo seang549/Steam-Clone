@@ -5,7 +5,7 @@ const AllReviews = ({ reviews }) => {
     return <p>1 user review</p>;
   }
   return (
-    <div className='header-review-gameInfo'>
+    <div href='#jumpToReviews' className='header-review-gameInfo'>
       <p className='first-p'>ALL REVIEWS:</p>
       <p className='second-p'>{reviews.length} user reviews</p>
     </div>

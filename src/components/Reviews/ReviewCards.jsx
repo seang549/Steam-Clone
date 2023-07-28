@@ -16,18 +16,19 @@ const ReviewCards = () => {
     }
     getData()
 }, [])
-  
+if(reviews !== undefined)
+{
 
     return (
       reviews.map((review) => {
         return (
-      <div className='TopDown'>
+      <div id='jumpToReviews' className='TopDown'>
         <ReviewCard review={review}/>
       </div>
         )
       })
     );
   };
-  
+}
   export default ReviewCards;
   

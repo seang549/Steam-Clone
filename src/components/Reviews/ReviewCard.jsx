@@ -6,7 +6,8 @@ import Helpfull from "./Helpfull";
 
 //import { useEffect, useState } from 'react'
 const ReviewCard = ({review}) => {
-
+if(review !== undefined)
+{
     return (
         <>
         <div className="TopDown">
@@ -31,6 +32,6 @@ const ReviewCard = ({review}) => {
         </>
     );
   };
-  
+}
   export default ReviewCard;
   

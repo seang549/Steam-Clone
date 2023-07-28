@@ -18,18 +18,44 @@ const Helpfull = ({review}) => {
     }
     getData()
 }, [])
-    return (
 
-    
+    return (
+        
         <>
         <div className="TopDown">
       <p>Was this review helpful?</p>
       <ReviewReactions/>
-      <h1>{help["positive"]} people found this review helpful</h1>
-      <h1>{help["funny"]} people found this review funny</h1>
-      <div className="Conversations"> BOTTOM LEFT ICON</div>
-      <AwardList help={help}/>
-     </div>
+      {help.map((table) => {
+        let possitiveView = true
+        let funnyView = true
+        let conversationsView = true
+        let awardView = true
+        if(table["positive"] == 0)
+        {
+            possitiveView = false
+        }
+        if(table["funny"] == 0)
+        {
+            funnyView = false
+        }
+        if(review["conversations"] == 0)
+        {
+            conversationsView = false
+        }
+        if(table["award_reviews_table"] == 0)
+        {
+            awardView = false
+        }
+        return (
+        <>
+      {possitiveView && <h1>{table["positive"]} people found this review helpful</h1>}
+      {funnyView && <h1>{table["funny"]} people found this review funny</h1>}
+      {conversationsView && <div className="Conversations"> <p>{review["conversations"]}</p> <img src="https://store.akamai.steamstatic.com/public/shared/images/comment_quoteicon_blue.png"></img></div>}
+      {awardView && <AwardList helpID={table["award_reviews_table"]}/>}
+        </>
+        )
+        })}
+         </div>
      </>
     );
   };
