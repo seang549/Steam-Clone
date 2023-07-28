@@ -1,53 +1,140 @@
-/* div{
-    border-style: solid;
-} */
-.TopDown{
-    color:blueviolet;
-    
+.reviews-area-container {
+  width: 616px;
+  float: left;
 }
 
-.SideBySide{
-    color:aquamarine;
-    display: flex;
-    direction: row;
-    
+#reviews-summary {
+  display: block;
+  width: 940px;
+}
+
+#review-subTitle {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+  padding-right: 10px;
+}
+.hr {
+  background-image: linear-gradient(to right, #3a6e8b, #1b2838);
+  height: 1px;
+  margin-bottom: 2px;
+  width: 616px;
+}
+
+#review-subTitle2 {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #56707f;
+}
+
+.Icon {
+  float: left;
+  padding-right: 8px;
+  display: block;
+}
+
+#jumpToReviews {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 26px;
+  background-image: url(/public/images/v6/maincol_gradient_rule.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+#user-info-username {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 140px;
+  overflow: hidden;
+  margin-top: -2px;
+  margin-bottom: -1px;
+  display: inline-block;
+  color: #c1dbf4;
+  font-size: 13px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: bold;
+}
+
+#user-info-cont {
+  position: relative;
+  width: 184px;
+  float: left;
+  padding: 8px;
+  opacity: 0.6;
+}
+
+#user-info-product {
+  font-size: 11px;
+  color: #626366;
+  display: block;
+  line-height: 17px;
+}
+
+#user-info-viewReviews {
+  font-size: 11px;
+  color: #626366;
+  display: block;
+}
+
+.right-column {
+  float: left;
+  width: 400px;
+  position: relative;
+  margin-left: 14px;
+}
+
+#response-dev {
+  color: #529cde;
+  font-size: 13px;
+}
+
+#thumb-pic {
+  float: left;
+  margin-right: 10px;
+}
+
+#user-info-username {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 140px;
+  overflow: hidden;
+  margin-top: -2px;
+  margin-bottom: -1px;
+  display: inline-block;
+  color: #c1dbf4;
+  font-size: 13px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: bold;
 }
 
 .Funny {
-    background-position: -208px -16px;
-    display: inline-block;
-    width: 16px;
-    height: 16px
+  background-position: -208px -16px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
 }
 
 .Yes {
-    background-position: -112px -16px;
-    display: inline-block;
-    width: 16px;
-    height: 16px
-    
+  background-position: -112px -16px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
 }
 
 .No {
-    background-position: -64px -16px;
-    display: inline-block;
-    width: 16px;
-    height: 16px
+  background-position: -64px -16px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
 }
 
-
-.TopLeftMargin{
-    color: red;
-    margin-right: 75%;
-    top: 0px;
-    left: 0px;
-}
-
-.Icon
-{
-        color: goldenrod;
-        float: left;
-        margin-right: 75%;
-        top: 0px;
-        left: 0px;
+.TopLeftMargin {
+  color: red;
+  margin-right: 75%;
+  top: 0px;
+  left: 0px;
 }
