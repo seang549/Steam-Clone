@@ -35,9 +35,13 @@ const GameTags = () => {
           Popular user-defined tags for this product:
         </p>
         {filteredData.map((tag) => (
-          <button key={tag.tag_id}>{tag.tag_title}</button>
+          <button className='tags-btn' key={tag.tag_id}>
+            {tag.tag_title}
+          </button>
         ))}
-        <button onClick={() => handleClick}>+</button>
+        <button className='tags-btn' onClick={() => handleClick}>
+          +
+        </button>
       </>
     );
   } else {
