@@ -22,17 +22,17 @@ const Carousel = ({ infoData }) => {
     return <p>Loading...</p>;
   } else {
     return (
-      <div id='carousel'>
+      <div id="carousel">
         <CarouselBody activeImg={activeImg} />
-        <div id='carouselNav'>
+        <div id="carouselNav">
           <CarouselNav infoData={infoData} handleChange={handleChange} />
         </div>
-        <div id='carousel-scrollbar'>
-          <div id='left-arrow'>{/* <GoTriangleLeft /> */}</div>
-          <div id='scroll-slider'>
-            <div id='slider-handle' className='invisible-scrollbar'></div>
+        <div id="carousel-scrollbar">
+          <div id="left-arrow">{/* <GoTriangleLeft /> */}</div>
+          <div id="scroll-slider">
+            <div id="slider-handle" className="invisible-scrollbar"></div>
           </div>
-          <div id='right-arrow'></div>
+          <div id="right-arrow"></div>
         </div>
       </div>
     );

@@ -88,6 +88,60 @@ app.get("/reviews", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+app.get("/awards", async (req, res) => {
+  try {
+    const result = await pool.query(
+      `SELECT * FROM awards`
+    );
+    if (result.rowCount === 0) {
+      res.status(404).send("No Information Found");
+    } else {
+      res
+        .status(200)
+        .setHeader("Content-Type", "application/json")
+        .json(result.rows);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+app.get("/helpfull", async (req, res) => {
+  try {
+    const result = await pool.query(
+      `SELECT * FROM helpfull`
+    );
+    if (result.rowCount === 0) {
+      res.status(404).send("No Information Found");
+    } else {
+      res
+        .status(200)
+        .setHeader("Content-Type", "application/json")
+        .json(result.rows);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+app.get("/award_reviews", async (req, res) => {
+  try {
+    const result = await pool.query(
+      `SELECT * FROM award_reviews WHERE id = ${id}`
+    );
+    if (result.rowCount === 0) {
+      res.status(404).send("No Information Found");
+    } else {
+      res
+        .status(200)
+        .setHeader("Content-Type", "application/json")
+        .json(result.rows);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 //get one
 app.get("/game_info/:id", async (req, res) => {
@@ -133,6 +187,63 @@ app.get("/reviews/:id", async (req, res) => {
   try {
     const result = await pool.query(
       `SELECT * FROM reviews WHERE review_id = ${id}`
+    );
+    if (result.rowCount === 0) {
+      res.status(404).send("No Information Found");
+    } else {
+      res
+        .status(200)
+        .setHeader("Content-Type", "application/json")
+        .json(result.rows);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+app.get("/awards/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await pool.query(
+      `SELECT * FROM awards WHERE id = ${id}`
+    );
+    if (result.rowCount === 0) {
+      res.status(404).send("No Information Found");
+    } else {
+      res
+        .status(200)
+        .setHeader("Content-Type", "application/json")
+        .json(result.rows);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+app.get("/helpfull/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await pool.query(
+      `SELECT * FROM helpfull WHERE id = ${id}`
+    );
+    if (result.rowCount === 0) {
+      res.status(404).send("No Information Found");
+    } else {
+      res
+        .status(200)
+        .setHeader("Content-Type", "application/json")
+        .json(result.rows);
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+app.get("/award_reviews/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await pool.query(
+      `SELECT * FROM award_reviews WHERE id = ${id}`
     );
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");
