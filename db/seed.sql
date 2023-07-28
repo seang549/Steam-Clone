@@ -198,6 +198,9 @@ INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
     VALUES
     ('Steam', 'https://avatars.cloudflare.steamstatic.com/5df8c292dabf417ae93951e4c14de291cc55f453.jpg', true, 8, true, '2023-06-26', '07:52', 0, '0.6', 140, 3, 'Select Colector', 'ほろよい', 8 , 6, '2023-06-26', '楽しいゲームだな、よくできましたｗｗｗ', 1);
+INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+    VALUES
+    ('negatIveTest', 'https://avatars.cloudflare.steamstatic.com/5df8c292dabf417ae93951e4c14de291cc55f453.jpg', false, 8, false, '2023-06-26', '07:52', 0, '0.6', 140, 3, 'Select Colector', 'ほろよい', 8 , 6, '2023-06-26', '楽しいゲームだな、よくできましたｗｗｗ', 1);
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(0,0,0,0);
 

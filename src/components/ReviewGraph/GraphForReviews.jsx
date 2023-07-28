@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
-// import AllReviewsChart from './AllReviewsChart.jsx'
 import AllReviews from './AllReviews/AllReviews.jsx'
-// import RecentReviews from './RecentReviews/RecentReviews.jsx'
+import RecentReviews from './RecentReviews/RecentReviews.jsx'
 import ReviewFilters from './ReviewFilters/ReviewFilters.jsx'
 
 

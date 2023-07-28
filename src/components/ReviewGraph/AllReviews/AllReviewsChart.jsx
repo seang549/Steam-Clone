@@ -4,6 +4,9 @@ import {useEffect, useRef} from 'react'
 import { Chart } from 'chart.js/auto'
 import 'moment'
 import 'chartjs-adapter-moment'
+import zoomPlugin from 'chartjs-plugin-zoom';
+
+Chart.register(zoomPlugin);
 
 
 
@@ -37,21 +40,21 @@ const AllReviewsChart = ({ data }) => {
                 negSum: -groupedData[date_posted].negSum,
             }));
 
-            // Create the chart
+
             chartInstanceRef.current = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: modifiedData.map((entry) => entry.date_posted),
                     datasets: [
                         {
-                            label: 'Positive Entries',
+                            label: `Entries`,
                             data: modifiedData.map((entry) => entry.posSum),
                             backgroundColor: 'rgba(75, 192, 192, 0.8)',
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 1,
                         },
                         {
-                            label: 'Negative Entries',
+                            label: 'Entries',
                             data: modifiedData.map((entry) => entry.negSum),
                             backgroundColor: 'rgba(255, 99, 132, 0.8)',
                             borderColor: 'rgba(255, 99, 132, 1)',
@@ -63,24 +66,25 @@ const AllReviewsChart = ({ data }) => {
                     scales: {
                         x: {
                             stacked: true,
-                            type: 'time', // Use the "time" scale for the x-axis
+                            type: 'time', 
                             time: {
-                                unit: 'day', // Set the unit for the time scale (could be 'day', 'week', 'month', etc.)
+                                unit: 'day', 
                             },
                         },
                         y: {
                             stacked: true,
                             ticks: {
-                                callback: (value) => Math.abs(value), // Display absolute values on the y-axis
+                                callback: (value) => Math.abs(value),
+                                stepSize: 1,
                             },
                         },
                     },
+                    
                 },
             });
         }
 
         return () => {
-            // Clean up: Ensure the chart instance is destroyed when the component is unmounted
             if (chartInstanceRef.current) {
                 chartInstanceRef.current.destroy();
             }
