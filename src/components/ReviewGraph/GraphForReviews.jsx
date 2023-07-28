@@ -20,12 +20,12 @@ const GraphForReviews = () => {
     console.log(reviewData)
     
 //testData
-    const data = [
-        { date: '2023-07-20', good: true },
-        { date: '2023-07-21', good: true },
-        { date: '2023-07-21', good: false },
-        // Add more data entries here
-    ];
+    // const data = [
+    //     { date: '2023-07-20', good: true },
+    //     { date: '2023-07-21', good: true },
+    //     { date: '2023-07-21', good: false },
+    //     // Add more data entries here
+    // ];
 
 
 
@@ -35,7 +35,7 @@ const GraphForReviews = () => {
         <>
             <div id='graphForReviews'>
             <h2 className="user_reviews_header no_bottom_margin">Customer reviews</h2>
-                <AllReviews data={data} />
+                <AllReviews data={reviewData} />
                 {/* <RecentReviews data={data} /> */}
                 <ReviewFilters />
             </div>
