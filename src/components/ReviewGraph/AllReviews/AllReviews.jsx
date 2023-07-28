@@ -1,9 +1,12 @@
 import AllReviewsChart from './AllReviewsChart.jsx'
+import { useEffect, useState } from 'react';
 
 const AllReviews = ({data}) => {
     const reviewSumm = 'ChangeMe'
     const tooltipText = 'ChangeMe'
     const reviewNumText = 'changeMe'
+
+    
     return (
         <>
 

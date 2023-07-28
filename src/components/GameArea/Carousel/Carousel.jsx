@@ -8,13 +8,11 @@ const Carousel = ({ infoData }) => {
 
   useEffect(() => {
     if (infoData && infoData.length > 0) {
-      console.log(infoData);
       setActiveImg(infoData[0].game_img[1]);
     }
   }, [infoData]);
 
   const handleChange = (url) => {
-    console.log(url);
     setActiveImg(url);
   };
 

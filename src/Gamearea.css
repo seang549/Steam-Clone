@@ -27,7 +27,7 @@
   padding-bottom: 15px;
 }
 
-#communityHub {
+.communityHub {
   padding: 0 15px;
   font-size: 15px;
   background-color: rgba(51, 83, 114, 0.5);
@@ -38,9 +38,9 @@
   cursor: pointer;
 }
 
-#communityHub:hover {
-  color: #67c1f5;
-  background: rgba(103, 193, 245, 0.2);
+.communityHub:hover {
+  color: #fff;
+  background: #66c0f4;
 }
 
 #carousel {
@@ -57,7 +57,6 @@
 }
 
 #videoThumb {
-  float: left;
   height: 65px;
   width: 116px;
   cursor: pointer;
@@ -144,12 +143,14 @@
 
 #carouselNav {
   display: block;
-  width: 722px;
+  width: 622px;
   position: relative;
   margin-top: 4px;
   height: 69px;
   margin-bottom: 4px;
   z-index: 40;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 #carousel-scrollbar {
@@ -159,6 +160,12 @@
   padding: 0;
   margin: 0;
   display: block;
+}
+
+#carouselNav::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  overflow: scroll;
+  display: none;
 }
 
 #left-arrow {
@@ -298,6 +305,9 @@
 #gameTags {
   margin: 10px 0px 0px 0px;
   font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tags-intro {
@@ -305,4 +315,125 @@
   font-size: 12px;
   color: #556772;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.tags-btn {
+  color: #67c1f5;
+  display: inline-block;
+  line-height: 19px;
+  padding: 0 7px;
+  color: #67c1f5;
+  background-color: rgba(103, 193, 245, 0.2);
+  box-shadow: none;
+  margin-right: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 3px;
+  max-width: 200px;
+  border: none;
+}
+
+.buy-section {
+  margin-bottom: 28px;
+  display: block;
+}
+
+.buy-game {
+  position: relative;
+  border-radius: 4px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  color: #c6d4df;
+  padding: 16px;
+  padding-bottom: 26px;
+  z-index: 1;
+  background: linear-gradient(
+    -60deg,
+    rgba(226, 244, 255, 0.3) 5%,
+    rgba(84, 107, 115, 0.3) 95%
+  );
+}
+
+#buy {
+  font-size: 21px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  color: #ffffff;
+  font-weight: normal;
+}
+
+#game-purchase {
+  position: relative;
+  bottom: 54px;
+  right: auto;
+  white-space: nowrap;
+  text-align: right;
+  display: flex;
+  width: 600px;
+  height: 74px;
+}
+
+#buy-game-container {
+  width: 616px;
+  float: left;
+}
+
+#game-purchase-cont {
+  height: 40px;
+  display: block;
+  background-color: #000000;
+  padding: 2px 2px 2px 0px;
+  border-radius: 2px;
+  white-space: nowrap;
+  font-size: 0;
+  float: right;
+  width: 162px;
+  z-index: 1;
+  position: absolute;
+  left: 420px;
+  bottom: 1px;
+}
+
+#dollar-amt {
+  background-color: #000000;
+  font-size: 13px;
+  padding-top: 11px;
+  padding-left: 10px;
+  padding-right: 152px;
+  color: #c6d4df;
+  margin: 0;
+}
+
+#btn-cart {
+  position: absolute;
+
+  z-index: 2;
+  background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+  width: 100px;
+  right: 5px;
+  top: 3px;
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #d2efa9;
+}
+
+#add-cart {
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #d2efa9;
+}
+
+#add-cart span {
+  padding: 0 12px;
+  font-size: 15px;
+  line-height: 30px;
 }
