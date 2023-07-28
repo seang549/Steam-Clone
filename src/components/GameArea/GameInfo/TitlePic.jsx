@@ -10,4 +10,4 @@ const TitlePic = ({ infoData }) => {
   );
 };
 
-export default TitlePic;
+export default TitlePic
