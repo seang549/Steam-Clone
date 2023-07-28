@@ -1,9 +1,8 @@
 import React from 'react';
 import {useEffect, useRef} from 'react'
 // import AllReviewsBarChart from './AllReviewsBarChart';
-import { Chart, TimeScale } from 'chart.js/auto'
+import { Chart } from 'chart.js/auto'
 import 'moment'
-import moment from 'moment'
 import 'chartjs-adapter-moment'
 
 
@@ -13,7 +12,6 @@ const AllReviewsChart = ({ data }) => {
     const chartInstanceRef = useRef(null);
 
     useEffect(() => {
-        console.log(Chart.defaults);
         if (chartRef && chartRef.current) {
             if (chartInstanceRef.current) {
                 chartInstanceRef.current.destroy();
@@ -22,28 +20,28 @@ const AllReviewsChart = ({ data }) => {
             const ctx = chartRef.current.getContext('2d');
 
             const groupedData = data.reduce((acc, item) => {
-                if (!acc[item.date]) {
-                    acc[item.date] = { posSum: 0, negSum: 0 };
+                if (!acc[item.date_posted]) {
+                    acc[item.date_posted] = { posSum: 0, negSum: 0 };
                 }
-                if (item.pos) {
-                    acc[item.date].posSum += 1;
+                if (item.recommendation) {
+                    acc[item.date_posted].posSum += 1;
                 } else {
-                    acc[item.date].negSum += 1;
+                    acc[item.date_posted].negSum += 1;
                 }
                 return acc;
             }, {});
 
-            const modifiedData = Object.keys(groupedData).map((date) => ({
-                date,
-                posSum: groupedData[date].posSum,
-                negSum: -groupedData[date].negSum,
+            const modifiedData = Object.keys(groupedData).map((date_posted) => ({
+                date_posted,
+                posSum: groupedData[date_posted].posSum,
+                negSum: -groupedData[date_posted].negSum,
             }));
 
             // Create the chart
             chartInstanceRef.current = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: modifiedData.map((entry) => entry.date),
+                    labels: modifiedData.map((entry) => entry.date_posted),
                     datasets: [
                         {
                             label: 'Positive Entries',
