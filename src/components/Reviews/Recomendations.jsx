@@ -14,8 +14,8 @@ const Recomendations = ({review}) => {
         <h2>Recommended</h2>
             </div>
             <div>
-        <h3>{review["total_time"]}</h3>
-        <h3>{review["at_review_time"]}</h3>
+        <h3>{review["total_time"]} hrs on record</h3>
+        <h3>{` (${review["at_review_time"]} at review time)`}</h3>
             </div>
         </div>
         </div>
