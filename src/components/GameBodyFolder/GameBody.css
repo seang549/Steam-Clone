@@ -1,0 +1,49 @@
+.flexGap {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.hr {
+  background-image: linear-gradient(to right, #3a6e8b, #1b2838);
+  height: 1px;
+  margin-bottom: 0.7rem;
+  width: 616px;
+}
+
+.sysReq {
+  color: #bcc6cd;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: normal;
+  font-size: 10px;
+  width: 300px;
+}
+
+div[data-highlightword] {
+  position: relative;
+  color: #acb2b8;
+}
+
+div[data-highlightword]::before {
+  content: attr(data-highlightword);
+  color: #61686d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flag {
+  display: inline-block;
+  margin: 7px 0;
+  vertical-align: top;
+  width: 16px;
+  height: 16px;
+  background-position: -256px 0px;
+  background-image: url(https://store.akamai.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
+}
+/* #bcc6cd */

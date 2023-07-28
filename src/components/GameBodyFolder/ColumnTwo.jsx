@@ -1,6 +1,6 @@
 const ColumnTwo = () => {
   return (
-    <div>
+    <div className="flexGap" style={{ flexDirection: "column", gap: "1rem" }}>
       <div>
         <div style={{ minWidth: "308px" }}>Is this game relevant to you?</div>
         <div>
@@ -31,6 +31,36 @@ const ColumnTwo = () => {
         </div>
         <div>English</div>
         <div>Simplified Chinese</div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+        <div className="flexGap">
+          TITLE: <div>Spider</div>
+        </div>
+        <div className="flexGap">
+          GENRE: <div>Casual, Indie, Strategy</div>
+        </div>
+        <div className="flexGap">
+          DEVELOPER: <div>undownsidable</div>
+        </div>
+        <div className="flexGap">
+          PUBLISHER: <div>undownsidable</div>
+        </div>
+        <div className="flexGap">
+          RELEASE DATE: <div>Jun 13, 2023</div>
+        </div>
+        <div>View update history</div>
+        <div>Read related news</div>
+        <div>View discussions</div>
+        <div>Find Community Groups</div>
+      </div>
+
+      <div className="flex" style={{ gap: ".5rem" }}>
+        <div>Share</div>
+        <div>Embed</div>
+        <div>
+          <img className="flag" />
+        </div>
       </div>
     </div>
   );
