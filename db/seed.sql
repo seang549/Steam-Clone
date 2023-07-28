@@ -321,3 +321,10 @@ VALUES
     INSERT INTO tags (tag_title, tag_link, game_id)
 VALUES 
     ('PvE', 'https://store.steampowered.com/tags/en/PvE/?snr=1_5_9__409', 5);
+
+    INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+    VALUES 
+        ('Product Key', 'https://avatars.cloudflare.steamstatic.com/735a7287e95f85f337f8c547903e3021038bc354_medium.jpg', false, 5, false, 0, '6.4', '0.6' , 450, 21, 'HELPING HAND', 'TEST FOR GORDY', 251 , 23, '2023-06-13', 'this is the worst game i have ever played in my entire life  ', 1);
+    INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
+    VALUES
+    ('negatIveTest', 'https://avatars.cloudflare.steamstatic.com/5df8c292dabf417ae93951e4c14de291cc55f453.jpg', false, 8, false, '2023-06-26', '07:52', 0, '0.6', 140, 3, 'Select Colector', 'ほろよい', 8 , 6, '2023-06-26', '楽しいゲームだな、よくできましたｗｗｗ', 1);
