@@ -27,7 +27,7 @@
   padding-bottom: 15px;
 }
 
-#communityHub {
+.communityHub {
   padding: 0 15px;
   font-size: 15px;
   background-color: rgba(51, 83, 114, 0.5);
@@ -38,9 +38,9 @@
   cursor: pointer;
 }
 
-#communityHub:hover {
-  color: #67c1f5;
-  background: rgba(103, 193, 245, 0.2);
+.communityHub:hover {
+  color: #fff;
+  background: #66c0f4;
 }
 
 #carousel {
