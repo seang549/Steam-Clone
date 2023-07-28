@@ -19,8 +19,7 @@ const Helpfull = ({review}) => {
     getData()
 }, [])
     return (
-
-    
+        
         <>
         <div className="TopDown">
       <p>Was this review helpful?</p>
