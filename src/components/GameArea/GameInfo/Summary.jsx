@@ -1,13 +1,14 @@
-import {useEffect} from 'react'
+import { useEffect } from "react";
 
 const Summary = ({ infoData }) => {
-       const summ = infoData[0].about_this_game
-    
-    return (
-        <div id='summary'>
-            <p>{summ}</p>
-        </div>
-    )
-}
+  const summ = infoData[0].about_this_game;
+  const split = summ.split("\\");
 
-export default Summary
+  return (
+    <div>
+      <p id='summary'>{split[0]}</p>
+    </div>
+  );
+};
+
+export default Summary;

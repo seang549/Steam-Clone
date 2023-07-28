@@ -11,8 +11,10 @@ const StoreNav = () => {
           <div className='store-nav' key={0}>
             {storeTabs.map((menu, index) => (
               <div className='tab'>
-                <span>
-                  <StoreTabs items={menu} key={index} />
+                <span className='pulldown'>
+                  <a className='pulldown-desktop'>
+                    <StoreTabs items={menu} key={index} />
+                  </a>
                 </span>
               </div>
             ))}
