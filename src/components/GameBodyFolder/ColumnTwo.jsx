@@ -7,7 +7,13 @@ const ColumnTwo = () => {
           Sign in to see reasons why you may or may not like this based on your
           games, friends, and curators you follow.
         </div>
-        <button>Sign In</button> or <button>Open in Steam</button>
+        <button className="communityHub" style={{ height: "30px" }}>
+          Sign In
+        </button>{" "}
+        or{" "}
+        <button className="communityHub" style={{ height: "30px" }}>
+          Open in Steam
+        </button>
       </div>
 
       <div>
