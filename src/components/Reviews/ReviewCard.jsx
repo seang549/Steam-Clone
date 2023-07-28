@@ -8,6 +8,8 @@ import Helpfull from "./Helpfull";
 const ReviewCard = ({review}) => {
 if(review !== undefined)
 {
+    let devView = review["developer_response"]
+    console.log(devView)
     return (
         <>
         <div className="TopDown">
@@ -23,10 +25,12 @@ if(review !== undefined)
             </div>
         </div>
         </div>
+        {devView &&
         <div>
             <h1>A developer has responded on {review["developer_date"]} @ {review["developer_time"]}</h1>
             <h1>VIEW RESPONSE</h1>
         </div>
+        }
         </div>
 
         </>
