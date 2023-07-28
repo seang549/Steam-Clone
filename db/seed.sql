@@ -134,12 +134,12 @@ VALUES
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 
 VALUES
-    ('steam', 'https://avatars.cloudflare.steamstatic.com/11d7b0dba7687a0568945b41ae500aa815858cf0.jpg', true, 0, true, '2023-06-27','06:01',3,'29.6','13.3',100,13,'Tier 10', 'Tigerclone', 48 , 10, '2023-06-26', 'WHY DOESNT THE JUMP BUTTON WORK SOMETIMES!!!!!!! I HAVE SPEND SEVERAL HOURS ON JUST THE FIRST LEVEL!!!!! (i like this game) ', 1);
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/11d7b0dba7687a0568945b41ae500aa815858cf0.jpg', true, 1, true, '2023-06-27','06:01',3,'29.6','13.3',100,13,'Tier 10', 'Tigerclone', 48 , 10, '2023-06-26', 'WHY DOESNT THE JUMP BUTTON WORK SOMETIMES!!!!!!! I HAVE SPEND SEVERAL HOURS ON JUST THE FIRST LEVEL!!!!! (i like this game) ', 1);
 INSERT INTO helpfull (positive,negative,funny,award_reviews_table)
     VALUES (5,0,2,0);
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 VALUES
-    ('steam', 'https://avatars.cloudflare.steamstatic.com/e14afa34b7b288659a90a8bc82037a974c6cdd66_medium.jpg', true, 1, false, 0, '0.9', 100, 29, 'Sarge', 'gaming4', 599 , 7, '2023-07-03', 'this game is pain ', 1);
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/e14afa34b7b288659a90a8bc82037a974c6cdd66_medium.jpg', true, 2, false, 0, '0.9', 100, 29, 'Sarge', 'gaming4', 599 , 7, '2023-07-03', 'this game is pain ', 1);
 INSERT INTO helpfull (positive,negative,funny,award_reviews_table)
     VALUES (3,0,1,1);
 INSERT INTO award_reviews(award_ids, count)
@@ -148,7 +148,7 @@ INSERT INTO awards(icon,animation,title,body,points)
     VALUES('https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/5.png?v=5','https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/5.png','Poetry', 'Such elegent prose! A literary feast.', 100);
  INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, at_review_time, xp, steam_level, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 VALUES
-    ('steam', 'https://avatars.cloudflare.steamstatic.com/2131b88f9be3ee20b5280fd3a84a28e006b58975.jpg', true, 2, false, 0, '18.1', '17.2', 0, 9, 'Chonny Jash', 0 , 2, '2023-07-19', 'ive been speedrunning this in my freetime and its actually grown on me quite a bit. after playing for 17 hours and beating the game in under 10 minutes i give it a full thumbs up ', 1);
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/2131b88f9be3ee20b5280fd3a84a28e006b58975.jpg', true, 3, false, 0, '18.1', '17.2', 0, 9, 'Chonny Jash', 0 , 2, '2023-07-19', 'ive been speedrunning this in my freetime and its actually grown on me quite a bit. after playing for 17 hours and beating the game in under 10 minutes i give it a full thumbs up ', 1);
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(3,0,1,2);
 INSERT INTO award_reviews (award_ids, count)
@@ -158,7 +158,7 @@ INSERT INTO awards (icon, animation, title, body, points)
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 
 VALUES
-    ('steam', 'https://avatars.cloudflare.steamstatic.com/c60c15313cbc9187174a705a764023b581288189.jpg', true, 3, true, '2023-06-23', '10:43', 0, '47.9', '18.8' , 200, 12, 'Community Ambasador', 'heyhater', 0 , 2, '2023-06-22', 'this is the best game I have ever played in my entire life  ', 1);
+    ('steam', 'https://avatars.cloudflare.steamstatic.com/c60c15313cbc9187174a705a764023b581288189.jpg', true, 4, true, '2023-06-23', '10:43', 0, '47.9', '18.8' , 200, 12, 'Community Ambasador', 'heyhater', 0 , 2, '2023-06-22', 'this is the best game I have ever played in my entire life  ', 1);
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(15,0,10,3);
 INSERT INTO award_reviews (award_ids, count)
@@ -168,7 +168,7 @@ INSERT INTO awards (icon, animation, title, body, points)
 
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, at_review_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
     VALUES 
-        ('Product Key', 'https://avatars.cloudflare.steamstatic.com/735a7287e95f85f337f8c547903e3021038bc354_medium.jpg', true, 4, false, 0, '6.4', '0.6' , 450, 21, 'Years of Service', 'MaSH', 251 , 23, '2023-06-13', 'this is the worst game i have ever played in my entire life  ', 1);
+        ('Product Key', 'https://avatars.cloudflare.steamstatic.com/735a7287e95f85f337f8c547903e3021038bc354_medium.jpg', true, 5, false, 0, '6.4', '0.6' , 450, 21, 'Years of Service', 'MaSH', 251 , 23, '2023-06-13', 'this is the worst game i have ever played in my entire life  ', 1);
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(23,0,21,4);
 INSERT INTO award_reviews (award_ids, count)
@@ -179,15 +179,15 @@ INSERT INTO awards (icon, animation, title, body, points)
     VALUES ( 'https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/still/18.png?v=5', 'https://store.cloudflare.steamstatic.com/public/images/loyalty/reactions/animated/18.png' , 'Wholesome', 'Like laying in the grass on a warm sunny day', 100);
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, steam_level, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
 VALUES
-    ('Product Key', 'https://avatars.cloudflare.steamstatic.com/71fd03d3a5b0d834c0b5174876835b2ad25af374.jpg', true, 5, true, '2023-06-19', '12:01', 0, '1.1', 4, 'hentai', 3 , 1, '2023-06-18 ', '上一次玩到这么动人的游戏还是传说之下，特别是关卡猎鹰的剧情。期待作者未来的作品  ', 1);
+    ('Product Key', 'https://avatars.cloudflare.steamstatic.com/71fd03d3a5b0d834c0b5174876835b2ad25af374.jpg', true, 6, true, '2023-06-19', '12:01', 0, '1.1', 4, 'hentai', 3 , 1, '2023-06-18 ', '上一次玩到这么动人的游戏还是传说之下，特别是关卡猎鹰的剧情。期待作者未来的作品  ', 1);
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(2,0,0,0);
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
     VALUES
-    ('Product Key', 'https://avatars.cloudflare.steamstatic.com/76398a0751088d8f725154f6275fc958e53ae89b.jpg', true, 5, true, '2023-06-14', '01:00', 0, '0.4', 500, 35, 'Community Leader', '一般社员凉风青叶', 102 , 5, '2023-06-13', '好难啊，第四关真的能把钥匙从瓶子里拿出来吗？  ', 1);
+    ('Product Key', 'https://avatars.cloudflare.steamstatic.com/76398a0751088d8f725154f6275fc958e53ae89b.jpg', true, 6, true, '2023-06-14', '01:00', 0, '0.4', 500, 35, 'Community Leader', '一般社员凉风青叶', 102 , 5, '2023-06-13', '好难啊，第四关真的能把钥匙从瓶子里拿出来吗？  ', 1);
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
     VALUES
-    ('Product Key', 'https://avatars.cloudflare.steamstatic.com/2d625a11a09b1829e63036a7e02c8d873974187c.jpg', true, 6, false, 0, '0.1', 100, 274, 'Forever', '冷笑黑妖', 6546 , 2985, '2023-07-23', '画面依然极其粗糙，画风不统一，但是比上一部《躲猫猫》强了超多 ，希望作者能找个美术组队。或者多利用商用素材。
+    ('Product Key', 'https://avatars.cloudflare.steamstatic.com/2d625a11a09b1829e63036a7e02c8d873974187c.jpg', true, 7, false, 0, '0.1', 100, 274, 'Forever', '冷笑黑妖', 6546 , 2985, '2023-07-23', '画面依然极其粗糙，画风不统一，但是比上一部《躲猫猫》强了超多 ，希望作者能找个美术组队。或者多利用商用素材。
 玩起来像是掘地求升，有物理引擎弹射手感。
 空格键的跳跃形同虚设，大部分时间在失灵，误导性极强，像是有内部CD，并且时间超长。
 另外蛛丝收线也是空格，键位冲突，怪上加怪，总感觉是自己操作失误，但是更大直觉告诉我这是BUG。
@@ -197,7 +197,7 @@ INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(5,0,1,0);
 INSERT INTO reviews (owned, user_icon, recommendation, helpfull_table_id, developer_response, developer_date, developer_time, conversations, total_time, xp, steam_level, rank, user_name, user_product, times_reviewed, date_posted, review_body, game_id)
     VALUES
-    ('Steam', 'https://avatars.cloudflare.steamstatic.com/5df8c292dabf417ae93951e4c14de291cc55f453.jpg', true, 7, true, '2023-06-26', '07:52', 0, '0.6', 140, 3, 'Select Colector', 'ほろよい', 8 , 6, '2023-06-26', '楽しいゲームだな、よくできましたｗｗｗ', 1);
+    ('Steam', 'https://avatars.cloudflare.steamstatic.com/5df8c292dabf417ae93951e4c14de291cc55f453.jpg', true, 8, true, '2023-06-26', '07:52', 0, '0.6', 140, 3, 'Select Colector', 'ほろよい', 8 , 6, '2023-06-26', '楽しいゲームだな、よくできましたｗｗｗ', 1);
 INSERT INTO helpfull(positive,negative,funny,award_reviews_table)
     Values(0,0,0,0);
 

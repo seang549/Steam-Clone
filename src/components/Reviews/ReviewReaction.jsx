@@ -5,10 +5,21 @@ const ReviewReaction = ({icon}) => {
     // handle onclick
     for(let key in icon)
     {
+      if(key == 'Award')
+      {
+        return (
+          <>
+          <div>
+          <img src={icon[key]} className={key}></img>
+             {key}
+             </div>
+           </>
+         );
+       };
        return (
         <>
-        <div className={key}>
-           <img src={icon[key]}></img>
+        <div style={{backgroundImage: `url(${icon[key]})`}} className={key}>
+           {key}
            </div>
          </>
        );
