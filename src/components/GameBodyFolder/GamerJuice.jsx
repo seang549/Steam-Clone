@@ -76,7 +76,7 @@ const GameBody = () => {
                 {store}
               </div>
             </div>
-            <MoreLikeThis />
+            <MoreLikeThis gameList={gameList}/>
           </div>
           <ColumnTwo />
         </>

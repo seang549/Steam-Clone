@@ -130,3 +130,195 @@
   display: flex;
 }
 
+.carousel-games {
+  display: flex;
+  flex-direction: row;
+}
+
+.bread-and-fred {
+  position: relative;
+  display: inline;
+
+}
+
+.bread-and-fred .tooltip{
+  opacity: 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  margin-left: 5px;
+  z-index:1;
+}
+
+.bread-and-fred:hover .tooltip{
+  opacity: 1;
+}
+
+.bread-and-fred .tooltip-right::after{
+  content: " ";
+  position: absolute;
+  top: 25%;
+  left: -10px;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.stardew-valley {
+  position: relative;
+  display: inline;
+
+}
+
+.stardew-valley .tooltip{
+  opacity: 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  margin-left: 5px;
+  z-index:1;
+}
+
+.stardew-valley:hover .tooltip{
+  opacity: 1;
+}
+
+.stardew-valley .tooltip-right::after{
+  content: " ";
+  position: absolute;
+  top: 25%;
+  left: -10px;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.terraria {
+  position: relative;
+  display: inline;
+
+}
+
+.terraria .tooltip{
+  opacity: 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  margin-left: 5px;
+  z-index:1;
+}
+
+.terraria:hover .tooltip{
+  opacity: 1;
+}
+
+.terraria .tooltip-right::after{
+  content: " ";
+  position: absolute;
+  top: 25%;
+  left: -10px;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapleStory {
+  position: relative;
+  display: inline;
+
+}
+
+.mapleStory .tooltip{
+  opacity: 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  transform: translate(0, -50%);
+  margin-left: 5px;
+  z-index:1;
+}
+
+.mapleStory:hover .tooltip{
+  opacity: 1;
+}
+
+.mapleStory .tooltip-right::after{
+  content: " ";
+  position: absolute;
+  top: 25%;
+  left: -10px;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.specific-to-game {
+  display:flex;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+}
+
+.other-games-images img{
+  /* height: 200px; */
+  width: 250px;
+  aspect-ratio: initial;
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-images {
+  height: 100%;
+  aspect-ratio: initial;
+  display: flex;
+  flex-direction: row;
+}
