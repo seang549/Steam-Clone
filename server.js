@@ -127,7 +127,7 @@ app.get("/helpfull", async (req, res) => {
 app.get("/award_reviews", async (req, res) => {
   try {
     const result = await pool.query(
-      `SELECT * FROM award_reviews WHERE id = ${id}`
+      `SELECT * FROM award_reviews`
     );
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");

@@ -16,7 +16,8 @@ const ReviewCards = () => {
     }
     getData()
 }, [])
-  
+if(reviews !== undefined)
+{
 
     return (
       reviews.map((review) => {
@@ -28,6 +29,6 @@ const ReviewCards = () => {
       })
     );
   };
-  
+}
   export default ReviewCards;
   
