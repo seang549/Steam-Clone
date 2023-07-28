@@ -97,7 +97,6 @@
   border: 3px solid greenyellow;
 }
 
-
 .submenu {
   display: none;
   position: absolute;
@@ -112,7 +111,6 @@
   display: flex;
   justify-content: center;
 }
-
 
 .header {
   background: #171d25;
@@ -322,3 +320,4 @@
   display: flex;
   flex-direction: row;
 }
+
