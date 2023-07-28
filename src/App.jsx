@@ -10,6 +10,8 @@ import Footer from "./components/FooterFolder/Footer";
 import ReviewCards from "./components/Reviews/ReviewCards.jsx";
 import axios from "axios";
 import "./Navbar.css";
+import "./Gamearea.css";
+import "./App.css";
 
 function App() {
   const [testArr, setTestArr] = useState([]);
