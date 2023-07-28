@@ -58,8 +58,10 @@ const GameBody = () => {
             <div className='buy-section'>
               <BuyGame />
             </div>
-            <div className='abt-section'>
-              <h2 className='abt-title'>ABOUT THIS GAME</h2>
+
+            <div>ABOUT THIS GAME</div>
+            <div className="hr"></div>
+            <div style={{ marginBottom: "3rem" }}>
               {paraOne}
               <br />
               {features} <br />
@@ -68,15 +70,34 @@ const GameBody = () => {
             </div>
 
             <div>SYSTEM REQUIREMENTS</div>
-            <div style={{ display: "flex" }}>
-              <div>
-                {mins} <br />
-                {os} <br />
-                {store} <br />
+            <div className="hr"></div>
+            <div
+              style={{
+                display: "flex",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                marginBottom: "3rem",
+              }}
+            >
+              <div className="sysReq">
+                <div>{mins}</div>
+                <div style={{ fontSize: "12px" }} data-highlightword="OS:">
+                  {os}
+                </div>
+                <div
+                  style={{ fontSize: "12px" }}
+                  data-highlightword="Storage: "
+                >
+                  {store}
+                </div>
               </div>
-              <div>
-                {rec} <br />
-                {store}
+              <div className="sysReq">
+                <div>{rec}</div>
+                <div
+                  style={{ fontSize: "12px" }}
+                  data-highlightword="Storage: "
+                >
+                  {store}
+                </div>
               </div>
             </div>
             <MoreLikeThis />
