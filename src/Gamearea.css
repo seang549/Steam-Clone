@@ -355,14 +355,6 @@
   );
 }
 
-#windows-logo {
-  background-image: url(./windows-logo.PNG);
-  float: right;
-  border: 1px solid red;
-  height: 30px;
-  width: 30px;
-}
-
 #buy {
   font-size: 21px;
   font-family: "Motiva Sans", Sans-serif;
@@ -372,14 +364,14 @@
 }
 
 #game-purchase {
-  position: absolute;
-  right: 16px;
-  bottom: 6px;
-  left: 8px;
+  position: relative;
+  bottom: 54px;
+  right: auto;
   white-space: nowrap;
   text-align: right;
-  display: block;
-  width: 630px;
+  display: flex;
+  width: 600px;
+  height: 74px;
 }
 
 #buy-game-container {
@@ -396,9 +388,11 @@
   white-space: nowrap;
   font-size: 0;
   float: right;
-  width: 25%;
+  width: 162px;
   z-index: 1;
-  position: relative;
+  position: absolute;
+  left: 420px;
+  bottom: 1px;
 }
 
 #dollar-amt {
@@ -406,7 +400,7 @@
   font-size: 13px;
   padding-top: 11px;
   padding-left: 10px;
-  padding-right: 115px;
+  padding-right: 152px;
   color: #c6d4df;
   margin: 0;
 }

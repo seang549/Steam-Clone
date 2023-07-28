@@ -3,7 +3,6 @@ const BuyGame = () => {
     <>
       <div style={{ display: "block" }} className='buy-game'>
         <h1 id='buy'>Buy 蜘蛛</h1>
-        <span id='windows-logo'></span>
       </div>
       <div id='game-purchase'>
         <div id='game-purchase-cont'>
