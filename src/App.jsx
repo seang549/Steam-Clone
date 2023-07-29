@@ -7,10 +7,10 @@ import GameArea from "./components/GameArea/GameArea.jsx";
 import Header from "./components/HeaderFolder/Header";
 import Footer from "./components/FooterFolder/Footer";
 import ReviewCards from "./components/Reviews/ReviewCards.jsx";
-import axios from "axios";
 import "./Navbar.css";
 import "./Gamearea.css";
 import "./App.css";
+import "./components/GameBodyFolder/GameBody.css";
 
 function App() {
   return (
@@ -24,15 +24,22 @@ function App() {
           <GameArea />
         </div>
         <GamerJuice />
-    
+
         <div className='clear'></div>
         <div className='review-graph-area'>
           <GraphForReviews />
         </div>
         <div className='clear' style={{ width: "940px" }}></div>
-        <div className='reviews-area'>
+        <div id='reviews-summary'>
+          <div className='reviews-area-container'>
+            <div style={{ paddingTop: "6px", display: "flex" }}>
+              <div id='review-subTitle'>MOST HELPFUL REVIEWS</div>
+              <span id='review-subTitle2'>IN THE PAST 30 DAYS</span>
+            </div>
+            <div className='hr'></div>
 
-          <ReviewCards />
+            <ReviewCards />
+          </div>
         </div>
       </div>
       <div className='footer-area'>

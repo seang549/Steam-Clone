@@ -21,9 +21,12 @@ body {
 
 .game_body {
   width: 940px;
+  display: flex;
   font-size: 14px;
   font-family: "Motiva Sans", Sans-serif;
   font-weight: normal;
+  gap: 1rem;
+  margin-top: 1.2rem;
 }
 
 .game-bgd {
@@ -97,8 +100,3 @@ body {
   margin-top: 1rem;
   width: 100vw;
 }
-
-/* GORDY CSS STARTS HERE */
-/* Game area */
-
-/* Carousel */
