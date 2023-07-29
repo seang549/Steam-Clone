@@ -1,282 +1,172 @@
+import axios from "axios";
+import React, {useState, useEffect} from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css'
+const MoreLikeThis = ({ gameList }) => {
+
+  const [gameTagsTwo, setGameTagsTwo] = useState([]);
+
+  const getTagsTwo = async () => {
+    const response = await axios.get(
+      "https://steam-clone-zf6a.onrender.com/tags"
+    );
+    const data = await response.data;
+    setGameTagsTwo(data);
+  };
+
+  useEffect(() => {
+    try {
+      getTagsTwo();
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
+  const [gameTagsThree, setGameTagsThree] = useState([]);
+
+  const getTagsThree = async () => {
+    const response = await axios.get(
+      "https://steam-clone-zf6a.onrender.com/tags"
+    );
+    const data = await response.data;
+    setGameTagsThree(data);
+  };
+
+  useEffect(() => {
+    try {
+      getTagsThree();
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
+  const [gameTagsFour, setGameTagsFour] = useState([]);
+
+  const getTagsFour = async () => {
+    const response = await axios.get(
+      "https://steam-clone-zf6a.onrender.com/tags"
+    );
+    const data = await response.data;
+    setGameTagsFour(data);
+  };
+
+  useEffect(() => {
+    try {
+      getTagsFour();
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
+  const [gameTagsFive, setGameTagsFive] = useState([]);
+
+  const getTagsFive = async () => {
+    const response = await axios.get(
+      "https://steam-clone-zf6a.onrender.com/tags"
+    );
+    const data = await response.data;
+    setGameTagsFive(data);
+  };
+
+  useEffect(() => {
+    try {
+      getTagsFive();
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
 
 
+  const gameTwo = gameTagsTwo.filter((tag) => tag.game_id === 2);
+  const gameThree = gameTagsThree.filter((tag) => tag.game_id === 3);
+  const gameFour = gameTagsFour.filter((tag) => tag.game_id === 4)
+  const gameFive = gameTagsFive.filter((tag) => tag.game_id === 5)
 
-
-const MoreLikeThis = ({gameList}) => {
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-}
+  const renderContent = (game) => {
+    if (game.game_title === "Bread & Fred") {
+      return (
+        gameTwo.map((tag) => (
+          <button className='tags-btn' key={tag.tag_id}>
+            {tag.tag_title}
+          </button>
+        ))
+        )
+    } else if (game.game_title === "Stardew Valley") {
+      return (
+        gameThree.map((tag) => (
+          <button className='tags-btn' key={tag.tag_id}>
+            {tag.tag_title}
+          </button>
+        ))
+        )
+    } else if (game.game_title === "Terraria") {
+      return (
+        gameFour.map((tag) => (
+          <button className='tags-btn' key={tag.tag_id}>
+            {tag.tag_title}
+          </button>
+        ))
+        )
+    }else if (game.game_title === "MapleStory") {
+      return (
+        gameFive.map((tag) => (
+          <button className='tags-btn' key={tag.tag_id}>
+            {tag.tag_title}
+          </button>
+        ))
+        )
+    } else {
+      return null; 
+    }
+  };
 
   return (
     <>
       <div>MORE LIKE THIS</div>
       <div className="carousel-games">
-        <div className="bread-and-fred">
-          <img src = {gameList[1].game_img[0]}></img>
-          {gameList[1].game_title}
-          {gameList[1].price}
-          <div className={"tooltip tooltip-right"}>
-            <div className="game-title">
-              {gameList[1].game_title}
-            </div>
-            <div className="release-date">
-              Released: {gameList[1].game_release_date}
-            </div>
-            <div className="other-games-images">
-              *Carousel of images here*
-              <Slider {...settings}>
-              <div className='carousel-images'>
-                <img src={gameList[1].game_img[1]}></img>
-                <img src={gameList[1].game_img[2]}></img>
-                <img src={gameList[1].game_img[3]}></img>
-                <img src={gameList[1].game_img[4]}></img>
-                <img src={gameList[1].game_img[5]}></img>
-                <img src={gameList[1].game_img[6]}></img>
-                <img src={gameList[1].game_img[7]}></img>
-                <img src={gameList[1].game_img[8]}></img>
-                <img src={gameList[1].game_img[9]}></img>
+        {gameList.slice(1).map((game, index) => (
+          <div key={index} className="other-game">
+            <img src={game.game_img[0]} alt="Game Cover" />
+            {game.game_title}
+            {game.price}
+            <div className="tooltip tooltip-right">
+              <div className="game-title">{game.game_title}</div>
+              <div className="release-date">Released: {game.game_release_date}</div>
+              <div className="other-games-images">
+                <Carousel
+                  showThumbs={false}
+                  showArrows={false}
+                  infiniteLoop={true}
+                  autoPlay={true}
+                  interval={3000}
+                  showStatus={false}
+                  renderIndicator={()=> null}
+                >
+                  {game.game_img.slice(1).map((imgSrc, imgIndex) => (
+                    <div key={imgIndex}>
+                      <img src={imgSrc} alt={`Game Image ${imgIndex}`} />
+                    </div>
+                  ))}
+                </Carousel>
               </div>
-              </Slider>
-            </div>
-            <div className="other-games-reviews">
-              <div className="overall-reviews">
-                Overall user reviews:
+              <div className="other-games-reviews">
+                  <div className="overall-reviews">Overall user reviews:</div>
+                  <div className="specific-to-game">
+                    <div className="rating">Overwhelmingly Positive</div>
+                    <div className="review-number">&nbsp;{game.total_reviews}</div>
+                  </div>
+                  <div className="user-tags">User tags:</div>
+                  <div className="tags">
+                    {renderContent(game)}
+                  </div>
               </div>
-              <div className="specific-to-game">
-                <div className="rating">
-                  Very Positive
-                </div>
-                <div className="review-number">
-                  &nbsp;(789 reviews)
-                </div>
-              </div>
-                <div className="user-tags">
-                  User tags:
-                </div>
-                <div className="tags">
-                  <div className="tag-one">
-                    Co-op
-                  </div>
-                  <div className="tag-two">
-                    Local Co-Op
-                  </div>
-                  <div className="tag-three">
-                    Cute
-                  </div>
-                  <div className="tag-four">
-                    Pixel Graphics
-                  </div>
-                </div>
             </div>
           </div>
-        </div>
-        <div className="stardew-valley">
-          <img src = {gameList[2].game_img[0]}></img>
-          {gameList[2].game_title}
-          {gameList[2].price}
-          <div className={"tooltip tooltip-right"}>
-            <div className="game-title">
-              {gameList[2].game_title}
-            </div>
-            <div className="release-date">
-              Released: {gameList[2].game_release_date}
-            </div>
-            <div className="other-games-images">
-              *Carousel of images here*
-              <Slider {...settings}>
-              <div className='carousel-images'>
-                <img src={gameList[2].game_img[1]}></img>
-                <img src={gameList[2].game_img[2]}></img>
-                <img src={gameList[2].game_img[3]}></img>
-                <img src={gameList[2].game_img[4]}></img>
-                <img src={gameList[2].game_img[5]}></img>
-                <img src={gameList[2].game_img[6]}></img>
-                <img src={gameList[2].game_img[7]}></img>
-                <img src={gameList[2].game_img[8]}></img>
-                <img src={gameList[2].game_img[9]}></img>
-                <img src={gameList[2].game_img[10]}></img>
-                <img src={gameList[2].game_img[11]}></img>
-                <img src={gameList[2].game_img[12]}></img>
-                <img src={gameList[2].game_img[13]}></img>
-                <img src={gameList[2].game_img[14]}></img>
-                <img src={gameList[2].game_img[15]}></img>
-                <img src={gameList[2].game_img[16]}></img>
-              </div>
-              </Slider>
-            </div>
-            <div className="other-games-reviews">
-              <div className="overall-reviews">
-                Overall user reviews:
-              </div>
-              <div className="specific-to-game">
-                <div className="rating">
-                  Overwhelmingly Positive
-                </div>
-                <div className="review-number">
-                  &nbsp;(495,486 reviews)
-                </div>
-              </div>
-                <div className="user-tags">
-                  User tags:
-                </div>
-                <div className="tags">
-                  <div className="tag-one">
-                    Farming Sim
-                  </div>
-                  <div className="tag-two">
-                    Life Sim
-                  </div>
-                  <div className="tag-three">
-                    Pixel Graphics
-                  </div>
-                  <div className="tag-four">
-                    Multiplayer
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div className="terraria">
-          <img src = {gameList[3].game_img[0]}></img>
-          {gameList[3].game_title}
-          {gameList[3].price}
-          <div className={"tooltip tooltip-right"}>
-            <div className="game-title">
-              {gameList[3].game_title}
-            </div>
-            <div className="release-date">
-              Released: {gameList[3].game_release_date}
-            </div>
-            <div className="other-games-images">
-              *Carousel of images here*
-              <Slider {...settings}>
-              <div className='carousel-images'>
-                <img src={gameList[3].game_img[1]}></img>
-                <img src={gameList[3].game_img[2]}></img>
-                <img src={gameList[3].game_img[3]}></img>
-                <img src={gameList[3].game_img[4]}></img>
-                <img src={gameList[3].game_img[5]}></img>
-                <img src={gameList[3].game_img[6]}></img>
-                <img src={gameList[3].game_img[7]}></img>
-                <img src={gameList[3].game_img[8]}></img>
-                <img src={gameList[3].game_img[9]}></img>
-                <img src={gameList[3].game_img[10]}></img>
-                <img src={gameList[3].game_img[11]}></img>
-                <img src={gameList[3].game_img[12]}></img>
-                <img src={gameList[3].game_img[13]}></img>
-                <img src={gameList[3].game_img[14]}></img>
-                <img src={gameList[3].game_img[15]}></img>
-                <img src={gameList[3].game_img[16]}></img>
-                <img src={gameList[3].game_img[17]}></img>
-                <img src={gameList[3].game_img[18]}></img>
-                <img src={gameList[3].game_img[19]}></img>
-              </div>
-              </Slider>
-            </div>
-            <div className="other-games-reviews">
-              <div className="overall-reviews">
-                Overall user reviews:
-              </div>
-              <div className="specific-to-game">
-                <div className="rating">
-                Overwhelmingly Positive
-                </div>
-                <div className="review-number">
-                  &nbsp;(927,900 reviews)
-                </div>
-              </div>
-                <div className="user-tags">
-                  User tags:
-                </div>
-                <div className="tags">
-                  <div className="tag-one">
-                    Open World Survival Craft
-                  </div>
-                  <div className="tag-two">
-                    Sandbox
-                  </div>
-                  <div className="tag-three">
-                    Survival
-                  </div>
-                  <div className="tag-four">
-                    2D
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div className="mapleStory">
-          <img src = {gameList[4].game_img[0]}></img>
-          {gameList[4].game_title}
-          {gameList[4].price}
-          <div className={"tooltip tooltip-right"}>
-            <div className="game-title">
-              {gameList[4].game_title}
-            </div>
-            <div className="release-date">
-              Released: {gameList[4].game_release_date}
-            </div>
-            <div className="other-games-images">
-              *Carousel of images here*
-              <Slider {...settings}>
-              <div className='carousel-images'>
-                <img src={gameList[4].game_img[1]}></img>
-                <img src={gameList[4].game_img[2]}></img>
-                <img src={gameList[4].game_img[3]}></img>
-                <img src={gameList[4].game_img[4]}></img>
-                <img src={gameList[4].game_img[5]}></img>
-                <img src={gameList[4].game_img[6]}></img>
-                <img src={gameList[4].game_img[7]}></img>
-                <img src={gameList[4].game_img[8]}></img>
-                <img src={gameList[4].game_img[9]}></img>
-                <img src={gameList[4].game_img[10]}></img>
-                <img src={gameList[4].game_img[11]}></img>
-                <img src={gameList[4].game_img[12]}></img>
-                <img src={gameList[4].game_img[13]}></img>
-                <img src={gameList[4].game_img[14]}></img>
-              </div>
-              </Slider>
-            </div>
-            <div className="other-games-reviews">
-              <div className="overall-reviews">
-                Overall user reviews:
-              </div>
-              <div className="specific-to-game">
-                <div className="rating">
-                  Mixed
-                </div>
-                <div className="review-number">
-                  &nbsp;(10,780 reviews)
-                </div>
-              </div>
-                <div className="user-tags">
-                  User tags:
-                </div>
-                <div className="tags">
-                  <div className="tag-one">
-                    MMORPG
-                  </div>
-                  <div className="tag-two">
-                    Loot
-                  </div>
-                  <div className="tag-three">
-                    Character Customization
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </>
-)};
+  );
+};
 
 export default MoreLikeThis;
