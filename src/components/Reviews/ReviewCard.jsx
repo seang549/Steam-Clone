@@ -6,10 +6,25 @@ import Helpfull from "./Helpfull";
 
 //import { useEffect, useState } from 'react'
 const ReviewCard = ({review}) => {
-if(review !== undefined)
+let date;
+let time;
+
+
+if(review !== undefined && review !== null)
 {
+    
     let devView = review["developer_response"]
-    console.log(devView)
+    if(devView)
+    {
+        date = new Date(review["developer_date"])
+        date = date.toDateString()
+        date = date.split(" ")
+        date = `${date[1]} ${date[2]}`
+        time = review["developer_time"]
+        time = time.split(":")
+        time = `${time[0]}:${time[1]}`
+        
+    }
     return (
         <>
         <div className="TopDown">
@@ -27,7 +42,7 @@ if(review !== undefined)
         </div>
         {devView &&
         <div>
-            <h1>A developer has responded on {review["developer_date"]} @ {review["developer_time"]}</h1>
+            <h1>A developer has responded on {date} @ {time}</h1>
             <h1>VIEW RESPONSE</h1>
         </div>
         }
