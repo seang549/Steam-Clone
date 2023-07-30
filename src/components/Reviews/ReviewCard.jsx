@@ -27,8 +27,10 @@ const ReviewCard = ({ review }) => {
             <UserInfo review={review} />
           </div>
         </div>
+
         <div id='recommendations-container'>
           <Recomendations review={review} />
+
         </div>
 
         <Review review={review} />
