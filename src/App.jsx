@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { DataProvider } from "./components/ReviewContext";
 import "./components/Reviews/Reviews.css";
 import StoreNav from "./components/Navbar/StoreNav";
 import GamerJuice from "./components/GameBodyFolder/GamerJuice";
@@ -27,7 +28,9 @@ function App() {
 
         <div className='clear'></div>
         <div className='review-graph-area'>
-          <GraphForReviews />
+          <DataProvider>
+            <GraphForReviews />
+          </DataProvider>
         </div>
         <div className='clear' style={{ width: "940px" }}></div>
         <div id='reviews-summary'>
@@ -37,8 +40,9 @@ function App() {
               <span id='review-subTitle2'>IN THE PAST 30 DAYS</span>
             </div>
             <div className='hr'></div>
-
-            <ReviewCards />
+            <DataProvider>
+              <ReviewCards />
+            </DataProvider>
           </div>
         </div>
       </div>
