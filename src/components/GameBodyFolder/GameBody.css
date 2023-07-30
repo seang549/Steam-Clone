@@ -33,8 +33,172 @@ div[data-highlightword]::before {
   content: attr(data-highlightword);
   color: #61686d;
   position: absolute;
+  font-weight: 300;
   top: 0;
   left: 0;
+}
+
+.relevent_line {
+  min-width: 308px;
+  background-image: linear-gradient(90deg, #131c25, #0c1117);
+  padding: 10px 18px;
+  height: 38px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.sign_in_btn_ctn {
+  gap: 1.7rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  color: #acb2b8;
+  padding: 16px;
+  height: 156px;
+  background-image: linear-gradient(90deg, #16202d, #0e141c);
+}
+
+.meta_ctn {
+  height: 27px;
+  display: flex;
+  align-items: center;
+  background-color: #111822;
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.meta_txt,
+.learning {
+  background-image: linear-gradient(90deg, #192a38, #14232e);
+  height: 100%;
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 1px;
+}
+
+.meta_txt {
+  color: #66c0f4;
+  cursor: pointer;
+}
+
+.meta_ctn:hover .meta_txt {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #67c1f5 0%, #417a9b 100%);
+}
+
+.question_mark {
+  background-image: url(https://store.akamai.steamstatic.com/public/shared/images/ico/icon_questionmark.png);
+  height: 12px;
+  width: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.question_mark .qm_txt {
+  visibility: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  background-color: #acb2b8;
+  border-radius: 2px;
+  color: #363a43;
+  padding: 5px;
+  font-size: 10px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 185%;
+}
+
+.question_mark:hover .qm_txt {
+  visibility: visible;
+}
+
+.cat_icon {
+  height: 16px;
+  width: 26px;
+}
+
+.cat_icon_ctn {
+  display: flex;
+  padding: 0px 6px;
+  color: #fff;
+  background-color: #111a23;
+}
+
+.cat_ctn {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: 90.5px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 5px;
+  font-size: 12px;
+}
+
+th,
+td {
+  padding: 3px 0px 3px 0px;
+  border-bottom: 1px solid #626366;
+  height: 23.5px;
+  text-align: center;
+}
+
+th {
+  padding-left: 5px;
+}
+
+.lang_ctn {
+  color: #8f98a0;
+  font-size: 12px;
+  padding: 16px;
+  height: 112px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lang_titles {
+  color: #b0aeac;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.langs {
+  display: flex;
+  align-content: start;
+  color: #8f98a0;
+  font-size: 12px;
+}
+
+.clm_two_gradient {
+  background-image: linear-gradient(90deg, #16202d, #0e141c);
+}
+
+.extra_info_ctn {
+  padding: 16px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #8f98a0;
+  line-height: 20px;
+}
+
+b {
+  color: #4c5d68;
+  font-size: 10px;
+  font-size: 300;
+}
+
+.game_info_ctn {
+  margin-bottom: 1em;
+}
+
+.share_flag_ctn {
+  height: 64px;
+  padding: 16px;
 }
 
 .flag {
@@ -46,4 +210,18 @@ div[data-highlightword]::before {
   background-position: -256px 0px;
   background-image: url(https://store.akamai.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
 }
-/* #bcc6cd */
+
+/* 
+#8f98a0 for non clickables
+#5cacdc for clickables
+*/
+
+/*
+#264154
+#243e51
+*/
+
+/*
+#325574
+#2f4f6d
+*/
