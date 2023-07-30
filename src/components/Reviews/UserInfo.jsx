@@ -14,17 +14,17 @@ const UserInfo = ({ review }) => {
       <div className='Icon'>
         <img src={review["user_icon"]}></img>
       </div>
-      <div className='TopDown'>
-        <h1 id='user-info-username'>{review["user_name"]}</h1>
-        {productsView && (
-          <h1 id='user-info-product'>
-            {review["user_product"]} products in account
-          </h1>
-        )}
-        {reviewsView && (
-          <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
-        )}
-      </div>
+      {/* <div className='user-info-cont'> */}
+      <h1 id='user-info-username'>{review["user_name"]}</h1>
+      {productsView && (
+        <h1 id='user-info-product'>
+          {review["user_product"]} products in account
+        </h1>
+      )}
+      {reviewsView && (
+        <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
+      )}
+      {/* </div> */}
     </>
   );
 };

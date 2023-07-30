@@ -22,24 +22,20 @@ const ReviewCard = ({ review }) => {
     }
     return (
       <>
-        <div className='TopDown'>
-          <div className='SideBySide'>
-            <div>
-              <UserInfo review={review} />
-            </div>
-            <div>
-              <div className='TopDown'>
-                <Recomendations review={review} />
-                <Review review={review} />
-                <Helpfull review={review} />
-              </div>
+        <div className='review-card-cont'>
+          <div className='userinfo-review-cards-cont'>
+            <UserInfo review={review} />
+            <div id='recommendations-container'>
+              <Recomendations review={review} />
+              <Review review={review} />
+              <Helpfull review={review} />
             </div>
           </div>
-          <div>
-            <h1>
+          <div id='response-container'>
+            <h1 id='response-dev'>
               A developer has responded on {date} @ {time}
             </h1>
-            <h1>VIEW RESPONSE</h1>
+            <h1 id='view-response'>(view response)</h1>
           </div>
         </div>
       </>

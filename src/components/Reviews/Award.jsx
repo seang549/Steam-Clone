@@ -27,7 +27,7 @@ const Award = ({ id }) => {
         {individualAward.map((IA) => {
           return (
             <>
-              <img src={IA["icon"]}></img>
+              <img id='reaction-icons' src={IA["icon"]}></img>
             </>
           );
         })}
