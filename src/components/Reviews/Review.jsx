@@ -7,12 +7,11 @@ const Review = ({ review }) => {
   date = `${date[1]} ${date[2]}`;
   return (
     <>
-      <div>
-        <h1>{date}</h1>
+      <div className='review-container-comp'>
+        <h1 id='review-date-posted'>POSTED: {date}</h1>
+        <p id='review-body'>{review["review_body"]}</p>
       </div>
-      <div>
-        <p>{review["review_body"]}</p>
-      </div>
+      <div className='hr'></div>
     </>
   );
 };

@@ -12,7 +12,7 @@ const UserInfo = ({ review }) => {
   return (
     <>
       <div className='Icon'>
-        <img src={review["user_icon"]}></img>
+        <img className='Icon' src={review["user_icon"]}></img>
       </div>
       {/* <div className='user-info-cont'> */}
       <h1 id='user-info-username'>{review["user_name"]}</h1>

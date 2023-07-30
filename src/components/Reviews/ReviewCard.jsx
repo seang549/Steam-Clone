@@ -29,9 +29,11 @@ const ReviewCard = ({ review }) => {
         </div>
         <div id='recommendations-container'>
           <Recomendations review={review} />
-          <Review review={review} />
-          <Helpfull review={review} />
         </div>
+
+        <Review review={review} />
+        <Helpfull review={review} />
+
         <div id='response-container'>
           <h1 id='response-dev'>
             A developer has responded on {date} @ {time}

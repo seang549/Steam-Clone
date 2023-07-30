@@ -22,8 +22,8 @@ const Helpfull = ({ review }) => {
   }, []);
 
   return (
-    <>
-      <p>Was this review helpful?</p>
+    <div id='control-comp'>
+      <span id='question-helpful'>Was this review helpful?</span>
       <ReviewReactions />
       {help.map((table) => {
         let possitiveView = true;
@@ -43,29 +43,35 @@ const Helpfull = ({ review }) => {
           awardView = false;
         }
         return (
-          <div>
-            {possitiveView && (
-              <h1 className='vote-info'>
-                {table["positive"]} people found this review helpful
-              </h1>
-            )}
-            {funnyView && (
-              <h1 className='vote-info'>
-                {table["funny"]} people found this review funny
-              </h1>
-            )}
+          <>
+            <div className='vote-info-cont'>
+              {possitiveView && (
+                <h1 className='vote-info'>
+                  {table["positive"]} people found this review helpful
+                </h1>
+              )}
+
+              {funnyView && (
+                <h1 className='vote-info'>
+                  {table["funny"]} people found this review funny
+                </h1>
+              )}
+            </div>
             {conversationsView && (
-              <div className='Conversations'>
-                {" "}
-                <p>{review["conversations"]}</p>{" "}
-                <img src='https://store.akamai.steamstatic.com/public/shared/images/comment_quoteicon_blue.png'></img>
-              </div>
+              <>
+                <div className='comment-count'>
+                  <a href='https://store.akamai.steamstatic.com/public/shared/images/comment_quoteicon_blue.png'>
+                    {review["conversations"]}
+                  </a>
+                </div>
+                <br></br>
+              </>
             )}
             {awardView && <AwardList helpID={table["award_reviews_table"]} />}
-          </div>
+          </>
         );
       })}
-    </>
+    </div>
   );
 };
 

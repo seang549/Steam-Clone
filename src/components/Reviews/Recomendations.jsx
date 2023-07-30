@@ -14,14 +14,13 @@ const Recomendations = ({ review }) => {
           className='thumb-pic'
           src='https://store.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp_v6.png'
         ></img>
-        <div>
-          <h2>Recommended</h2>
 
-          <h3>{review["total_time"]} hrs on record</h3>
-          {reviewTimeView && (
-            <h3>{` (${review["at_review_time"]} at review time)`}</h3>
-          )}
-        </div>
+        <h2>Recommended</h2>
+
+        <h3>{review["total_time"]} hrs on record</h3>
+        {reviewTimeView && (
+          <h3>{` (${review["at_review_time"]} at review time)`}</h3>
+        )}
       </>
     );
   }
@@ -35,12 +34,10 @@ const Recomendations = ({ review }) => {
 
         <h2>Not Recommended</h2>
 
-        <div>
-          <h3>{review["total_time"]} hrs on record</h3>
-          {reviewTimeView && (
-            <h3>{` (${review["at_review_time"]} at review time)`}</h3>
-          )}
-        </div>
+        <h3>{review["total_time"]} hrs on record</h3>
+        {reviewTimeView && (
+          <h3>{` (${review["at_review_time"]} at review time)`}</h3>
+        )}
       </>
     );
   }
