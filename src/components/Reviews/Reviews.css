@@ -50,6 +50,8 @@
   background-image: url(/public/images/v6/maincol_gradient_rule.png);
   background-repeat: no-repeat;
   background-position: top left;
+  display: grid;
+  grid-template-columns: max-content;
 }
 
 #user-info-username {

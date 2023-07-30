@@ -25,18 +25,18 @@ const ReviewCard = ({ review }) => {
         <div className='review-card-cont'>
           <div className='userinfo-review-cards-cont'>
             <UserInfo review={review} />
-            <div id='recommendations-container'>
-              <Recomendations review={review} />
-              <Review review={review} />
-              <Helpfull review={review} />
-            </div>
           </div>
-          <div id='response-container'>
-            <h1 id='response-dev'>
-              A developer has responded on {date} @ {time}
-            </h1>
-            <h1 id='view-response'>(view response)</h1>
-          </div>
+        </div>
+        <div id='recommendations-container'>
+          <Recomendations review={review} />
+          <Review review={review} />
+          <Helpfull review={review} />
+        </div>
+        <div id='response-container'>
+          <h1 id='response-dev'>
+            A developer has responded on {date} @ {time}
+          </h1>
+          <h1 id='view-response'>(view response)</h1>
         </div>
       </>
     );
