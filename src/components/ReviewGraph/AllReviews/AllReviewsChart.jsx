@@ -27,7 +27,7 @@ const AllReviewsChart = ({data}) => {
                 entry.date_posted > min || entry.date_posted < max;
             });
             console.log(filteredData)
-            setReviewData(filteredData)
+            // setReviewData(filteredData)
             clearTimeout(timer)
         }
     };
