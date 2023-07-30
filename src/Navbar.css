@@ -6,14 +6,16 @@ body {
 
 /* dropdown is the background color and such for the submenus */
 .dropdown {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
   position: absolute;
   display: none;
   border: 3px solid darkmagenta;
-  /* height: 600px; */
-  width: 700px;
+  height: 350px;
+  width: 70px;
 }
 
 /* dropdownitem is the actual submenu titles  */
