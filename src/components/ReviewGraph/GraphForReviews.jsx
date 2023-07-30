@@ -2,11 +2,12 @@ import {useState, useEffect} from 'react'
 import AllReviews from './AllReviews/AllReviews.jsx'
 import RecentReviews from './RecentReviews/RecentReviews.jsx'
 import ReviewFilters from './ReviewFilters/ReviewFilters.jsx'
+import { useReviewData, useReviewDataUpdate } from '../ReviewContext';
 
 
 const GraphForReviews = () => {
-
-    const [reviewData, setReviewData] = useState([])
+    const reviewData = useReviewData();
+    const setReviewData = useReviewDataUpdate()
     useEffect(() => {
         const getReviews = async () => {
             const result = await fetch('https://steam-clone-zf6a.onrender.com/reviews')
@@ -18,13 +19,7 @@ const GraphForReviews = () => {
     }, [])
     console.log(reviewData)
     
-//testData
-    // const data = [
-    //     { date: '2023-07-20', good: true },
-    //     { date: '2023-07-21', good: true },
-    //     { date: '2023-07-21', good: false },
-    //     // Add more data entries here
-    // ];
+
 
 
 
