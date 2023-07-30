@@ -1,5 +1,4 @@
 import AllReviewsChart from './AllReviewsChart.jsx'
-import { useEffect, useState } from 'react';
 
 const AllReviews = ({data}) => {
     const reviewSumm = 'ChangeMe'
@@ -9,8 +8,6 @@ const AllReviews = ({data}) => {
     
     return (
         <>
-
-
             <div className="user_reviews_summary_bar">
                 <div className="summary_section">
                     <div className="title">Overall Reviews:</div>

@@ -30,7 +30,7 @@ const GraphForReviews = () => {
             <div id='graphForReviews'>
             <h2 className="user_reviews_header no_bottom_margin">Customer reviews</h2>
                 <AllReviews data={reviewData} />
-                {/* <RecentReviews data={data} /> */}
+                <RecentReviews data={reviewData} />
                 <ReviewFilters />
             </div>
         </>
