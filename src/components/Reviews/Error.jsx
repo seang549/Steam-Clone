@@ -12,8 +12,14 @@ const Error = ({ handleClose, show}) => {
        </div>
         <div className="ErrorBody">
             <p className="Message">You must be logged in to perform that action.</p>
+            <div className="buttonContainer">
+              <div>
           <button className="SignIn" type="button">sign in</button>
+          </div>
+          <div>
           <button className="Close" type="button" onClick={handleClose}>cancel</button>
+          </div>
+          </div>
         </div>
         </section>
       </div>
