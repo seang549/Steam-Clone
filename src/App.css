@@ -312,7 +312,10 @@
   background-image: url(https://store.cloudflare.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1);
   background-repeat: no-repeat;
   background-position: 10px 5px;
-  
+}
+
+.install-steam:hover {
+  color: white;
 }
 
 .language-toggle {
