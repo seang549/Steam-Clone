@@ -17,6 +17,14 @@ const AllReviewsChart = ({ data }) => {
     const reviewData = useReviewData();
     const [permData, setPermData] = useState([]);
     let timer;
+
+    useEffect(() => {
+        const getReviews = async () => {
+            setPermData(reviewData)
+        }
+        getReviews()
+    },[])
+
     useEffect(() => {
         const getReviews = async () => {
             const result = await fetch('https://steam-clone-zf6a.onrender.com/reviews')

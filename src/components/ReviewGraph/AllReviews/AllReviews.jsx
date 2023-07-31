@@ -1,6 +1,6 @@
 import AllReviewsChart from './AllReviewsChart.jsx'
 
-const AllReviews = ({data}) => {
+const AllReviews = ({expanded, data}) => {
     const reviewSumm = 'ChangeMe'
     const tooltipText = 'ChangeMe'
     const reviewNumText = 'changeMe'
@@ -19,7 +19,7 @@ const AllReviews = ({data}) => {
                 </div>
                 <div id='review_histogram_rollup_container' className="review_histogram">
                     <div className="review_histogram_rollup">
-                        <AllReviewsChart data={data} />
+                        <AllReviewsChart expanded={expanded} data={data} />
                     </div>
                 </div>
             </div>

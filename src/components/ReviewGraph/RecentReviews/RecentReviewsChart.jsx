@@ -28,7 +28,6 @@ const RecentReviewsChart = ({ data }) => {
                 const datePosted = new Date(entry.date_posted);
                 return datePosted >= oneMonthAgo
             })
-            console.log(recentData)
             setPermData(recentData)
         }
         getReviews()
