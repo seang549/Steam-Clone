@@ -20,14 +20,15 @@ const AwardHover = ({IA, i, awards}) => {
        return (
         <>
         <div className="AwardInfo">
-            <img src={IA.animation}></img>
+            <img className="animated" src={IA.animation}></img>
             <h1>{IA.title}</h1>
             <p>{IA.body}</p>
-            <p1>Award gives creators {IA.points} Steam Points. Given by {total} person.</p1>
+            <p1 className="count">Award gives creators {IA.points} Steam Points. Given by {total} person.</p1>
         </div>
          </>
        );
      };
      
      export default AwardHover;
+     
      

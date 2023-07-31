@@ -402,6 +402,29 @@ background: linear-gradient( to right, #32363f 5%, #32363f 95%); box-shadow: 2px
     background: rgba(0, 0, 0, 0.6);
 }
 
+.animated{
+  width: 120px;
+	height: 80px;
+	vertical-align: middle;
+}
+
+.count{
+  color: #66c0f4;
+	font-size: 10px;
+	vertical-align: middle;
+	font-weight: bold;
+	padding: 3px;
+  text-align: center
+  
+}
+
+.AwardInfo{
+  vertical-align: middle;
+  text-align: center;
+  height: auto;
+  width: 120px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
 .Error{
   font-family: "Motiva Sans", Sans-serif;
 		font-weight: 200; /* thin */
