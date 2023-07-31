@@ -1,37 +1,38 @@
 import React from 'react';
-import {useState, useEffect, useRef} from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Chart } from 'chart.js/auto'
 import moment from 'moment'
 import 'chartjs-adapter-moment'
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { useReviewData, useReviewDataUpdate } from '../../ReviewContext';
-let newMin
-let newMax
 Chart.register(zoomPlugin);
 
 
 
-const AllReviewsChart = ({data}) => {
+const AllReviewsChart = ({ data }) => {
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
-    const [dateRange, setDateRange] = useState("");
     let modifiedData;
     const setReviewData = useReviewDataUpdate(); // Call the hook inside the component directly
-    const permData = data;
+    const reviewData = useReviewData();
+    const [permData, setPermData] = useState([]);
     let timer;
 
-    const timeFilter = (min, max) => {
-        console.log(min)
-        if (timer) {
-            const filteredData = permData.filter((entry) => {
-                entry.date_posted > min || entry.date_posted < max;
-            });
-            console.log(filteredData)
-            // setReviewData(filteredData)
-            clearTimeout(timer)
+    useEffect(() => {
+        const getReviews = async () => {
+            setPermData(reviewData)
         }
-    };
+        getReviews()
+    },[])
 
+    useEffect(() => {
+        const getReviews = async () => {
+            const result = await fetch('https://steam-clone-zf6a.onrender.com/reviews')
+            const data = await result.json()
+            setPermData(data)
+        }
+        getReviews()
+    }, [reviewData])
 
     function startFetch({ chart }) {
         if (timer) {
@@ -39,22 +40,43 @@ const AllReviewsChart = ({data}) => {
         }
         const { min, max } = chart.scales.x;
         timer = setTimeout(() => {
-            console.log('Fetched data between ' + min + ' and ' + max);
-            const startDate = moment(min).format('YYYY-MM-DD'); 
-            const endDate = moment(max).format('YYYY-MM-DD'); 
-            console.log(startDate)
+            const startDate = moment(min).format('YYYY-MM-DD');
+            const endDate = moment(max).format('YYYY-MM-DD');
             chart.data.datasets[0].data = modifiedData.map((entry) => entry.posSum);
             chart.data.datasets[1].data = modifiedData.map((entry) => entry.negSum);
             chart.stop(); // make sure animations are not running
             chart.update('none');
-            setDateRange([startDate, endDate]);
+            timeFilter(startDate, endDate)
             chart.resetZoom()
-            timeFilter()
+            clearTimeout(timer)
         }, 1500);
-        
     }
 
-    
+    const timeFilter = (min, max) => {
+        const newData = []
+        permData.map((entry) => {
+            let minArr = min.split('-')
+            let maxArr = max.split('-')
+            let smallArr = entry['date_posted'].split('T')[0].split('-')
+            if (parseInt(minArr[0]) <= parseInt(smallArr[0])) {
+                if (parseInt(maxArr[0]) >= parseInt(smallArr[0])) {
+                    if (parseInt(minArr[1]) <= parseInt(smallArr[1])) {
+                        if (parseInt(maxArr[1]) >= parseInt(smallArr[1])) {
+                            if (parseInt(minArr[2]) <= parseInt(smallArr[2])) {
+                                if (parseInt(maxArr[2]) >= parseInt(smallArr[2])) {
+                                    newData.push(entry)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
+        console.log(newData)
+        setReviewData(newData)
+    }
+
+
 
 
     useEffect(() => {
@@ -95,7 +117,7 @@ const AllReviewsChart = ({data}) => {
                             backgroundColor: 'rgba(75, 192, 192, 0.8)',
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 1,
-                           
+
                         },
                         {
                             label: 'Entries',
@@ -103,7 +125,7 @@ const AllReviewsChart = ({data}) => {
                             backgroundColor: 'rgba(255, 99, 132, 0.8)',
                             borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 1,
-                           
+
                         },
                     ],
                 },
@@ -111,10 +133,10 @@ const AllReviewsChart = ({data}) => {
                     scales: {
                         x: {
                             stacked: true,
-                            type: 'time', 
+                            type: 'time',
                             time: {
                                 parser: 'YYYY-MM-DD',
-                                unit: 'day', 
+                                unit: 'day',
                             },
                         },
                         y: {
@@ -130,7 +152,7 @@ const AllReviewsChart = ({data}) => {
                             limits: {
                                 x: { min: 'original', max: 'original', minRange: 100 },
                                 y: { min: 'original', max: 'original', minRange: 100 },
-                                
+
                             },
                             pan: {
                                 enabled: false,
@@ -150,7 +172,7 @@ const AllReviewsChart = ({data}) => {
                             }
                         }
                     }
-                    }
+                }
             });
         }
 
@@ -161,7 +183,7 @@ const AllReviewsChart = ({data}) => {
         };
     }, [data]);
 
-    return <canvas ref={chartRef} />;
+    return <canvas id='allChart'ref={chartRef} />;
 };
 
 export default AllReviewsChart;
