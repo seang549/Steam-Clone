@@ -5,7 +5,7 @@ const HeaderNavBar = () => {
         <nav>
             <ul style={{listStyleType: "none"}} className="menus">
                 {menuItems.map((menu, index) => {
-                    return <HeaderMenuItems items={menu} key={index} />
+                    return <HeaderMenuItems items={menu} key={index} isFirstLink={index === 0} />
                 })}
             </ul>
         </nav>

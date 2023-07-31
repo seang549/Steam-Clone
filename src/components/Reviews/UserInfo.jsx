@@ -12,19 +12,21 @@ const UserInfo = ({ review }) => {
   return (
     <>
       <div className='Icon'>
-        <img src={review["user_icon"]}></img>
+        <img className='Icon' src={review["user_icon"]}></img>
+        {reviewsView && (
+          <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
+        )}
       </div>
-      <div className='TopDown'>
+      {/* <div className='user-info-cont'> */}
+      <div className='user-product-username'>
         <h1 id='user-info-username'>{review["user_name"]}</h1>
         {productsView && (
           <h1 id='user-info-product'>
             {review["user_product"]} products in account
           </h1>
         )}
-        {reviewsView && (
-          <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
-        )}
       </div>
+      {/* </div> */}
     </>
   );
 };
