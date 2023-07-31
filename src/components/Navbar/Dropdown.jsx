@@ -27,7 +27,8 @@ if(i === 2) {
           <div className={`subtitle-div subtitle${index}`}>
             <a href={submenu.url}>{submenu.subTitle}</a>
           </div>
-
+          <div className={`categories-hr${index}`}></div>
+          <div className ={`categories-vr${index}`}></div>
           <div className={`title-div title${index}`}>
             <a href={submenu.url}>{submenu.title}</a>
           </div>
