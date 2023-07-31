@@ -2,11 +2,25 @@ import ReviewCard from "./ReviewCard.jsx";
 import { useReviewData } from "../ReviewContext.jsx";
 const ReviewCards = () => {
 
-  const reviewData = useReviewData()
 
- 
-  
-    return reviewData.map((review) => {
+  if (reviews !== undefined) {
+    return reviews.map((review) => {
+      let date;
+      let time;
+      let devView = review["developer_response"];
+      if (review !== undefined && review !== null) {
+        
+        if (devView) {
+          date = new Date(review["developer_date"]);
+          date = date.toDateString();
+          date = date.split(" ");
+          date = `${date[1]} ${date[2]}`;
+          time = review["developer_time"];
+          time = time.split(":");
+          time = `${time[0]}:${time[1]}`;
+        }
+      }
+
 
       return (
         <>
@@ -15,7 +29,7 @@ const ReviewCards = () => {
               <ReviewCard review={review} />
             </div>
           </div>
-          <div id='response-container'>
+          {devView && <div id='response-container'>
             <div id='left-col'></div>
             <div id='right-col'>
               <h1 id='response-dev'>
@@ -23,7 +37,7 @@ const ReviewCards = () => {
               </h1>
               <h1 id='view-response'>(view response)</h1>
             </div>
-          </div>
+          </div>}
           <div className='hr'></div>
         </>
       );
