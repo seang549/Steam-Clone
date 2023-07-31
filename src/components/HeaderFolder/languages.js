@@ -72,7 +72,7 @@ export const languages = [
         url: 'https://store.steampowered.com/app/2433830/_/?l=polish'
     },
     {
-        title: 'ortuguês (Portuguese - Portugal)',
+        title: 'Português (Portuguese - Portugal)',
         url: 'https://store.steampowered.com/app/2433830/_/?l=portuguese'
     },
     {
