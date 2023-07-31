@@ -134,53 +134,87 @@
   display: flex;
   flex-direction: row;
   height: 500px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 162px;
 }
 
-.other-game {
-  position: relative;
+.carousel-games::-webkit-scrollbar {
+  width: 10px;
+}
+
+.carousel-games::-webkit-scrollbar-track {
+  /* background-color: #0e1c29; */
+  visibility: visible;
+}
+
+.carousel-games::-webkit-scrollbar-thumb {
+  /* background-color: #070e14;
+  border-radius: 2px; */
+  visibility: visible;
+}
+
+/* .carousel-games::-webkit-scrollbar-button {
+  width: 38px;
+  height: 18px;
+  background-color: #070e14;
+} */
+
+/* .other-game */
+.has_tooltip {
   display: inline;
   height: 150px;
-
+  margin: 1px;
 }
 
-.other-game .tooltip{
-  opacity: 0;
-  background-color: black;
-  color: #fff;
-  text-align: center;
+.display_game {
+  padding: 15px;
+  background-color: #16202d;
+  height: 132px;
+  width: 203px;
+}
+
+.tooltip_wrapper {
+  visibility: hidden;
+  background-color: #d5d7da;
+  display: flex;
+  flex-direction: column;
+  color: #363a43;
+  text-align: left;
   border-radius: 6px;
-  padding: 5px;
-  opacity: 0;
-  transition: opacity 1s;
+  padding: 15px;
+
   position: absolute;
   z-index: 1;
-  top:95%;
-  left: 100%;
-  transform: translate(0, -50%);
-  margin-left: 5px;
-  z-index:1;
+  /* top: 95%;
+  left: 100%; */
+  /* transform: translate(0, -50%); */
+  /* margin-left: 5px; */
 }
 
-.other-game:hover .tooltip {
-  opacity: 1;
+.other-game:hover {
+  cursor: pointer;
 }
 
-.other-game .tooltip-right::after{
+.other-game:hover .tooltip_wrapper {
+  visibility: visible;
+}
+
+.tooltip_right::after {
   content: " ";
   position: absolute;
   top: 12%;
   left: -10px;
-  margin-top: -5px;
+  /* margin-top: -5px; */
   border-width: 5px;
   border-style: solid;
-  border-color: transparent black transparent transparent;
+  border-color: transparent #d5d7da transparent transparent;
   display: flex;
   flex-direction: column;
 }
 
-
 .specific-to-game {
-  display:flex;
+  display: flex;
 }
 
 .tags {
@@ -188,8 +222,7 @@
   flex-direction: row;
 }
 
-.other-games-images img{
-  /* height: 200px; */
+.other-games-images {
   width: 250px;
   aspect-ratio: initial;
   display: flex;
@@ -201,4 +234,26 @@
   aspect-ratio: initial;
   display: flex;
   flex-direction: row;
+}
+
+.display_title {
+  color: #8f98a0;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.display_price {
+  color: #fff;
+  font-size: 11px;
+  padding: 0px 6px;
+  margin-top: 5px;
+}
+
+.see_all {
+  font-size: 11px;
+  padding: 2px 4px;
+  cursor: pointer;
+  height: 16px;
+  float: top right;
+  background-color: #2a475e;
 }
