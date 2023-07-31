@@ -13,11 +13,14 @@ const ColumnTwo = () => {
             </p>
           </div>
           <div>
-            <button className="communityHub" style={{ height: "30px" }}>
+            <button className="communityHub sign_in" style={{ height: "30px" }}>
               Sign In
             </button>{" "}
             or{" "}
-            <button className="communityHub" style={{ height: "30px" }}>
+            <button
+              className="communityHub open_in_steam"
+              style={{ height: "30px" }}
+            >
               Open in Steam
             </button>
           </div>
@@ -88,40 +91,85 @@ const ColumnTwo = () => {
           <br />
           <b>GENRE:</b>{" "}
           <span>
-            <a href="">Casual</a>, <a href="">Indie</a>, <a href="">Strategy</a>
+            <a
+              className="game_bod_link"
+              href="https://store.steampowered.com/genre/Casual/?snr=1_5_9__408"
+            >
+              Casual
+            </a>
+            ,{" "}
+            <a
+              className="game_bod_link"
+              href="https://store.steampowered.com/genre/Indie/?snr=1_5_9__408"
+            >
+              Indie
+            </a>
+            ,{" "}
+            <a
+              className="game_bod_link"
+              href="https://store.steampowered.com/genre/Strategy/?snr=1_5_9__408"
+            >
+              Strategy
+            </a>
           </span>
           <br />
-          <b>DEVELOPER:</b> <a href="">undownsidable</a>
+          <b>DEVELOPER:</b>{" "}
+          <a
+            className="game_bod_link"
+            href="https://store.steampowered.com/developer/undownsidable?snr=1_5_9__408"
+          >
+            undownsidable
+          </a>
           <br />
-          <b>PUBLISHER:</b> <a href="">undownsidable</a>
+          <b>PUBLISHER:</b>{" "}
+          <a
+            className="game_bod_link"
+            href="https://store.steampowered.com/developer/undownsidable?snr=1_5_9__408"
+          >
+            undownsidable
+          </a>
           <br />
           <b>RELEASE DATE:</b> Jun 13, 2023
         </div>
-        <div className="meta_txt" style={{ height: "25px" }}>
-          View update history
-        </div>
-        <div className="meta_txt" style={{ height: "25px" }}>
-          Read related news
-        </div>
-        <div className="meta_txt" style={{ height: "25px" }}>
-          View discussions
-        </div>
-        <div className="meta_txt" style={{ height: "25px" }}>
-          Find Community Groups
-        </div>
+        <a href="https://store.steampowered.com/newshub/?appids=2433830&snr=1_5_9__408">
+          <div className="meta_txt" style={{ height: "25px" }}>
+            View update history
+          </div>
+        </a>
+        <a href="https://store.steampowered.com/newshub/app/2433830?snr=1_5_9__408">
+          <div className="meta_txt" style={{ height: "25px" }}>
+            Read related news
+          </div>
+        </a>
+        <a href="https://steamcommunity.com/app/2433830/discussions/">
+          <div className="meta_txt" style={{ height: "25px" }}>
+            View discussions
+          </div>
+        </a>
+        <a href="https://steamcommunity.com/actions/Search?T=ClanAccount&K=Spider">
+          <div className="meta_txt" style={{ height: "25px" }}>
+            Find Community Groups
+          </div>
+        </a>
       </div>
 
       <div
         className="flex clm_two_gradient share_flag_ctn"
         style={{ gap: ".5rem" }}
       >
-        <div className="communityHub">Share</div>
-        <div className="communityHub">Embed</div>
-        <a href="" className="communityHub">
-          <span>
-            <i className="flag"></i>
-          </span>
-        </a>
+        <div className="communityHub share" style={{ height: "30px" }}>
+          Share
+        </div>
+        <div className="communityHub embed" style={{ height: "30px" }}>
+          Embed
+        </div>
+        <div className="flag_ctn communityHub" style={{ height: "30px" }}>
+          <a href="">
+            <span>
+              <i className="flag"></i>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   );

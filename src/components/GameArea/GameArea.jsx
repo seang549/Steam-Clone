@@ -48,7 +48,9 @@ const GameArea = () => {
         <div id="lowerGameHeader">
           <div id="gameAreaTitle">Spider</div>
           <div id="communityHubDiv">
-            <button className="communityHub">Community Hub</button>
+            <button className="communityHub community_Hub">
+              Community Hub
+            </button>
           </div>
         </div>
       </div>
