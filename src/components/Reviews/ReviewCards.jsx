@@ -2,6 +2,7 @@ import ReviewCard from "./ReviewCard.jsx";
 import { useReviewData } from "../ReviewContext.jsx";
 const ReviewCards = () => {
 
+  const reviews = useReviewData()
 
   if (reviews !== undefined) {
     return reviews.map((review) => {
@@ -43,5 +44,5 @@ const ReviewCards = () => {
       );
     });
   }
-// };
+ };
 export default ReviewCards;
