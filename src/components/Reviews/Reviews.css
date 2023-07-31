@@ -334,23 +334,32 @@
 }
 
 .modal-main {
-  position: fixed;
-  z-index: 1000;
-  max-width: 927px;
-  left: 253px;
-  top: 384px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal; /* normal */
+
+    position: absolute;
+
+max-width: 900px;	/* our page width */
+min-width: 500px;
+
+background: radial-gradient(circle at top left, rgba(74, 81, 92, 0.4) 0%, rgba(75, 81, 92, 0) 60%), #25282e;
 }
 
 .Close{
-  border-radius: 2px;
-    border: none;
-    padding: 1px;
-    display: inline-block;
-    cursor: pointer;
-    color: #dfe3e6;
-    margin-left: 12px;
-    margin-top: 12px;
-    background: transparent;
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+	float: right;
+	margin-top: 9px;
+	margin-right: 9px;
+	height: 16px;
+	width: 16px;
+  text-align: right;
+	opacity: 0.7;
+  background: #75b022;
+  background: linear-gradient( top, #75b022 5%, #588a1b 95%);
+background: linear-gradient( to bottom, #75b022 5%, #588a1b 95%);
+background: linear-gradient( to right, #32363f 5%, #32363f 95%); box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); transition: all 0.2s ease-out;
 }
 
 .SignIn{
@@ -363,12 +372,19 @@
     margin-left: 12px;
     margin-top: 12px;
     background: #6fa720;
+    text-align: right;
+    border-radius: 2px;
+		display: block;
+			background: linear-gradient( top, #6fa720 5%, #588a1b 95%);
+	background: linear-gradient( to bottom, #6fa720 5%, #588a1b 95%);
+		background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
 }
 .ErrorHeader{
+  padding: 32px 32px 0px 32px;
+	display: block;
   width: 100%;
   overflow: auto;
   word-wrap: break-word;
-  padding: 32px;
   font-size: 14px;
   color: #acb2b8;
   position: relative;
@@ -387,17 +403,28 @@
 }
 
 .Error{
-  padding: 0px 0px 0px 0px;
+  font-family: "Motiva Sans", Sans-serif;
+		font-weight: 200; /* thin */
+
+		    font-size: 19px;
+    text-transform: none;
+    line-height: 20px;
+    letter-spacing: 0px;
+    padding: 0px 32px 0px 32px;
+    display: block;
     text-align: left;
     font-size: 22px;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: unset;
     text-transform: unset;
     flex-shrink: 0;
 
 }
-
+.TOPBAR{
+  width: 100%;
+	height: 1px;
+	background: linear-gradient(to right, #00ccff, #3366ff);
+}
 .X{
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjVBREZBRDlBNzdCNzExRTI5ODAzRUE3MDU0Mzk5MjM5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjVBREZBRDlCNzdCNzExRTI5ODAzRUE3MDU0Mzk5MjM5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NUFERkFEOTg3N0I3MTFFMjk4MDNFQTcwNTQzOTkyMzkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NUFERkFEOTk3N0I3MTFFMjk4MDNFQTcwNTQzOTkyMzkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4iulRzAAABPElEQVR42mI8cuQIAyWABUqbAXEylH0fiDtwqI8FYhsoewEQH4cZcBaI64DYG8p/AVWADDyAeD4QMwPxJiA+BRJkgkr+BeJoIL4D5U8DYi0kzepAvAKq+TJU7V9kA0DgIxD7Q2lOIF4NpfmBeAuUfg3EPkD8BaaJCc2Z14A4EcoGuWAC1NkqQPwLqvkRsgYmLAG1HoiboOw0IA6EshNh/iZkAAjUA/FBJP5KIF6GTSEuAwygUQsDflAxogwQAuJ10AAExcpNKHsjEIsSMoAZGl2K0EALBeIIKFsOKSpxGtACxK5Qdi4QX4DiAqiYExB34TIgBIgrkAJtFpLcdKgYCBQBcRRMghGamUBxfhKIeaB+NkFOLFAAkjsDTZXfgdgK5DpYXvBGiqYpWDQzQMVAYZKDlDcuMFKanQECDAAqw0LA+GRiqAAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
