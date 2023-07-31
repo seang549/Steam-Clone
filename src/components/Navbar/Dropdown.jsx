@@ -25,7 +25,7 @@ const Dropdown = ({ submenus }) => {
             submenu.dropdownItems &&
             submenu.dropdownItems.length >
               0(
-                <ul className='submenu'>
+                <ul className='submenu' >
                   {submenu.dropdownItems.map((item, i) => (
                     <li key={i}>
                       <a href={item.url}>{item.title}</a>
@@ -52,3 +52,5 @@ export default Dropdown;
 //     <a href={item.url}>{item.submenu.title}</a>
 //   )}
 // </ul>
+
+

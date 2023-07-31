@@ -8,6 +8,53 @@
   width: 940px;
 }
 
+.review-card-cont {
+  width: 184px;
+  padding: 8px;
+  opacity: 0.6;
+}
+
+#left-col {
+  width: 184px;
+  float: left;
+  padding: 8px;
+}
+
+#right-col {
+  width: 402px;
+  float: left;
+  margin-left: 27px;
+  position: relative;
+}
+
+.jumpToReviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 616px;
+}
+
+.comment-count {
+  position: absolute;
+  bottom: 40px;
+  left: 361px;
+}
+
+.comment-count a {
+  text-decoration: none;
+  color: #66c0f4;
+  background-image: url(src/assets/comment_quoteicon_blue.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  display: inline-block;
+  height: 16px;
+}
+
+.review-reaction-holder {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
 #review-subTitle {
   font-family: "Motiva Sans", Sans-serif;
   font-weight: normal;
@@ -18,12 +65,6 @@
   letter-spacing: 2px;
   padding-right: 10px;
 }
-.hr {
-  background-image: linear-gradient(to right, #3a6e8b, #1b2838);
-  height: 1px;
-  margin-bottom: 2px;
-  width: 616px;
-}
 
 #review-subTitle2 {
   text-transform: uppercase;
@@ -31,18 +72,33 @@
   color: #56707f;
 }
 
-.Icon {
-  float: left;
-  padding-right: 8px;
-  display: block;
+.hr {
+  background-image: linear-gradient(to right, #3a6e8b, #1b2838);
+  height: 1px;
+  width: 616px;
 }
 
-#jumpToReviews {
+.hr2 {
+  background-image: linear-gradient(to right, #3a6e8b, #1b2838);
+  height: 1px;
+  width: 392px;
+}
+
+.Icon {
+  padding-right: 8px;
+  width: 32px;
+}
+
+.reviews-area {
   background-color: rgba(0, 0, 0, 0.2);
   margin-bottom: 26px;
   background-image: url(/public/images/v6/maincol_gradient_rule.png);
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+.userinfo-review-cards-cont {
+  display: flex;
 }
 
 #user-info-username {
@@ -52,32 +108,25 @@
   overflow: hidden;
   margin-top: -2px;
   margin-bottom: -1px;
-  display: inline-block;
   color: #c1dbf4;
   font-size: 13px;
   font-family: "Motiva Sans", Sans-serif;
   font-weight: bold;
-}
-
-#user-info-cont {
-  position: relative;
-  width: 184px;
-  float: left;
-  padding: 8px;
-  opacity: 0.6;
+  grid-column-start: 2;
 }
 
 #user-info-product {
   font-size: 11px;
   color: #626366;
-  display: block;
   line-height: 17px;
+  font-weight: lighter;
 }
 
 #user-info-viewReviews {
   font-size: 11px;
   color: #626366;
-  display: block;
+  width: max-content;
+  font-weight: lighter;
 }
 
 .right-column {
@@ -90,46 +139,181 @@
 #response-dev {
   color: #529cde;
   font-size: 13px;
+  font-weight: lighter;
 }
 
-#thumb-pic {
+.recommendations-container {
+  margin: 8px 0 13px;
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  height: 40px;
+}
+
+#steam-XS-img {
+  float: right;
+  margin-right: 5px;
+  margin-top: 12px;
+  opacity: 0.5;
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  left: 379px;
+}
+
+.recommended {
+  font-size: 16px;
+  color: #d6d7d8;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  padding: 3px 0px 0px 0px;
+  line-height: 19px;
+}
+
+#review-date-posted {
+  margin: 0px 0px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #8091a2;
+  display: inline-block;
+  opacity: 0.6;
+  grid-column-start: 2;
+  font-weight: normal;
+}
+
+#review-body {
+  margin-right: 8px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 17px;
+  color: #acb2b8;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  grid-column-start: 2;
+  padding-bottom: 10px;
+}
+
+#control-comp {
+  margin: 8px 0;
+  display: inline-block;
+  grid-column-start: 2;
+}
+
+#question-helpful {
+  display: inline-block;
+  margin-right: 9px;
+  color: #8091a2;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+#reaction-icon-cont {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+#reaction-icons {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+#response-container {
+  padding-bottom: 10px;
+  margin-top: -23px;
+  margin-bottom: 26px;
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#view-response {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+.thumb-pic {
   float: left;
   margin-right: 10px;
 }
 
-#user-info-username {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 140px;
-  overflow: hidden;
-  margin-top: -2px;
-  margin-bottom: -1px;
-  display: inline-block;
-  color: #c1dbf4;
-  font-size: 13px;
+.hrs-on-rec {
   font-family: "Motiva Sans", Sans-serif;
-  font-weight: bold;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 15px;
+  color: #8091a2;
+  opacity: 0.6;
+  position: absolute;
+  top: 30px;
+  left: 50px;
 }
 
+.hrs-on-rec2 {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 15px;
+  color: #8091a2;
+  opacity: 0.6;
+  position: absolute;
+  top: 30px;
+  left: 143px;
+}
+
+.vote-info-comp {
+  padding: 0px 9px 8px 0px;
+  font-size: 12px;
+  color: #647580;
+  min-height: 16px;
+}
+
+.vote-info {
+  font-size: 12px;
+  color: #647580;
+  min-height: 16px;
+  font-weight: lighter;
+}
+
+.vote-info2 {
+  padding: 0px 9px 8px 0px;
+  font-size: 12px;
+  color: #647580;
+  min-height: 16px;
+  font-weight: lighter;
+}
+
+.yes-or-no {
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.Award {
+  vertical-align: middle;
+  height: 16px;
+}
+
+.Yes,
+.No,
 .Funny {
-  background-position: -208px -16px;
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
   display: inline-block;
-  width: 16px;
-  height: 16px;
-}
-
-.Yes {
-  background-position: -112px -16px;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-}
-
-.No {
-  background-position: -64px -16px;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #66c0f4 !important;
+  background: #212c3d;
 }
 
 .TopLeftMargin {
