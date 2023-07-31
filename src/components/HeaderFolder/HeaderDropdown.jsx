@@ -13,11 +13,11 @@ const HeaderDropdown = ({ submenus }) => {
   };
 
   return (
-    <ul style={{listStyleType: "none"}} className='dropdown'>
+    <ul style={{listStyleType: "none"}} className='dropdown-header'>
       {submenus.map((submenu, index) => (
         <li
           key={index}
-          className="dropdown-item"
+          className="dropdown-item-header"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >

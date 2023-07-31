@@ -6,7 +6,7 @@ const StoreTabs = ({ items }) => {
       {items.submenu ? (
         <>
           <a href={items.url}>{items.title} </a>
-          <Dropdown submenus={items.submenu} />
+          <Dropdown submenus={items.submenu}  />
         </>
       ) : (
         <a href={items.url}>{items.title}</a>
