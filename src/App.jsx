@@ -27,10 +27,9 @@ function App() {
         <GamerJuice />
 
         <div className='clear'></div>
+    <DataProvider>
         <div className='review-graph-area'>
-          <DataProvider>
             <GraphForReviews />
-          </DataProvider>
         </div>
         <div className='clear' style={{ width: "940px" }}></div>
         <div id='reviews-summary'>
@@ -40,11 +39,10 @@ function App() {
               <span id='review-subTitle2'>IN THE PAST 30 DAYS</span>
             </div>
             <div className='hr'></div>
-            <DataProvider>
               <ReviewCards />
-            </DataProvider>
           </div>
         </div>
+    </DataProvider>
       </div>
       <div className='footer-area'>
         <Footer />

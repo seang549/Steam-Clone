@@ -8,6 +8,22 @@ import { useReviewData, useReviewDataUpdate } from '../ReviewContext';
 const GraphForReviews = () => {
     const reviewData = useReviewData();
     const setReviewData = useReviewDataUpdate()
+    const [expanded, setExpanded] = useState(false)
+    const [filters, setFilters] = useState({
+        reviewType: 'all',
+        purchaseType: 'all',
+        reviewLanguage: 'all',
+        reviewDateRange: 'all',
+        playTime: 'noMin',
+        displayAs: 'summary'
+    })
+
+
+    const toggleExpanded = () => {
+        setExpanded(!expanded)
+        console.log(expanded)
+    }
+
     useEffect(() => {
         const getReviews = async () => {
             const result = await fetch('https://steam-clone-zf6a.onrender.com/reviews')
@@ -17,24 +33,38 @@ const GraphForReviews = () => {
         getReviews()
         
     }, [])
-    console.log(reviewData)
     
+    useEffect(() => {
+        const applyFilters = () => {
+         console.log(filters)   
+        }
+        applyFilters()
+    }, [filters])
 
 
 
 
   
-    
-    return (
-        <>
+    if (expanded) {
+        
+        return (
+            <>
             <div id='graphForReviews'>
-            <h2 className="user_reviews_header no_bottom_margin">Customer reviews</h2>
-                <AllReviews data={reviewData} />
-                {/* <RecentReviews data={data} /> */}
-                <ReviewFilters />
+                <h2 className="user_reviews_header no_bottom_margin">Customer reviews</h2> 
+                    <AllReviews expanded={expanded}  data={reviewData} />
+                    <RecentReviews expanded={expanded} data={reviewData} />
+                    <ReviewFilters filters={filters} setFilters={setFilters} expanded={expanded} toggleExpanded={toggleExpanded} />               
             </div>
         </>
     )
+    } else {
+        return (
+            <div id='graphForReviews'>
+                <h2 className="user_reviews_header no_bottom_margin">Customer reviews</h2>
+                <ReviewFilters filters='filters' setFilters={setFilters} expanded={expanded} toggleExpanded={toggleExpanded} />
+            </div>
+        )
+}
 }
 
 

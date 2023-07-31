@@ -65,6 +65,10 @@ body {
   text-align: left;
 }
 
+.dropdown-item-store-and-new:hover a{
+  color: white;
+}
+
 /* dropdownitem is the actual submenu titles  */
 .dropdown-item .title-div a{
   position: relative;
@@ -102,6 +106,12 @@ body {
   visibility: hidden;
 }
 
+.title-div:hover a{
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 2px ;
+  text-underline-offset: 5px;
+}
 
 .subtitle1, .subtitle2, .subtitle3, .subtitle4, .subtitle5, .subtitle6, .subtitle7, .subtitle8, .subtitle9, .subtitle10, .subtitle11, .subtitle12, .subtitle13, .subtitle14, .subtitle16, .subtitle17, .subtitle18, .subtitle19, .subtitle20, .subtitle21, .subtitle22, .subtitle23, .subtitle24, .subtitle25, .subtitle26, .subtitle27, .subtitle28, .subtitle29, .subtitle30, .subtitle31, .subtitle32, .subtitle33, .subtitle34, .subtitle35, .subtitle36, .subtitle37, .subtitle38, .subtitle39, .subtitle40, .subtitle41, .subtitle42, .subtitle43, .subtitle44, .subtitle45, .subtitle46, .subtitle47, .subtitle48, .subtitle49, .subtitle50, .subtitle51, .subtitle52, .subtitle53, .subtitle54, .subtitle55, .subtitle56, .subtitle57, .subtitle58, .subtitle59, .subtitle60, .subtitle61, .subtitle62, .subtitle63, .subtitle65, .subtitle66, .subtitle67, .subtitle68, .subtitle69, .subtitle70, .subtitle71, .subtitle73, .subtitle74, .subtitle75, .subtitle76, .subtitle77, .subtitle78, .subtitle79
 {
