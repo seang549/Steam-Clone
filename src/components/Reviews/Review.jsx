@@ -10,7 +10,7 @@ const Review = ({ review }) => {
       {/* className='review-container-comp' */}
       <h1 id='review-date-posted'>POSTED: {date}</h1>
       <p id='review-body'>{review["review_body"]}</p>
-      <div className='hr'></div>
+      <div className='hr2'></div>
     </>
   );
 };
