@@ -85,11 +85,10 @@
 }
 
 .Icon {
-  float: left;
   padding-right: 8px;
-  display: block;
   width: 32px;
-  aspect-ratio: initial;
+
+  grid-column-start: 1;
 }
 
 .reviews-area {
@@ -100,6 +99,12 @@
   background-position: top left;
 }
 
+.userinfo-review-cards-cont {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
 #user-info-username {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -107,35 +112,34 @@
   overflow: hidden;
   margin-top: -2px;
   margin-bottom: -1px;
-
   color: #c1dbf4;
   font-size: 13px;
   font-family: "Motiva Sans", Sans-serif;
   font-weight: bold;
-  float: right;
+  grid-column-start: 2;
 }
 
-/* #user-info-cont {
-  position: relative;
-  width: 184px;
-  float: left;
-  padding: 8px;
-  opacity: 0.6;
-} */
+.user-product-username {
+  position: absolute;
+  left: 50px;
+}
 
 #user-info-product {
   font-size: 11px;
   color: #626366;
   display: block;
-  float: right;
+  grid-column-start: 2;
   line-height: 17px;
+  font-weight: lighter;
 }
 
 #user-info-viewReviews {
   font-size: 11px;
   color: #626366;
-  float: right;
-  display: block;
+  grid-column-start: 1;
+  display: flex;
+  width: max-content;
+  font-weight: lighter;
 }
 
 .right-column {
@@ -282,20 +286,6 @@
   position: absolute;
   top: 30px;
   left: 143px;
-}
-
-#user-info-username {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 140px;
-  overflow: hidden;
-  margin-top: -2px;
-  margin-bottom: -1px;
-  display: inline-block;
-  color: #c1dbf4;
-  font-size: 13px;
-  font-family: "Motiva Sans", Sans-serif;
-  font-weight: bold;
 }
 
 .vote-info-comp {
