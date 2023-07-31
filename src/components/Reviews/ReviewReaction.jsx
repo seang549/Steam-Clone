@@ -15,7 +15,13 @@ const ReviewReaction = ({ icon }) => {
     }
     return (
       <>
-        <div style={{ backgroundImage: `url(${icon[key]})` }} className={key}>
+        <div
+          // style={{
+          //   backgroundImage: `url(${icon[key]})`,
+          //   backgroundRepeat: "no-repeat",
+          // }}
+          className={key}
+        >
           <span className='yes-or-no'>{key}</span>
         </div>
       </>

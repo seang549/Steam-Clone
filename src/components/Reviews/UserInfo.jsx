@@ -15,12 +15,14 @@ const UserInfo = ({ review }) => {
         <img className='Icon' src={review["user_icon"]}></img>
       </div>
       {/* <div className='user-info-cont'> */}
-      <h1 id='user-info-username'>{review["user_name"]}</h1>
-      {productsView && (
-        <h1 id='user-info-product'>
-          {review["user_product"]} products in account
-        </h1>
-      )}
+      <div className='user-product-username'>
+        <h1 id='user-info-username'>{review["user_name"]}</h1>
+        {productsView && (
+          <h1 id='user-info-product'>
+            {review["user_product"]} products in account
+          </h1>
+        )}
+      </div>
       {reviewsView && (
         <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
       )}

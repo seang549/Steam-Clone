@@ -52,21 +52,22 @@ const Helpfull = ({ review }) => {
               )}
 
               {funnyView && (
-                <h1 className='vote-info'>
+                <h1 className='vote-info2'>
                   {table["funny"]} people found this review funny
                 </h1>
               )}
+              {conversationsView && (
+                <>
+                  <div className='comment-count'>
+                    <a href='https://store.akamai.steamstatic.com/public/shared/images/comment_quoteicon_blue.png'>
+                      {review["conversations"]}
+                    </a>
+                  </div>
+                  <br></br>
+                </>
+              )}
             </div>
-            {conversationsView && (
-              <>
-                <div className='comment-count'>
-                  <a href='https://store.akamai.steamstatic.com/public/shared/images/comment_quoteicon_blue.png'>
-                    {review["conversations"]}
-                  </a>
-                </div>
-                <br></br>
-              </>
-            )}
+
             {awardView && <AwardList helpID={table["award_reviews_table"]} />}
           </>
         );

@@ -15,8 +15,29 @@
   opacity: 0.6;
 }
 
+#left-col {
+  width: 184px;
+  float: left;
+  padding: 8px;
+}
+
+#right-col {
+  width: 402px;
+  float: left;
+  margin-left: 27px;
+  position: relative;
+}
+
+.jumpToReviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr; */
+}
+
 .comment-count {
-  float: right;
+  position: absolute;
+  bottom: 40px;
+  left: 361px;
 }
 
 .comment-count a {
@@ -48,8 +69,13 @@
 .hr {
   background-image: linear-gradient(to right, #3a6e8b, #1b2838);
   height: 1px;
-  margin-bottom: 2px;
   width: 616px;
+}
+
+.hr2 {
+  background-image: linear-gradient(to right, #3a6e8b, #1b2838);
+  height: 1px;
+  width: 392px;
 }
 
 #review-subTitle2 {
@@ -59,11 +85,10 @@
 }
 
 .Icon {
-  float: left;
   padding-right: 8px;
-  display: block;
   width: 32px;
-  aspect-ratio: initial;
+
+  grid-column-start: 1;
 }
 
 .reviews-area {
@@ -72,8 +97,12 @@
   background-image: url(/public/images/v6/maincol_gradient_rule.png);
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+.userinfo-review-cards-cont {
   display: grid;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 #user-info-username {
@@ -83,32 +112,34 @@
   overflow: hidden;
   margin-top: -2px;
   margin-bottom: -1px;
-  display: inline-block;
   color: #c1dbf4;
   font-size: 13px;
   font-family: "Motiva Sans", Sans-serif;
   font-weight: bold;
+  grid-column-start: 2;
 }
 
-/* #user-info-cont {
-  position: relative;
-  width: 184px;
-  float: left;
-  padding: 8px;
-  opacity: 0.6;
-} */
+.user-product-username {
+  position: absolute;
+  left: 50px;
+}
 
 #user-info-product {
   font-size: 11px;
   color: #626366;
   display: block;
+  grid-column-start: 2;
   line-height: 17px;
+  font-weight: lighter;
 }
 
 #user-info-viewReviews {
   font-size: 11px;
   color: #626366;
-  display: block;
+  grid-column-start: 1;
+  display: flex;
+  width: max-content;
+  font-weight: lighter;
 }
 
 .right-column {
@@ -121,15 +152,34 @@
 #response-dev {
   color: #529cde;
   font-size: 13px;
+  font-weight: lighter;
 }
 
-#recommendations-container {
+.recommendations-container {
   margin: 8px 0 13px;
-  display: block;
+  display: flex;
   background: rgba(0, 0, 0, 0.2);
   height: 40px;
+}
+
+#steam-XS-img {
   float: right;
-  width: 430px;
+  margin-right: 5px;
+  margin-top: 12px;
+  opacity: 0.5;
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  left: 379px;
+}
+
+.recommended {
+  font-size: 16px;
+  color: #d6d7d8;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  padding: 3px 0px 0px 0px;
+  line-height: 19px;
 }
 
 #review-date-posted {
@@ -140,6 +190,8 @@
   color: #8091a2;
   display: inline-block;
   opacity: 0.6;
+  grid-column-start: 2;
+  font-weight: normal;
 }
 
 #review-body {
@@ -151,16 +203,19 @@
   color: #acb2b8;
   overflow-wrap: break-word;
   overflow: hidden;
+  grid-column-start: 2;
+  padding-bottom: 10px;
 }
 
 /* come back to this please */
-.review-container-comp {
+/* .review-container-comp {
   postion: relative;
-}
+} */
 
 #control-comp {
   margin: 8px 0;
   display: inline-block;
+  grid-column-start: 2;
 }
 
 #question-helpful {
@@ -191,31 +246,46 @@
   margin-top: -23px;
   margin-bottom: 26px;
   padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 #view-response {
   text-decoration: none;
   color: #ffffff;
   font-size: 13px;
+  font-weight: lighter;
 }
 
-#thumb-pic {
+.thumb-pic {
   float: left;
   margin-right: 10px;
 }
 
-#user-info-username {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 140px;
-  overflow: hidden;
-  margin-top: -2px;
-  margin-bottom: -1px;
-  display: inline-block;
-  color: #c1dbf4;
-  font-size: 13px;
+.hrs-on-rec {
   font-family: "Motiva Sans", Sans-serif;
-  font-weight: bold;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 15px;
+  color: #8091a2;
+  opacity: 0.6;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+.hrs-on-rec2 {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 15px;
+  color: #8091a2;
+  opacity: 0.6;
+  position: absolute;
+  top: 30px;
+  left: 143px;
 }
 
 .vote-info-comp {
@@ -226,10 +296,18 @@
 }
 
 .vote-info {
+  font-size: 12px;
+  color: #647580;
+  min-height: 16px;
+  font-weight: lighter;
+}
+
+.vote-info2 {
   padding: 0px 9px 8px 0px;
   font-size: 12px;
   color: #647580;
   min-height: 16px;
+  font-weight: lighter;
 }
 
 .yes-or-no {
