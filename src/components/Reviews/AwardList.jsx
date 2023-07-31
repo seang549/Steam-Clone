@@ -23,10 +23,10 @@ const AwardList = ({ helpID }) => {
     return (
       <div id='reaction-icon-cont'>
         {awards.map((test) => {
-          return test["award_ids"].map((award) => {
+          return test["award_ids"].map((award, index) => {
             return (
               <Award
-                id={award}
+                id={award} i={index} awards={awards}
               /> /** sorted by total Points awarded(quantity *value) */
             );
           });
