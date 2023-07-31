@@ -4,14 +4,16 @@ const Error = ({ handleClose, show}) => {
     return (
       <div className={showHideClassName}>
         <section className="modal-main">
-        <button type="button" onClick={handleClose}>
-            X
+        <div className="ErrorHeader">
+        <button className="X" type="button" onClick={handleClose}>
           </button>
-            <h1> Error</h1>
-            <p>You must be logged in to perform that action.</p>
-          <button type="button">sign in</button>
-          <button type="button" onClick={handleClose}>cancel</button>
-          
+            <h1 className="Error"> Error</h1>
+       </div>
+        <div className="ErrorBody">
+            <p className="Message">You must be logged in to perform that action.</p>
+          <button className="SignIn" type="button">sign in</button>
+          <button className="Close" type="button" onClick={handleClose}>cancel</button>
+        </div>
         </section>
       </div>
     );
