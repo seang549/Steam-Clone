@@ -13,6 +13,9 @@ const UserInfo = ({ review }) => {
     <>
       <div className='Icon'>
         <img className='Icon' src={review["user_icon"]}></img>
+        {reviewsView && (
+          <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
+        )}
       </div>
       {/* <div className='user-info-cont'> */}
       <div className='user-product-username'>
@@ -23,9 +26,6 @@ const UserInfo = ({ review }) => {
           </h1>
         )}
       </div>
-      {reviewsView && (
-        <h1 id='user-info-viewReviews'>{review["times_reviewed"]} reviews</h1>
-      )}
       {/* </div> */}
     </>
   );

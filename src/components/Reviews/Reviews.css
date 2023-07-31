@@ -10,7 +10,6 @@
 
 .review-card-cont {
   width: 184px;
-  float: left;
   padding: 8px;
   opacity: 0.6;
 }
@@ -31,7 +30,7 @@
 .jumpToReviews {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr; */
+  width: 616px;
 }
 
 .comment-count {
@@ -66,6 +65,13 @@
   letter-spacing: 2px;
   padding-right: 10px;
 }
+
+#review-subTitle2 {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #56707f;
+}
+
 .hr {
   background-image: linear-gradient(to right, #3a6e8b, #1b2838);
   height: 1px;
@@ -78,17 +84,9 @@
   width: 392px;
 }
 
-#review-subTitle2 {
-  text-transform: uppercase;
-  font-size: 14px;
-  color: #56707f;
-}
-
 .Icon {
   padding-right: 8px;
   width: 32px;
-
-  grid-column-start: 1;
 }
 
 .reviews-area {
@@ -100,9 +98,7 @@
 }
 
 .userinfo-review-cards-cont {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
 }
 
 #user-info-username {
@@ -119,16 +115,9 @@
   grid-column-start: 2;
 }
 
-.user-product-username {
-  position: absolute;
-  left: 50px;
-}
-
 #user-info-product {
   font-size: 11px;
   color: #626366;
-  display: block;
-  grid-column-start: 2;
   line-height: 17px;
   font-weight: lighter;
 }
@@ -136,8 +125,6 @@
 #user-info-viewReviews {
   font-size: 11px;
   color: #626366;
-  grid-column-start: 1;
-  display: flex;
   width: max-content;
   font-weight: lighter;
 }
@@ -206,11 +193,6 @@
   grid-column-start: 2;
   padding-bottom: 10px;
 }
-
-/* come back to this please */
-/* .review-container-comp {
-  postion: relative;
-} */
 
 #control-comp {
   margin: 8px 0;
