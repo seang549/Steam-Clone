@@ -14,13 +14,13 @@ const Recomendations = ({ review }) => {
           className='thumb-pic'
           src='https://store.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp_v6.png'
         ></img>
+        <h2 className='recommended'>Recommended</h2>
 
-        <h2>Recommended</h2>
-
-        <h3>{review["total_time"]} hrs on record</h3>
+        <h3 className='hrs-on-rec'>{review["total_time"]} hrs on record</h3>
         {reviewTimeView && (
-          <h3>{` (${review["at_review_time"]} at review time)`}</h3>
+          <h3 className='hrs-on-rec2'>{` (${review["at_review_time"]} at review time)`}</h3>
         )}
+        <img id='steam-XS-img' src='src/assets/steam-logo-XS.png'></img>
       </>
     );
   }
@@ -32,11 +32,11 @@ const Recomendations = ({ review }) => {
           src='https://store.cloudflare.steamstatic.com/public/shared/images/userreviews/icon_thumbsDown_v6.png'
         ></img>
 
-        <h2>Not Recommended</h2>
+        <h2 className='recommended'>Not Recommended</h2>
 
-        <h3>{review["total_time"]} hrs on record</h3>
+        <h3 className='hrs-on-rec'>{review["total_time"]} hrs on record</h3>
         {reviewTimeView && (
-          <h3>{` (${review["at_review_time"]} at review time)`}</h3>
+          <h3 className='hrs-on-rec2'>{` (${review["at_review_time"]} at review time)`}</h3>
         )}
       </>
     );

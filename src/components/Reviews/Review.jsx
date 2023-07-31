@@ -7,10 +7,9 @@ const Review = ({ review }) => {
   date = `${date[1]} ${date[2]}`;
   return (
     <>
-      <div className='review-container-comp'>
-        <h1 id='review-date-posted'>POSTED: {date}</h1>
-        <p id='review-body'>{review["review_body"]}</p>
-      </div>
+      {/* className='review-container-comp' */}
+      <h1 id='review-date-posted'>POSTED: {date}</h1>
+      <p id='review-body'>{review["review_body"]}</p>
       <div className='hr'></div>
     </>
   );

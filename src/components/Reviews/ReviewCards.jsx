@@ -22,7 +22,7 @@ const ReviewCards = () => {
     return reviews.map((review) => {
       return (
         <div className='reviews-area'>
-          <div id='jumpToReviews'>
+          <div className='jumpToReviews'>
             <ReviewCard review={review} />
           </div>
         </div>
