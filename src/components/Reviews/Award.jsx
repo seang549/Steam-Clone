@@ -55,7 +55,7 @@ const Award = ({ id, awards, i }) => {
             
             {hover && <AwardHover IA={IA} awards={awards} i={i}/>}
 
-            {show && <Error.jsx show={show} handleClose={handleClose}/>}
+            {show && <Error show={show} handleClose={handleClose}/>}
             </>
           );
         })}

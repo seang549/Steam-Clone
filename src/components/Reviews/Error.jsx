@@ -4,14 +4,17 @@ const Error = ({ handleClose, show}) => {
     return (
       <div className={showHideClassName}>
         <section className="modal-main">
-          <button type="button">sign in</button>
-          <button type="button" onClick={handleClose}>cancel</button>
-          <button type="button" onClick={handleClose}>
+        <button type="button" onClick={handleClose}>
             X
           </button>
+            <h1> Error</h1>
+            <p>You must be logged in to perform that action.</p>
+          <button type="button">sign in</button>
+          <button type="button" onClick={handleClose}>cancel</button>
+          
         </section>
       </div>
     );
   };
 
-export default Error;
+  export default Error;

@@ -22,8 +22,8 @@ const AwardHover = ({IA, i, awards}) => {
         <div className="AwardInfo">
             <img src={IA.animation}></img>
             <h1>{IA.title}</h1>
-            <h1>{IA.body}</h1>
-            <h1>Award gives creators {IA.points} Steam Points. Given by {total} person.</h1>
+            <p>{IA.body}</p>
+            <p1>Award gives creators {IA.points} Steam Points. Given by {total} person.</p1>
         </div>
          </>
        );
