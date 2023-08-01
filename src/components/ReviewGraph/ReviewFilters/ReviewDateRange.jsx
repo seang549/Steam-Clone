@@ -1,13 +1,19 @@
 import React from "react";
 
-const ReviewDateRange = ({ filters, setFilters }) => {
-  const handleDateRangeChange = (event) => {
-    const selectedDateRange = event.target.value;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      reviewDateRange: selectedDateRange,
-    }));
-  };
+const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilters }) => {
+    const handleDateRangeChange = (event) => {
+        const selectedDateRange = event.target.value;
+        setFilters((prevFilters) => ({
+            ...prevFilters,
+            reviewDateRange: selectedDateRange,
+        }));
+    };
+
+    const handleClick = () => {
+        if (!expanded) {
+            toggleExpanded()
+        }
+    }
 
   return (
     <div className="reviewsFilterMenu filter_dropdown">
@@ -48,6 +54,8 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             Only Specific Range (Select on graph above)
           </label>
           <br />
+
+
 
           <input
             type="radio"
