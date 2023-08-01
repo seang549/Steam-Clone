@@ -59,10 +59,9 @@ body {
   padding: 0;
   margin: 0;
   position: absolute;
-  right: -544px;
-  display: none;
+  transform: translate(-27.75%);
   height: 539.5px;
-  width: 930px;
+  width: 940px;
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 0px;
@@ -379,7 +378,7 @@ body {
 }
 
 .menu2:hover .categories {
-  display: block;
+  display: absolute;
   background: linear-gradient(
     180deg,
     rgba(86, 90, 99) 13.5%,
@@ -387,6 +386,8 @@ body {
     rgb(45, 53, 63) 80%
   );
   visibility: visible;
+  left: 0px;
+  right: 400px;
 }
 
 .menu2:hover .dropdown-item a {
