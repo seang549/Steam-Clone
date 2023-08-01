@@ -6,7 +6,13 @@ import PlayTime from "./PlayTime.jsx";
 import ReviewDisplayAs from "./ReviewDisplayAs.jsx";
 import ExpandBtns from "./ExpandBtns.jsx";
 
-const ReviewFilters = ({ filters, setFilters, expanded, toggleExpanded }) => {
+const ReviewFilters = ({
+  fullData,
+  filters,
+  setFilters,
+  expanded,
+  toggleExpanded,
+}) => {
   const totalReviewCount = "";
   const posReviewCount = "";
   const negReviewCount = "";
@@ -17,7 +23,7 @@ const ReviewFilters = ({ filters, setFilters, expanded, toggleExpanded }) => {
 
   return (
     <>
-      <div id="reviewFilterOptions">
+      <div id='reviewFilterOptions'>
         <ReviewType
           filters={filters}
           setFilters={setFilters}
@@ -41,7 +47,13 @@ const ReviewFilters = ({ filters, setFilters, expanded, toggleExpanded }) => {
           yourLanguageReviewCount={yourLanguageReviewCount}
         />
 
-        <ReviewDateRange filters={filters} setFilters={setFilters} />
+        <ReviewDateRange
+          filters={filters}
+          expanded={expanded}
+          toggleExpanded={toggleExpanded}
+          fullData={fullData}
+          setFilters={setFilters}
+        />
 
         <PlayTime filters={filters} setFilters={setFilters} />
 

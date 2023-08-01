@@ -79,8 +79,8 @@ div[data-highlightword]::before {
 
 .meta_txt {
   color: #66c0f4;
-  cursor: pointer;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .sign_in,
@@ -101,20 +101,10 @@ div[data-highlightword]::before {
   padding-top: 5px;
 }
 
-.meta_ctn:hover .meta_txt,
-.meta_txt:hover {
+.meta_ctn:hover .meta_txt {
   text-decoration: none;
   color: #fff;
   background: linear-gradient(135deg, #67c1f5 0%, #417a9b 100%);
-}
-
-.question_mark {
-  background-image: url(https://store.akamai.steamstatic.com/public/shared/images/ico/icon_questionmark.png);
-  height: 12px;
-  width: 12px;
-
-  position: relative;
-  display: inline-block;
 }
 
 a.game_bod_link {
@@ -125,6 +115,14 @@ a.game_bod_link {
 a.game_bod_link:hover {
   color: #fff;
   cursor: pointer;
+}
+
+.question_mark {
+  background-image: url(https://store.akamai.steamstatic.com/public/shared/images/ico/icon_questionmark.png);
+  height: 12px;
+  width: 12px;
+  position: relative;
+  display: inline-block;
 }
 
 .question_mark .qm_txt {
@@ -194,11 +192,12 @@ th {
 
 .lang_titles {
   color: #b0aeac;
-  font-weight: 200;
+  font-weight: lighter;
   font-size: 12px;
 }
 
 .lang_row {
+  display: flex;
   align-content: start;
   color: #8f98a0;
   font-size: 12px;
@@ -245,6 +244,7 @@ b {
   background-image: linear-gradient(90deg, #223c4e, #213a4b);
   border-radius: 2px;
 }
+
 /* 
 #8f98a0 for non clickables
 #5cacdc for clickables

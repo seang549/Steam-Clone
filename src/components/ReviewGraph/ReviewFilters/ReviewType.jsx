@@ -14,54 +14,54 @@ const ReviewType = ({
   };
 
   return (
-    <div id="reviewType" className="reviewsFilterMenu filter_dropdown">
-      <div className="title">
-        Review type <span className="arrow">&#9660;</span>
+    <div id='reviewType' className='reviewsFilterMenu filter_dropdown'>
+      <div className='title'>
+        Review type <span className='arrow'>&#9660;</span>
       </div>
-      <div className="reviewMenuFlyout filter_dropdown_content">
-        <div className="reviewMenuFlyoutContent">
+      <div className='reviewMenuFlyout filter_dropdown_content'>
+        <div className='reviewMenuFlyoutContent'>
           <input
-            type="radio"
-            name="review_type"
-            value="all"
-            id="review_type_all"
+            type='radio'
+            name='review_type'
+            value='all'
+            id='review_type_all'
             checked={filters.reviewType === "all"}
             onChange={handleReviewTypeChange}
           />
-          <label for="review_type_all">
+          <label for='review_type_all'>
             {" "}
             All
-            <span className="userReviewCount">{totalReviewCount}</span>
+            <span className='userReviewCount'>{totalReviewCount}</span>
           </label>
           <br />
 
           <input
-            type="radio"
-            name="review_type"
-            value="positive"
-            id="review_type_positive"
+            type='radio'
+            name='review_type'
+            value='positive'
+            id='review_type_positive'
             checked={filters.reviewType === "positive"}
             onChange={handleReviewTypeChange}
           />
-          <label for="review_type_positive">
+          <label for='review_type_positive'>
             {" "}
             Positive
-            <span className="userReviewCount">{posReviewCount}</span>
+            <span className='userReviewCount'>{posReviewCount}</span>
           </label>
           <br />
 
           <input
-            type="radio"
-            name="review_type"
-            value="negative"
-            id="review_type_negative"
+            type='radio'
+            name='review_type'
+            value='negative'
+            id='review_type_negative'
             checked={filters.reviewType === "negative"}
             onChange={handleReviewTypeChange}
           />
-          <label for="review_type_negative">
+          <label for='review_type_negative'>
             {" "}
             Negative
-            <span className="userReviewCount">{negReviewCount}</span>
+            <span className='userReviewCount'>{negReviewCount}</span>
           </label>
         </div>
       </div>

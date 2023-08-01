@@ -27,36 +27,34 @@ const GameArea = () => {
   useEffect(() => {}, [infoData]);
 
   return (
-    <div id="GameArea">
-      <div id="gameAreaHeader">
-        <div id="gameAreaBreadcrumbs">
-          <a href="#" className="title-stuff">
+    <div id='GameArea'>
+      <div id='gameAreaHeader'>
+        <div id='gameAreaBreadcrumbs'>
+          <a href='#' className='title-stuff'>
             {" "}
             All games
           </a>{" "}
           &gt;
-          <a href="#" className="title-stuff">
+          <a href='#' className='title-stuff'>
             {" "}
             Indie Games
           </a>{" "}
           &gt;
-          <a href="#" className="title-stuff">
+          <a href='#' className='title-stuff'>
             {" "}
             Spider
           </a>
         </div>
-        <div id="lowerGameHeader">
-          <div id="gameAreaTitle">Spider</div>
-          <div id="communityHubDiv">
-            <button className="communityHub community_Hub">
-              Community Hub
-            </button>
+        <div id='lowerGameHeader'>
+          <div id='gameAreaTitle'>Spider</div>
+          <div id='communityHubDiv'>
+            <button className='communityHub'> Community Hub</button>
           </div>
         </div>
       </div>
 
-      <div id="container-carousel">
-        <div id="carousel-holder-div">
+      <div id='container-carousel'>
+        <div id='carousel-holder-div'>
           <Carousel infoData={infoData} />
           <GameInfo infoData={infoData} />
         </div>

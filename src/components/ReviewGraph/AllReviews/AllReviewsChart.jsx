@@ -1,19 +1,23 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 import moment from "moment";
 import "chartjs-adapter-moment";
 import zoomPlugin from "chartjs-plugin-zoom";
-import { useReviewData, useReviewDataUpdate } from "../../ReviewContext";
+import { useReviewData } from "../../ReviewContext";
 Chart.register(zoomPlugin);
 
-const AllReviewsChart = ({ data }) => {
+const AllReviewsChart = ({
+  setMinDate,
+  setMaxDate,
+  permData,
+  setPermData,
+  data,
+}) => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
   let modifiedData;
-  const setReviewData = useReviewDataUpdate(); // Call the hook inside the component directly
   const reviewData = useReviewData();
-  const [permData, setPermData] = useState([]);
   let timer;
 
   useEffect(() => {
@@ -38,43 +42,19 @@ const AllReviewsChart = ({ data }) => {
     if (timer) {
       clearTimeout(timer);
     }
+
     const { min, max } = chart.scales.x;
     timer = setTimeout(() => {
-      const startDate = moment(min).format("YYYY-MM-DD");
-      const endDate = moment(max).format("YYYY-MM-DD");
+      setMinDate(moment(min).format("YYYY-MM-DD"));
+      setMaxDate(moment(max).format("YYYY-MM-DD"));
       chart.data.datasets[0].data = modifiedData.map((entry) => entry.posSum);
       chart.data.datasets[1].data = modifiedData.map((entry) => entry.negSum);
-      chart.stop(); // make sure animations are not running
+      chart.stop();
       chart.update("none");
-      timeFilter(startDate, endDate);
       chart.resetZoom();
       clearTimeout(timer);
     }, 1500);
   }
-
-  const timeFilter = (min, max) => {
-    const newData = [];
-    permData.map((entry) => {
-      let minArr = min.split("-");
-      let maxArr = max.split("-");
-      let smallArr = entry["date_posted"].split("T")[0].split("-");
-      if (parseInt(minArr[0]) <= parseInt(smallArr[0])) {
-        if (parseInt(maxArr[0]) >= parseInt(smallArr[0])) {
-          if (parseInt(minArr[1]) <= parseInt(smallArr[1])) {
-            if (parseInt(maxArr[1]) >= parseInt(smallArr[1])) {
-              if (parseInt(minArr[2]) <= parseInt(smallArr[2])) {
-                if (parseInt(maxArr[2]) >= parseInt(smallArr[2])) {
-                  newData.push(entry);
-                }
-              }
-            }
-          }
-        }
-      }
-    });
-    console.log(newData);
-    setReviewData(newData);
-  };
 
   useEffect(() => {
     if (chartRef && chartRef.current) {
@@ -127,10 +107,14 @@ const AllReviewsChart = ({ data }) => {
           scales: {
             x: {
               stacked: true,
+              isoWeekday: true,
               type: "time",
+              unitStepSize: 1,
               time: {
-                parser: "YYYY-MM-DD",
-                unit: "day",
+                displayFormats: {
+                  week: "MMM DD",
+                },
+                unit: "week",
               },
             },
             y: {
@@ -168,19 +152,15 @@ const AllReviewsChart = ({ data }) => {
         },
       });
     }
-
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
     };
   }, [data]);
-
-  return (
-    <div>
-      <canvas id="allChart" ref={chartRef} />
-    </div>
-  );
+  return <canvas id='allChart' ref={chartRef} />;
 };
+
+// return <canvas id='allChart' ref={chartRef} />;
 
 export default AllReviewsChart;

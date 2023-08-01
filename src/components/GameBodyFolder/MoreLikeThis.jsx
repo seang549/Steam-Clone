@@ -30,25 +30,25 @@ const MoreLikeThis = ({ gameList }) => {
   const renderContent = (game) => {
     if (game.game_title === "Bread & Fred") {
       return gameTwo.map((tag) => (
-        <button className="tags-btn" key={tag.tag_id}>
+        <button className='tags-btn' key={tag.tag_id}>
           {tag.tag_title}
         </button>
       ));
     } else if (game.game_title === "Stardew Valley") {
       return gameThree.map((tag) => (
-        <button className="tags-btn" key={tag.tag_id}>
+        <button className='tags-btn' key={tag.tag_id}>
           {tag.tag_title}
         </button>
       ));
     } else if (game.game_title === "Terraria") {
       return gameFour.map((tag) => (
-        <button className="tags-btn" key={tag.tag_id}>
+        <button className='tags-btn' key={tag.tag_id}>
           {tag.tag_title}
         </button>
       ));
     } else if (game.game_title === "MapleStory") {
       return gameFive.map((tag) => (
-        <button className="tags-btn" key={tag.tag_id}>
+        <button className='tags-btn' key={tag.tag_id}>
           {tag.tag_title}
         </button>
       ));
@@ -60,7 +60,7 @@ const MoreLikeThis = ({ gameList }) => {
   return (
     <>
       <div
-        className="flex"
+        className='flex'
         style={{
           width: "616px",
           justifyContent: "space-between",
@@ -68,32 +68,32 @@ const MoreLikeThis = ({ gameList }) => {
           color: "#FFF",
         }}
       >
-        MORE LIKE THIS <button className="communityHub see_all">See all</button>
+        MORE LIKE THIS <button className='communityHub see_all'>See all</button>
       </div>
-      <div className="hr"></div>
-      <div className="carousel-games">
+      <div className='hr'></div>
+      <div className='carousel-games'>
         {gameList.slice(1).map((game, index) => (
           <div
             key={index}
-            className="other-game has_tooltip"
+            className='other-game has_tooltip'
             style={{ display: "flex" }}
           >
-            <div className="display_game">
+            <div className='display_game'>
               <img
                 src={game.game_img[0]}
-                alt="Game Cover"
+                alt='Game Cover'
                 style={{ width: "171px" }}
               />
-              <p className="display_title">{game.game_title}</p>
-              <p className="display_price">{game.price}</p>
+              <p className='display_title'>{game.game_title}</p>
+              <p className='display_price'>{game.price}</p>
             </div>
-            <span className="tooltip_wrapper tooltip_right">
-              <span className="tooltip ">
-                <div className="game-title">{game.game_title}</div>
-                <b className="release-date" style={{ marginBottom: "5px" }}>
+            <span className='tooltip_wrapper tooltip_right'>
+              <span className='tooltip '>
+                <div className='game-title'>{game.game_title}</div>
+                <b className='release-date' style={{ marginBottom: "5px" }}>
                   Released: {game.game_release_date}
                 </b>
-                <div className="other-games-images">
+                <div className='other-games-images'>
                   <Carousel
                     showThumbs={false}
                     showArrows={false}
@@ -110,16 +110,16 @@ const MoreLikeThis = ({ gameList }) => {
                     ))}
                   </Carousel>
                 </div>
-                <div className="other-games-reviews">
-                  <div className="overall-reviews">Overall user reviews:</div>
-                  <div className="specific-to-game">
-                    <div className="rating">Overwhelmingly Positive</div>
-                    <div className="review-number">
+                <div className='other-games-reviews'>
+                  <div className='overall-reviews'>Overall user reviews:</div>
+                  <div className='specific-to-game'>
+                    <div className='rating'>Overwhelmingly Positive</div>
+                    <div className='review-number'>
                       &nbsp;{game.total_reviews}
                     </div>
                   </div>
-                  <div className="user-tags">User tags:</div>
-                  <div className="tags">{renderContent(game)}</div>
+                  <div className='user-tags'>User tags:</div>
+                  <div className='tags'>{renderContent(game)}</div>
                 </div>
               </span>
             </span>
