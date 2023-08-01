@@ -1,4 +1,3 @@
-import { getWidth } from "rsuite/esm/DOMHelper/index.js";
 import AllReviewsChart from "./AllReviewsChart.jsx";
 
 const AllReviews = ({
