@@ -152,12 +152,15 @@ const AllReviewsChart = ({
         },
       });
     }
-  });
-  console.log(newData);
-  setReviewData(newData);
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
+  }, [data]);
+  return <canvas id='allChart' ref={chartRef} />;
 };
 
 // return <canvas id='allChart' ref={chartRef} />;
 
 export default AllReviewsChart;
-

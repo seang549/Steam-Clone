@@ -4,28 +4,282 @@ body {
   min-height: 100vh;
 }
 
+.categories-hr4,
+.categories-hr6,
+.categories-hr8,
+.categories-hr10 {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(216, 216, 216, 0.3), transparent);
+  margin-top: 7px;
+  margin-bottom: 8px;
+  margin-left: 13px;
+  width: 75px;
+}
+
 /* dropdown is the background color and such for the submenus */
 .dropdown {
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding: 0;
+  padding: 5px;
   margin: 0;
   position: absolute;
-  display: none;
-  border: 3px solid darkmagenta;
-  height: 350px;
-  width: 70px;
+  height: auto;
+  width: auto;
+  visibility: hidden;
+  z-index: 200;
+  box-shadow: 0 0 12px #000000;
+  left: 0px;
 }
 
 /* dropdownitem is the actual submenu titles  */
-.dropdown-item {
+.dropdown-item .title-div a {
   position: relative;
-  display: inline-flex;
-  padding: 8px;
   text-decoration: none;
-  color: #e5e5e5;
-  border: 3px solid pink;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  font-size: 11px;
+  border-bottom: 2px solid #ffffff00;
+  padding: 3px 1px;
+  margin: 0px 10px 3px 14px;
+  transition-property: border;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  white-space: normal;
+  color: #d8d8d8;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: -544px;
+  display: none;
+  height: 539.5px;
+  width: 930px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+  visibility: hidden;
+  z-index: 200;
+  box-shadow: 0 0 12px #000000;
+  right: -554px;
+}
+
+.categories-hr0,
+.categories-hr1,
+.categories-hr2,
+.categories-hr3,
+.categories-hr5,
+.categories-hr7,
+.categories-hr9,
+.categories-hr11,
+.categories-hr12,
+.categories-hr13,
+.categories-hr14,
+.categories-hr15,
+.categories-hr16,
+.categories-hr17,
+.categories-hr18,
+.categories-hr19,
+.categories-hr20,
+.categories-hr21,
+.categories-hr22,
+.categories-hr23,
+.categories-hr24,
+.categories-hr25,
+.categories-hr26,
+.categories-hr27,
+.categories-hr28,
+.categories-hr29,
+.categories-hr30,
+.categories-hr31,
+.categories-hr32,
+.categories-hr33,
+.categories-hr34,
+.categories-hr35,
+.categories-hr36,
+.categories-hr37,
+.categories-hr38,
+.categories-hr39,
+.categories-hr40,
+.categories-hr41,
+.categories-hr42,
+.categories-hr43,
+.categories-hr44,
+.categories-hr45,
+.categories-hr46,
+.categories-hr47,
+.categories-hr48,
+.categories-hr49,
+.categories-hr50,
+.categories-hr51,
+.categories-hr52,
+.categories-hr53,
+.categories-hr54,
+.categories-hr55,
+.categories-hr56,
+.categories-hr57,
+.categories-hr58,
+.categories-hr59,
+.categories-hr60,
+.categories-hr61,
+.categories-hr62,
+.categories-hr63,
+.categories-hr64,
+.categories-hr65,
+.categories-hr66,
+.categories-hr67,
+.categories-hr68,
+.categories-hr69,
+.categories-hr70,
+.categories-hr71,
+.categories-hr72,
+.categories-hr73,
+.categories-hr74,
+.categories-hr75,
+.categories-hr76,
+.categories-hr77,
+.categories-hr78,
+.categories-hr79 {
+  display: none;
+}
+
+.dropdown-item-store-and-new {
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  border-bottom: 2px solid #ffffff00;
+  padding: 3px 1px;
+  margin: 0px 10px 3px 14px;
+  transition-property: border;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  white-space: normal;
+  color: #d8d8d8;
+  cursor: pointer;
+  text-transform: none;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: left;
+}
+
+.dropdown-item-store-and-new:hover a {
+  color: white;
+}
+
+.dropdown-item .subtitle-div a {
+  position: relative;
+  /* display: inline-flex; */
+  text-decoration: none;
+  color: #67c1f5;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  padding: 5px 5px 10px 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  font-size: 11px;
+  visibility: hidden;
+}
+
+.title-div {
+  height: 29px;
+}
+.title-div:hover a {
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.subtitle1,
+.subtitle2,
+.subtitle3,
+.subtitle4,
+.subtitle5,
+.subtitle6,
+.subtitle7,
+.subtitle8,
+.subtitle9,
+.subtitle10,
+.subtitle11,
+.subtitle12,
+.subtitle13,
+.subtitle14,
+.subtitle16,
+.subtitle17,
+.subtitle18,
+.subtitle19,
+.subtitle20,
+.subtitle21,
+.subtitle22,
+.subtitle23,
+.subtitle25,
+.subtitle26,
+.subtitle27,
+.subtitle28,
+.subtitle29,
+.subtitle30,
+.subtitle31,
+.subtitle33,
+.subtitle34,
+.subtitle35,
+.subtitle36,
+.subtitle37,
+.subtitle38,
+.subtitle39,
+.subtitle41,
+.subtitle42,
+.subtitle43,
+.subtitle44,
+.subtitle45,
+.subtitle46,
+.subtitle47,
+.subtitle49,
+.subtitle50,
+.subtitle51,
+.subtitle52,
+.subtitle53,
+.subtitle54,
+.subtitle55,
+.subtitle57,
+.subtitle58,
+.subtitle59,
+.subtitle60,
+.subtitle61,
+.subtitle62,
+.subtitle63,
+.subtitle65,
+.subtitle66,
+.subtitle67,
+.subtitle68,
+.subtitle69,
+.subtitle70,
+.subtitle71,
+.subtitle73,
+.subtitle74,
+.subtitle75,
+.subtitle76,
+.subtitle77,
+.subtitle78,
+.subtitle79 {
+  display: none;
+}
+
+.title0,
+.title15,
+.title64,
+.title72 {
+  display: none;
 }
 
 .store-nav {
@@ -84,12 +338,68 @@ body {
   display: block;
 }
 
-.menu-items {
+.menu1,
+.menu2,
+.menu3 {
   padding-right: 10px;
   margin-right: 0px;
   background: none;
   display: inline-block;
   position: relative;
+}
+
+/* come back to background color when fixed */
+.menu0:hover .dropdown {
+  display: block;
+  background: linear-gradient(
+    180deg,
+    rgba(86, 90, 99) 13.5%,
+    rgba(58, 74, 86) 25.23%,
+    rgb(45, 53, 63) 80%
+  );
+  visibility: visible;
+}
+.menu0:hover .dropdown-item a {
+  visibility: visible;
+}
+
+.menu1:hover .dropdown {
+  display: block;
+  background: linear-gradient(
+    180deg,
+    rgba(86, 90, 99) 13.5%,
+    rgba(58, 74, 86) 25.23%,
+    rgb(45, 53, 63) 80%
+  );
+  visibility: visible;
+}
+
+.menu1:hover .dropdown-item a {
+  visibility: visible;
+}
+
+.menu2:hover .categories {
+  display: block;
+  background: linear-gradient(
+    180deg,
+    rgba(86, 90, 99) 13.5%,
+    rgba(58, 74, 86) 25.23%,
+    rgb(45, 53, 63) 80%
+  );
+  visibility: visible;
+}
+
+.menu2:hover .dropdown-item a {
+  visibility: visible;
+}
+.store-nav .tab span.pulldown {
+  padding-right: 10px;
+  margin-right: 0px;
+  background: none;
+}
+
+.menu-items {
+  font-size: 13px;
 }
 
 /* come back to background color when fixed */
@@ -209,5 +519,3 @@ a {
   font-weight: 300;
   font-style: italic;
 }
-
-

@@ -79,13 +79,42 @@ div[data-highlightword]::before {
 
 .meta_txt {
   color: #66c0f4;
+  font-size: 12px;
   cursor: pointer;
+}
+
+.sign_in,
+.share {
+  background-image: linear-gradient(90deg, #264154, #243e51);
+}
+
+.open_in_steam {
+  background-image: linear-gradient(90deg, #233d50, #21394b);
+}
+
+.embed {
+  background-image: linear-gradient(90deg, #243e51, #223c4e);
+}
+
+.embed,
+.share {
+  padding-top: 5px;
 }
 
 .meta_ctn:hover .meta_txt {
   text-decoration: none;
   color: #fff;
   background: linear-gradient(135deg, #67c1f5 0%, #417a9b 100%);
+}
+
+a.game_bod_link {
+  color: #66c0f4;
+  font-size: 12px;
+}
+
+a.game_bod_link:hover {
+  color: #fff;
+  cursor: pointer;
 }
 
 .question_mark {
@@ -167,7 +196,7 @@ th {
   font-size: 12px;
 }
 
-.langs {
+.lang_row {
   display: flex;
   align-content: start;
   color: #8f98a0;
@@ -209,6 +238,11 @@ b {
   height: 16px;
   background-position: -256px 0px;
   background-image: url(https://store.akamai.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
+}
+
+.flag_ctn {
+  background-image: linear-gradient(90deg, #223c4e, #213a4b);
+  border-radius: 2px;
 }
 
 /* 
