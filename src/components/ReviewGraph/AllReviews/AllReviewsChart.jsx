@@ -163,6 +163,7 @@ const AllReviewsChart = ({setMinDate, setMaxDate, permData, setPermData, data })
     }, [data]);
 
     return <canvas id='allChart' ref={chartRef} />;
+
 };
 
 export default AllReviewsChart;
