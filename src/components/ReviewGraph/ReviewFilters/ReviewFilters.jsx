@@ -1,4 +1,5 @@
 
+
 import ReviewType from './ReviewType.jsx'
 import PurchaseType from './PurchaseType.jsx'
 import ReviewLanguage from './ReviewLanguage.jsx'
@@ -43,3 +44,37 @@ const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded
 
 export default ReviewFilters
 
+
+        <PurchaseType
+          filters={filters}
+          setFilters={setFilters}
+          totalReviewCount={totalReviewCount}
+          steamPurchaseCount={steamPurchaseCount}
+          otherPurchaseCount={otherPurchaseCount}
+        />
+
+        <ReviewLanguage
+          filters={filters}
+          setFilters={setFilters}
+          englishReviews={englishReviews}
+          yourLanguageReviewCount={yourLanguageReviewCount}
+        />
+
+        <ReviewDateRange
+          expanded={expanded}
+          toggleExpanded={toggleExpanded}
+          fullData={fullData}
+          filters={filters}
+          setFilters={setFilters}
+        />
+
+        <PlayTime filters={filters} setFilters={setFilters} />
+
+        <ReviewDisplayAs filters={filters} setFilters={setFilters} />
+        <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
+      </div>
+    </>
+  );
+};
+
+export default ReviewFilters;
