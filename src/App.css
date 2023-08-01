@@ -46,9 +46,27 @@
   display: block;
 }
 
+.footer {
+  padding-top: 10px;
+}
+
 .footer-content {
   display: flex;
-  justify-content: center;
+  position: relative;
+  right: -394px;
+  top: 10px;
+  border-bottom: 1px solid #363c44;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-top: 1px solid #363c44;
+  width: 940px;
+  align-content: center;
+}
+
+.valve-links {
+  position: absolute;
+  right: 690px;
+  top: 200px;
 }
 
 .menus {
@@ -154,10 +172,6 @@
   background-color: #f0f0f0;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: center;
-}
 
 .header {
   background: #171d25;
@@ -384,4 +398,10 @@
 
 .language-toggle:hover {
   color: white
+}
+
+.valve {
+  height: 25px;
+  width: 88;
+  aspect-ratio: intital;
 }

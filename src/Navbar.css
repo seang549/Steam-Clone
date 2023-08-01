@@ -259,6 +259,10 @@ body {
   background: none;
 }
 
+.menu-items {
+  font-size: 13px;
+}
+
 .store-nav
   .tab
   .pulldown
