@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const ReviewLanguage = ({
   filters,
   setFilters,
@@ -16,14 +15,12 @@ const ReviewLanguage = ({
   };
 
   return (
-
-    <div className="reviewsFilterMenu filter_dropdown">
-      <div className="title">
-        Language <span className="arrow">&#9660;</span>
+    <div className='reviewsFilterMenu filter_dropdown'>
+      <div className='title'>
+        Language <span className='arrow'>&#9660;</span>
       </div>
-      <div className="reviewMenuFlyout filter_dropdown_content">
-        <div className="reviewMenuFlyoutContent">
-
+      <div className='reviewMenuFlyout filter_dropdown_content'>
+        <div className='reviewMenuFlyoutContent'>
           <input
             type='radio'
             name='review_language'
@@ -40,7 +37,6 @@ const ReviewLanguage = ({
           <br />
 
           <input
-
             type='radio'
             name='review_language'
             id='review_language_all'
@@ -51,34 +47,12 @@ const ReviewLanguage = ({
           <label for='review_language_all'>
             All Languages&nbsp;
             <span className='user_reviews_count'>{englishReviews}</span>
-            <a className="tooltip" data-tooltip-html="languageTooltipText">
-              <img src="https://store.akamai.steamstatic.com/public/shared/images/ico/icon_questionmark_dark.png" />
-            </a>
-          </label>
-          <br />       
-         
-          <div className="user_reviews_customize_language">
-            <a href="#">Customize</a>
-          </div>
-
-          <input
-            type='radio'
-            name='review_language'
-            id='review_language_mine'
-            value='english'
-            checked={filters.reviewLanguage === "english"}
-            onChange={handleLanguageChange}
-          />
-          <label for='review_language_mine'>
-            Your Languages&nbsp;
-            <span className='user_reviews_count'>
-              {yourLanguageReviewCount}
-            </span>
             <a className='tooltip' data-tooltip-html='languageTooltipText'>
               <img src='https://store.akamai.steamstatic.com/public/shared/images/ico/icon_questionmark_dark.png' />
             </a>
           </label>
           <br />
+
           <div className='user_reviews_customize_language'>
             <a href='#'>Customize</a>
           </div>
