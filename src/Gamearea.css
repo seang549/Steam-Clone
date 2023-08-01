@@ -27,9 +27,9 @@
   padding-bottom: 15px;
 }
 
-.community_Hub {
+/* .community_Hub {
   background-image: linear-gradient(90deg, #325577, #2f4f6d);
-}
+} */
 
 .communityHub {
   padding: 0 15px;
@@ -39,6 +39,7 @@
   height: 35px;
   color: #67c1f5;
   cursor: pointer;
+  background-image: linear-gradient(90deg, #325577, #2f4f6d);
 }
 
 .communityHub:hover {

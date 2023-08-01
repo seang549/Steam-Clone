@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const HeaderDropdown = ({ submenus }) => {
+const HeaderDropdown = ({ submenus, i }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const handleMouseEnter = (index) => {
