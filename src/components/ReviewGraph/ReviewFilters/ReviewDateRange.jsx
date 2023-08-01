@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 
 const ReviewDateRange = ({ filters, setFilters }) => {
   const handleDateRangeChange = (event) => {
@@ -63,10 +64,9 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             Exclude Specific Range (Select on graph above)
           </label>
           <br />
+
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ReviewDateRange;
