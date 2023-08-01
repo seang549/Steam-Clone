@@ -1,6 +1,6 @@
 import RecentReviewsChart from './RecentReviewsChart.jsx'
 
-const AllReviews = ({ setMinDate, setMaxDate, recentPermData, setRecentPermData, data }) => {
+const RecentReviews = ({ setMinDate, setMaxDate, recentPermData, setRecentPermData, data }) => {
     const reviewSumm = 'ChangeMe'
     const tooltipText = 'ChangeMe'
     const reviewNumText = 'changeMe'
@@ -27,4 +27,4 @@ const AllReviews = ({ setMinDate, setMaxDate, recentPermData, setRecentPermData,
     )
 }
 
-export default AllReviews
+export default RecentReviews

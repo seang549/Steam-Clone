@@ -18,8 +18,10 @@ const PlayTime = ({ filters, setFilters }) => {
     }, [filters.playTime]);
 
     return (
-        <div className='reviewsFilterMenu'>
+
+        <div className='reviewsFilterMenu filter_dropdown'>
             <div className="title">Playtime</div>
+            <div className="reviewMenuFlyoutContent filter_dropdown_content">
             <div className="reviewMenuFlyoutContent">
                 <div className="user_reviews_steam_labs_desc">
                     <a href="#">
@@ -85,6 +87,7 @@ const PlayTime = ({ filters, setFilters }) => {
                 <input type="hidden" id="app_reviews_playtime_range_max" value="0" />
 
             </div>
+</div>
         </div>
     );
 };
