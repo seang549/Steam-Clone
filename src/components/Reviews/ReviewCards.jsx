@@ -26,7 +26,7 @@ const ReviewCards = () => {
       return (
         <>
           <div className='reviews-area'>
-            <div className='jumpToReviews'>
+            <div id='jumpToReviews' className='jumpToReviews'>
               <ReviewCard review={review} />
             </div>
           </div>

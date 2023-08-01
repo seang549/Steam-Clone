@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DataProvider } from "./components/ReviewContext";
 import "./components/Reviews/Reviews.css";
 import StoreNav from "./components/Navbar/StoreNav";
@@ -12,9 +13,15 @@ import "./Navbar.css";
 import "./Gamearea.css";
 import "./App.css";
 import "./components/GameBodyFolder/GameBody.css";
+import ScrollToAnchor from "./ScrollToAnchor";
 
 function App() {
   return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={
+          <>
+          <ScrollToAnchor/>
     <div>
       <div className='header-area'>
         <Header />
@@ -48,6 +55,10 @@ function App() {
         <Footer />
       </div>
     </div>
+  </>}>
+    </Route>
+    </Routes>
+    </Router>
   );
 }
 
