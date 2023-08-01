@@ -1,5 +1,4 @@
 import Dropdown from "./Dropdown";
-import { useState } from "react";
 
 const StoreTabs = ({ items, index }) => {
   return (

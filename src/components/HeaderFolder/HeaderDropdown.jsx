@@ -13,7 +13,10 @@ const HeaderDropdown = ({ submenus, i }) => {
 
   if (i === 2) {
     return (
-      <ul style={{ display: "flex", flex: "column" }} className='categories'>
+      <ul
+        style={{ display: "flex", flex: "column" }}
+        className='dropdown-header'
+      >
         {submenus.map((submenu, index) => (
           <li
             key={index}
