@@ -1,45 +1,56 @@
-import ReviewType from './ReviewType.jsx'
-import PurchaseType from './PurchaseType.jsx'
-import ReviewLanguage from './ReviewLanguage.jsx'
-import ReviewDateRange from './ReviewDateRange.jsx'
-import PlayTime from './PlayTime.jsx'
-import ReviewDisplayAs from './ReviewDisplayAs.jsx'
-import ExpandBtns from './ExpandBtns.jsx'
-import {useState} from 'react'
+import ReviewType from "./ReviewType.jsx";
+import PurchaseType from "./PurchaseType.jsx";
+import ReviewLanguage from "./ReviewLanguage.jsx";
+import ReviewDateRange from "./ReviewDateRange.jsx";
+import PlayTime from "./PlayTime.jsx";
+import ReviewDisplayAs from "./ReviewDisplayAs.jsx";
+import ExpandBtns from "./ExpandBtns.jsx";
+import { useState } from "react";
 
 const ReviewFilters = ({ filters, setFilters, expanded, toggleExpanded }) => {
-    const totalReviewCount = ''
-    const posReviewCount= ''
-    const negReviewCount = ''
-    const steamPurchaseCount = ''
-    const otherPurchaseCount = ''
-    const englishReviews = ''
-    const yourLanguageReviewCount = ''
-    
-    
-   
-          return (
-        <>
-    
-    
-    
-                <div id='reviewFilterOptions'>
-                      <ReviewType filters={filters} setFilters={setFilters} totalReviewCount={totalReviewCount} posReviewCount={posReviewCount} negReviewCount={negReviewCount} />
+  const totalReviewCount = "";
+  const posReviewCount = "";
+  const negReviewCount = "";
+  const steamPurchaseCount = "";
+  const otherPurchaseCount = "";
+  const englishReviews = "";
+  const yourLanguageReviewCount = "";
 
-                      <PurchaseType filters={filters} setFilters={setFilters} totalReviewCount={totalReviewCount} steamPurchaseCount={steamPurchaseCount} otherPurchaseCount={otherPurchaseCount} /> 
-                 
-                      <ReviewLanguage filters={filters} setFilters={setFilters} englishReviews={englishReviews} yourLanguageReviewCount={yourLanguageReviewCount} />
-                    
-                      <ReviewDateRange filters={filters} setFilters={setFilters} />
+  return (
+    <>
+      <div id="reviewFilterOptions">
+        <ReviewType
+          filters={filters}
+          setFilters={setFilters}
+          totalReviewCount={totalReviewCount}
+          posReviewCount={posReviewCount}
+          negReviewCount={negReviewCount}
+        />
 
-                      <PlayTime filters={filters} setFilters={setFilters} />
-                    
-                      <ReviewDisplayAs filters={filters} setFilters={setFilters} />
-                      <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
-                  </div >
+        <PurchaseType
+          filters={filters}
+          setFilters={setFilters}
+          totalReviewCount={totalReviewCount}
+          steamPurchaseCount={steamPurchaseCount}
+          otherPurchaseCount={otherPurchaseCount}
+        />
 
-        </>
-    )
-}
+        <ReviewLanguage
+          filters={filters}
+          setFilters={setFilters}
+          englishReviews={englishReviews}
+          yourLanguageReviewCount={yourLanguageReviewCount}
+        />
 
-export default ReviewFilters
+        <ReviewDateRange filters={filters} setFilters={setFilters} />
+
+        <PlayTime filters={filters} setFilters={setFilters} />
+
+        <ReviewDisplayAs filters={filters} setFilters={setFilters} />
+        <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
+      </div>
+    </>
+  );
+};
+
+export default ReviewFilters;
