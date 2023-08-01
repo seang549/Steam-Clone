@@ -12,8 +12,8 @@ const ReviewDateRange = ({ filters, setFilters }) => {
   return (
     <div className="reviewsFilterMenu filter_dropdown">
       <div className="title">Date Range</div>
-      <div className="reviewMenuFlyout">
-        <div className="reviewMenuFlyoutContent filter_dropdown_content">
+      <div className="reviewMenuFlyout filter_dropdown_content">
+        <div className="reviewMenuFlyoutContent ">
           <div className="user_reviews_date_range_explanation">
             To view reviews within a date range, please click and drag a
             selection on a graph above or click on a specific bar. <br />
@@ -31,7 +31,7 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             checked={filters.reviewDateRange === "all"}
             onChange={handleDateRangeChange}
           />
-          <label htmlFor="review_date_range_all">Lifetime</label>
+          <label htmlFor="review_date_range_all"> Lifetime</label>
           <br />
 
           <input
@@ -44,7 +44,8 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             onChange={handleDateRangeChange}
           />
           <label htmlFor="review_date_range_histogram">
-            Only Specific Range (Select on graph above)&nbsp;
+            {" "}
+            Only Specific Range (Select on graph above)
           </label>
           <br />
 
@@ -58,7 +59,8 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             onChange={handleDateRangeChange}
           />
           <label htmlFor="review_date_range_exclude_histogram">
-            Exclude Specific Range (Select on graph above)&nbsp;
+            {" "}
+            Exclude Specific Range (Select on graph above)
           </label>
           <br />
         </div>
