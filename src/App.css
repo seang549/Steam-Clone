@@ -1,33 +1,22 @@
 .dropdown-header {
   list-style: none;
   padding: 0;
-  display: none;
-  /* z-index: 1; */
   display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
   height: 177px;
   width: 124.76px;
   justify-content: center;
-  background: #3D4450;
+  background: #3d4450;
   color: #dcdedf;
   margin: 0;
   box-shadow: 3px 3px 5px -3px #000;
   text-align: left;
   z-index: 500;
-
-
 }
 
-.dropdown-header {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none;
-}
-
-
-.dropdown-item-header a{
+.dropdown-item-header a {
   position: relative;
   display: inline-block;
   padding: 8px;
@@ -39,9 +28,9 @@
   font-size: 12px;
 }
 
-
-.dropdown-item-header:hover, .dropdown-item-header:hover a {
-  color: #3D4450;
+.dropdown-item-header:hover,
+.dropdown-item-header:hover a {
+  color: #3d4450;
   background-color: #dcdedf;
 }
 
@@ -49,9 +38,42 @@
   display: block;
 }
 
+.logo-small {
+  position: relative;
+  left: 50px;
+}
+
+.footer-text {
+  padding-left: 10px;
+}
+
+.footer {
+  padding-top: 10px;
+}
+
 .footer-content {
   display: flex;
-  justify-content: center;
+  position: absolute;
+  right: 264px;
+  top: 133px;
+  border-bottom: 1px solid #363c44;
+  padding-top: 10px;
+  padding-bottom: 36px;
+  border-top: 1px solid #363c44;
+  width: 940px;
+  align-content: center;
+}
+
+.logo-footer-css {
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+
+.valve-links {
+  position: absolute;
+  right: 560px;
+  top: 230px;
 }
 
 .menus {
@@ -62,17 +84,11 @@
   padding-top: 25px;
   height: 72.5px;
   width: 334.95px;
-
-
 }
-
-
 
 .float-a-tag {
   position: relative;
   right: 400px;
-  
-  
 }
 
 .first-link {
@@ -120,7 +136,7 @@
   width: 176px;
   height: 100%;
   position: absolute;
-  right: -92px
+  right: -92px;
 }
 
 .nav-area {
@@ -143,11 +159,11 @@
   display: flex;
   flex-direction: row;
   height: 24px;
-  width:239.82px;
+  width: 239.82px;
   top: 5px;
   line-height: 24px;
   position: absolute;
-  right: 207px
+  right: 207px;
 }
 
 .submenu {
@@ -158,13 +174,6 @@
   padding: 0;
   margin: 0;
   background-color: #f0f0f0;
-}
-
-
-
-.footer-content {
-  display: flex;
-  justify-content: center;
 }
 
 .header {
@@ -187,6 +196,9 @@
   display: flex;
   flex-direction: row;
   height: 500px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 162px;
 }
 
 .carousel-games::-webkit-scrollbar {
@@ -194,32 +206,48 @@
 }
 
 .carousel-games::-webkit-scrollbar-track {
-  /* background-color: #0e1c29; */
   visibility: visible;
 }
 
 .carousel-games::-webkit-scrollbar-thumb {
-  /* background-color: #070e14;
-  border-radius: 2px; */
   visibility: visible;
 }
 
-/* .carousel-games::-webkit-scrollbar-button {
-  width: 38px;
-  height: 18px;
-  background-color: #070e14;
-} */
-
 /* .other-game */
 
-.other-game {
+.has_tooltip {
+  display: inline;
+  height: 150px;
+  margin: 1px;
+}
+
+.display_game {
+  padding: 15px;
+  background-color: #16202d;
+  height: 132px;
+  width: 203px;
+}
+
+.tooltip_wrapper {
+  visibility: hidden;
+  background-color: #d5d7da;
+  display: flex;
+  flex-direction: column;
+  color: #363a43;
+  text-align: left;
+  border-radius: 6px;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+}
+
+/* .other-game {
   position: relative;
   display: inline;
   height: 150px;
-
 }
 
-.other-game .tooltip{
+.other-game .tooltip {
   opacity: 0;
   background-color: black;
   color: #fff;
@@ -230,33 +258,36 @@
   transition: opacity 1s;
   position: absolute;
   z-index: 1;
-  top:95%;
+  top: 95%;
   left: 100%;
   transform: translate(0, -50%);
   margin-left: 5px;
-  z-index:1;
+  z-index: 1;
+} */
+
+.other-game:hover {
+  cursor: pointer;
 }
 
-.other-game:hover .tooltip {
-  opacity: 1;
+.other-game:hover .tooltip_wrapper {
+  visibility: visible;
 }
 
-.other-game .tooltip-right::after{
+.tooltip_right::after {
   content: " ";
   position: absolute;
   top: 12%;
   left: -10px;
-  margin-top: -5px;
+  /* margin-top: -5px; */
   border-width: 5px;
   border-style: solid;
-  border-color: transparent black transparent transparent;
+  border-color: transparent #d5d7da transparent transparent;
   display: flex;
   flex-direction: column;
 }
 
-
 .specific-to-game {
-  display:flex;
+  display: flex;
 }
 
 .tags {
@@ -264,8 +295,7 @@
   flex-direction: row;
 }
 
-.other-games-images img{
-  /* height: 200px; */
+.other-games-images {
   width: 250px;
   aspect-ratio: initial;
   display: flex;
@@ -301,8 +331,8 @@
   background-color: #2a475e;
 }
 
-
-.login, .language-toggle {
+.login,
+.language-toggle {
   color: #b8b6b4;
   font-size: 11px;
   margin: auto;
@@ -312,7 +342,7 @@
   z-index: 200;
   position: absolute;
   box-shadow: 0 0 12px #000000;
-  background: #3D4450;
+  background: #3d4450;
   height: 772.5px;
   width: 305.8px;
   display: flex;
@@ -320,11 +350,10 @@
   gap: 3px;
   padding-top: 10px;
   left: -70px;
-  bottom: -770px
+  bottom: -770px;
 }
 
-
-.language-items a{
+.language-items a {
   padding-top: 10px;
   padding-right: 12px;
   padding-bottom: 10px;
@@ -342,15 +371,15 @@
 }
 
 .login:hover {
-  color:white
+  color: white;
 }
 
-
-.language-items:hover{
+.language-items:hover {
   background-color: #dcdedf;
 }
+
 .language-items:hover a {
-  color: #3D4450;
+  color: #3d4450;
 }
 
 .install-steam {
@@ -368,7 +397,10 @@
   background-image: url(https://store.cloudflare.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1);
   background-repeat: no-repeat;
   background-position: 10px 5px;
-  
+}
+
+.install-steam:hover {
+  color: white;
 }
 
 .language-toggle {
@@ -381,5 +413,11 @@
 }
 
 .language-toggle:hover {
-  color: white
+  color: white;
+}
+
+.valve {
+  height: 25px;
+  width: 88;
+  aspect-ratio: intital;
 }
