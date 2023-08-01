@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+
 
 const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilters }) => {
     const handleDateRangeChange = (event) => {
@@ -58,9 +59,23 @@ const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilte
                 />
                 <label htmlFor="review_date_range_exclude_histogram">Exclude Specific Range (Select on graph above)&nbsp;</label><br />
 
-            </div>
-        </div>
-    );
+
+        <input
+          type="radio"
+          name="review_date_range"
+          id="review_date_range_exclude_histogram"
+          value="exclude"
+          checked={filters.reviewDateRange === "exclude"}
+          disabled="disabled"
+          onChange={handleDateRangeChange}
+        />
+        <label htmlFor="review_date_range_exclude_histogram">
+          Exclude Specific Range (Select on graph above)&nbsp;
+        </label>
+        <br />
+      </div>
+    </div>
+  );
 };
 
 export default ReviewDateRange;

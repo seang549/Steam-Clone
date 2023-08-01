@@ -1,0 +1,62 @@
+#graphForReviews {
+  height: 350px;
+  width: 940px;
+}
+
+.user_reviews_summary_bar {
+  width: 605px;
+}
+
+#reviewFilterOptions {
+  display: flex;
+}
+
+#recentChart {
+  height: 250px;
+  width: 335px;
+}
+
+.review_histogram_rollup,
+#allChart {
+  height: 250px;
+}
+
+#review_histogram_rollup_container {
+  width: 605px;
+}
+
+#recent_review_histogram_rollup_container {
+  width: 335px;
+}
+
+/********************************************************************************************************************************************/
+
+.filter_dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter_dropdown_content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.filter_dropdown:hover .filter_dropdown_content {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+<div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+  <p>Hello World!</p>
+  </div>
+</div>
+*/
