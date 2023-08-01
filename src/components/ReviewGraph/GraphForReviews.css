@@ -4,18 +4,9 @@
 }
 
 .user_reviews_summary_bar {
-  width: 605px;
-}
-
-#reviewFilterOptions {
-  display: flex;
-  width: 940px;
-}
-
-#recentChart {
-  height: 250px;
   width: 335px;
 }
+
 
 .review_histogram_rollup,
 #allChart {
@@ -57,3 +48,4 @@
 .reviewDisplayAs {
   flex-grow: 3;
 }
+

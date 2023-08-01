@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 
 const ReviewDateRange = ({
   toggleExpanded,
@@ -75,10 +76,9 @@ const ReviewDateRange = ({
             Exclude Specific Range (Select on graph above)
           </label>
           <br />
+
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ReviewDateRange;

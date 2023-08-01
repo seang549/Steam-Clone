@@ -181,6 +181,7 @@ const AllReviewsChart = ({ data }) => {
       <canvas id="allChart" ref={chartRef} />;
     </div>
   );
+
 };
 
 export default AllReviewsChart;

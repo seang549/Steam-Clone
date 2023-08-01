@@ -219,8 +219,16 @@
 }
 
 .carousel-games::-webkit-scrollbar-thumb {
+  /* background-color: #070e14;
+  border-radius: 2px; */
   visibility: visible;
 }
+
+/* .carousel-games::-webkit-scrollbar-button {
+  width: 38px;
+  height: 18px;
+  background-color: #070e14;
+} */
 
 /* .other-game */
 .has_tooltip {

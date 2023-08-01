@@ -1,5 +1,6 @@
 import AllReviewsChart from "./AllReviewsChart.jsx";
 
+
 const AllReviews = ({
   setMinDate,
   setMaxDate,
@@ -8,6 +9,7 @@ const AllReviews = ({
   expanded,
   data,
 }) => {
+
   const reviewSumm = "ChangeMe";
   const tooltipText = "ChangeMe";
   const reviewNumText = "changeMe";
@@ -37,6 +39,7 @@ const AllReviews = ({
           className="review_histogram"
         >
           <div className="review_histogram_rollup">
+
             <AllReviewsChart
               setMinDate={setMinDate}
               setMaxDate={setMaxDate}
@@ -45,6 +48,7 @@ const AllReviews = ({
               expanded={expanded}
               data={data}
             />
+
           </div>
         </div>
       </div>

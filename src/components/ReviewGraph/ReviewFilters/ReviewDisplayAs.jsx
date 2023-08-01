@@ -17,6 +17,7 @@ const ReviewDisplayAs = ({ filters, setFilters }) => {
     setSelectedDisplayAs(filters.displayAs);
   }, [filters.displayAs]);
 
+
   return (
     <div className="reviewDisplayAs">
       <span className="title">Display As: </span>
@@ -32,6 +33,7 @@ const ReviewDisplayAs = ({ filters, setFilters }) => {
       </select>
     </div>
   );
+
 };
 
 export default ReviewDisplayAs;
