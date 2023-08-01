@@ -1,27 +1,27 @@
-import React from 'react';
-import { useEffect, useRef } from 'react'
-import { Chart } from 'chart.js/auto'
-import moment from 'moment'
-import 'chartjs-adapter-moment'
-import zoomPlugin from 'chartjs-plugin-zoom';
-import { useReviewData } from '../../ReviewContext';
+import React from "react";
+import { useState, useEffect, useRef } from "react";
+import { Chart } from "chart.js/auto";
+import moment from "moment";
+import "chartjs-adapter-moment";
+import zoomPlugin from "chartjs-plugin-zoom";
+import { useReviewData, useReviewDataUpdate } from "../../ReviewContext";
 Chart.register(zoomPlugin);
 
+const AllReviewsChart = ({ data }) => {
+  const chartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
+  let modifiedData;
+  const setReviewData = useReviewDataUpdate(); // Call the hook inside the component directly
+  const reviewData = useReviewData();
+  const [permData, setPermData] = useState([]);
+  let timer;
 
-
-const AllReviewsChart = ({setMinDate, setMaxDate, permData, setPermData, data }) => {
-    const chartRef = useRef(null);
-    const chartInstanceRef = useRef(null);
-    let modifiedData;
-    const reviewData = useReviewData();
-    let timer;
-
-    useEffect(() => {
-        const getReviews = async () => {
-            setPermData(reviewData)
-        }
-        getReviews()
-    },[])
+  useEffect(() => {
+    const getReviews = async () => {
+      setPermData(reviewData);
+    };
+    getReviews();
+  }, []);
 
     useEffect(() => {
         const getReviews = async () => {
@@ -32,22 +32,22 @@ const AllReviewsChart = ({setMinDate, setMaxDate, permData, setPermData, data })
         getReviews()
     }, [reviewData])
 
-    function startFetch({ chart }) {
-        if (timer) {
-            clearTimeout(timer)
-        }
-        const { min, max } = chart.scales.x;
-        timer = setTimeout(() => {
+  function startFetch({ chart }) {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    const { min, max } = chart.scales.x;
+    timer = setTimeout(() => {
             setMinDate(moment(min).format('YYYY-MM-DD'));
             setMaxDate(moment(max).format('YYYY-MM-DD'));
-            chart.data.datasets[0].data = modifiedData.map((entry) => entry.posSum);
-            chart.data.datasets[1].data = modifiedData.map((entry) => entry.negSum);
+      chart.data.datasets[0].data = modifiedData.map((entry) => entry.posSum);
+      chart.data.datasets[1].data = modifiedData.map((entry) => entry.negSum);
             chart.stop(); 
             chart.update('none');
             chart.resetZoom()
             clearTimeout(timer)
-        }, 1500);
-    }
+    }, 1500);
+  }
 
     
 
@@ -155,14 +155,15 @@ const AllReviewsChart = ({setMinDate, setMaxDate, permData, setPermData, data })
             });
         }
 
-        return () => {
-            if (chartInstanceRef.current) {
-                chartInstanceRef.current.destroy();
-            }
-        };
-    }, [data]);
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
+  }, [data]);
 
     return <canvas id='allChart' ref={chartRef} />;
+
 };
 
 export default AllReviewsChart;

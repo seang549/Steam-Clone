@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageReviewCount }) => {
     const handleLanguageChange = (event) => {
         const selectedLanguage = event.target.value;
@@ -10,8 +11,9 @@ const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageRevie
     };
 
     return (
-        <div className='reviewsFilterMenu'>
+        <div className='reviewsFilterMenu filter_dropdown'>
             <div className="title">Language</div>
+            <div className="reviewMenuFlyout filter_dropdown_content">
             <div className="reviewMenuFlyoutContent">
 
                 <input
@@ -23,8 +25,8 @@ const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageRevie
                     onChange={handleLanguageChange}
                 />
                 <label for="review_language_all">
-                    All Languages&nbsp;
-                    <span className="user_reviews_count">{englishReviews}</span>
+                        All Languages&nbsp;
+                        <span className="user_reviews_count">{englishReviews}</span>
                 </label>
                 <br />
 
@@ -47,6 +49,7 @@ const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageRevie
                 <div className="user_reviews_customize_language">
                     <a href="#">Customize</a>
                 </div>
+            </div>
             </div>
         </div>
     );

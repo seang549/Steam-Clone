@@ -17,17 +17,23 @@ const ReviewDisplayAs = ({ filters, setFilters }) => {
         setSelectedDisplayAs(filters.displayAs);
     }, [filters.displayAs]);
 
-    return (
-        <div className="reviewDisplayAs">
-            <span className="title">Display As: </span>
-            <select id="review_context" value={selectedDisplayAs} onChange={handleDisplayAsChange}>
-                <option value="summary">Summary</option>
-                <option value="helpful">Most Helpful</option>
-                <option value="recent">Recent</option>
-                <option value="funny">Funny</option>
-            </select>
-        </div>
-    );
+
+  return (
+    <div className="reviewDisplayAs">
+      <span className="title">Display As: </span>
+      <select
+        id="review_context"
+        value={selectedDisplayAs}
+        onChange={handleDisplayAsChange}
+      >
+        <option value="summary">Summary</option>
+        <option value="helpful">Most Helpful</option>
+        <option value="recent">Recent</option>
+        <option value="funny">Funny</option>
+      </select>
+    </div>
+  );
+
 };
 
 export default ReviewDisplayAs;

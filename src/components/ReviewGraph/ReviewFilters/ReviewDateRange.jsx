@@ -1,13 +1,13 @@
 import React from 'react';
 
 const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilters }) => {
-    const handleDateRangeChange = (event) => {
-        const selectedDateRange = event.target.value;
-        setFilters((prevFilters) => ({
-            ...prevFilters,
-            reviewDateRange: selectedDateRange,
-        }));
-    };
+  const handleDateRangeChange = (event) => {
+    const selectedDateRange = event.target.value;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      reviewDateRange: selectedDateRange,
+    }));
+  };
 
     const handleClick = () => {
         if (!expanded) {

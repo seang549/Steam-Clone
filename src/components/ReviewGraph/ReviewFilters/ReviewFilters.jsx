@@ -32,14 +32,13 @@ const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded
                     
                       <ReviewDateRange expanded={expanded} toggleExpanded={toggleExpanded} fullData={fullData} filters={filters} setFilters={setFilters} />
 
-                      <PlayTime filters={filters} setFilters={setFilters} />
-                    
-                      <ReviewDisplayAs filters={filters} setFilters={setFilters} />
-                      <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
-                  </div >
+        <PlayTime filters={filters} setFilters={setFilters} />
 
-        </>
-    )
-}
+        <ReviewDisplayAs filters={filters} setFilters={setFilters} />
+        <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
+      </div>
+    </>
+  );
+};
 
 export default ReviewFilters
