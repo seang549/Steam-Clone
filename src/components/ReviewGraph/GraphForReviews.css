@@ -1,5 +1,4 @@
 #graphForReviews {
-  height: 350px;
   width: 940px;
 }
 
@@ -7,15 +6,15 @@
   width: 335px;
 }
 
-#reviewFilterOptions{
-  display:flex;
-width:940px;
+#reviewFilterOptions {
+  display: flex;
+  width: 940px;
+  height: 32px;
+  background-color: #1f2f42;
 }
 
-
-.review_histogram_rollup,
-#allChart {
-  height: 250px;
+.review_histogram_rollup {
+  height: 350px;
 }
 
 #review_histogram_rollup_container {
@@ -38,18 +37,44 @@ width:940px;
 .filter_dropdown_content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #b9ccdd;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  color: #556772;
   padding: 12px 16px;
   z-index: 1;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .filter_dropdown:hover .filter_dropdown_content {
   display: flex;
   flex-direction: column;
+  transform: translateX(-6%);
 }
 
 .reviewDisplayAs {
   flex-grow: 3;
+}
+
+.reviewsFilterMenu {
+  color: #3f7799;
+  padding: 10px 10px 10px 10px;
+}
+
+.reviewDisplayAs {
+  color: #3f7799;
+  padding: 5px;
+}
+
+.reviewsFilterMenu:hover {
+  cursor: pointer;
+  background-color: #b9ccdd;
+}
+
+.reviewsFilterMenu:hover .arrow {
+  color: #0e141b;
+}
+
+.arrow {
+  color: #66c0f4;
 }
