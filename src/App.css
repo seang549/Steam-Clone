@@ -9,13 +9,12 @@
   height: 177px;
   width: 124.76px;
   justify-content: center;
-  background: #3D4450;
+  background: #3d4450;
   color: #dcdedf;
   margin: 0;
   box-shadow: 3px 3px 5px -3px #000;
   text-align: left;
   z-index: 500;
-
 }
 
 .dropdown-header {
@@ -25,7 +24,7 @@
   display: none;
 }
 
-.dropdown-item-header a{
+.dropdown-item-header a {
   position: relative;
   display: inline-block;
   padding: 8px;
@@ -37,13 +36,23 @@
   font-size: 12px;
 }
 
-.dropdown-item-header:hover, .dropdown-item-header:hover a {
-  color: #3D4450;
+.dropdown-item-header:hover,
+.dropdown-item-header:hover a {
+  color: #3d4450;
   background-color: #dcdedf;
 }
 
 .menu-items-header:hover .dropdown-header {
   display: block;
+}
+
+.logo-small {
+  position: relative;
+  left: 50px;
+}
+
+.footer-text {
+  padding-left: 10px;
 }
 
 .footer {
@@ -52,21 +61,27 @@
 
 .footer-content {
   display: flex;
-  position: relative;
-  right: -394px;
-  top: 10px;
+  position: absolute;
+  right: 264px;
+  top: 133px;
   border-bottom: 1px solid #363c44;
   padding-top: 10px;
-  padding-bottom: 15px;
+  padding-bottom: 36px;
   border-top: 1px solid #363c44;
   width: 940px;
   align-content: center;
 }
 
+.logo-footer-css {
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+
 .valve-links {
   position: absolute;
-  right: 690px;
-  top: 200px;
+  right: 560px;
+  top: 230px;
 }
 
 .menus {
@@ -77,14 +92,11 @@
   padding-top: 25px;
   height: 72.5px;
   width: 334.95px;
-
 }
-
 
 .float-a-tag {
   position: relative;
   right: 400px;
-  
 }
 
 .first-link {
@@ -132,7 +144,7 @@
   width: 176px;
   height: 100%;
   position: absolute;
-  right: -92px
+  right: -92px;
 }
 
 .nav-area {
@@ -155,11 +167,11 @@
   display: flex;
   flex-direction: row;
   height: 24px;
-  width:239.82px;
+  width: 239.82px;
   top: 5px;
   line-height: 24px;
   position: absolute;
-  right: 207px
+  right: 207px;
 }
 
 .submenu {
@@ -171,7 +183,6 @@
   margin: 0;
   background-color: #f0f0f0;
 }
-
 
 .header {
   background: #171d25;
@@ -317,7 +328,8 @@
   background-color: #2a475e;
 }
 
-.login, .language-toggle {
+.login,
+.language-toggle {
   color: #b8b6b4;
   font-size: 11px;
   margin: auto;
@@ -327,7 +339,7 @@
   z-index: 200;
   position: absolute;
   box-shadow: 0 0 12px #000000;
-  background: #3D4450;
+  background: #3d4450;
   height: 772.5px;
   width: 305.8px;
   display: flex;
@@ -335,10 +347,10 @@
   gap: 3px;
   padding-top: 10px;
   left: -70px;
-  bottom: -770px
+  bottom: -770px;
 }
 
-.language-items a{
+.language-items a {
   padding-top: 10px;
   padding-right: 12px;
   padding-bottom: 10px;
@@ -356,14 +368,14 @@
 }
 
 .login:hover {
-  color:white
+  color: white;
 }
 
-.language-items:hover{
+.language-items:hover {
   background-color: #dcdedf;
 }
 .language-items:hover a {
-  color: #3D4450;
+  color: #3d4450;
 }
 
 .install-steam {
@@ -397,7 +409,7 @@
 }
 
 .language-toggle:hover {
-  color: white
+  color: white;
 }
 
 .valve {
