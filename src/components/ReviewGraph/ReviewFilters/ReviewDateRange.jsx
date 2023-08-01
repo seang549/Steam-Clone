@@ -1,6 +1,12 @@
 import React from "react";
 
-const ReviewDateRange = ({ filters, setFilters }) => {
+const ReviewDateRange = ({
+  toggleExpanded,
+  expanded,
+  fullData,
+  filters,
+  setFilters,
+}) => {
   const handleDateRangeChange = (event) => {
     const selectedDateRange = event.target.value;
     setFilters((prevFilters) => ({
@@ -33,7 +39,7 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             checked={filters.reviewDateRange === "all"}
             onChange={handleDateRangeChange}
           />
-          <label htmlFor="review_date_range_all"> Lifetime</label>
+          <label htmlFor="review_date_range_all">Lifetime</label>
           <br />
 
           <input
@@ -42,12 +48,11 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             id="review_date_range_histogram"
             value="include"
             checked={filters.reviewDateRange === "include"}
-            disabled="disabled"
+            disabled={fullData}
             onChange={handleDateRangeChange}
           />
           <label htmlFor="review_date_range_histogram">
-            {" "}
-            Only Specific Range (Select on graph above)
+            Only Specific Range (Select on graph above)&nbsp;
           </label>
           <br />
 
@@ -57,12 +62,11 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             id="review_date_range_exclude_histogram"
             value="exclude"
             checked={filters.reviewDateRange === "exclude"}
-            disabled="disabled"
+            disabled={fullData}
             onChange={handleDateRangeChange}
           />
           <label htmlFor="review_date_range_exclude_histogram">
-            {" "}
-            Exclude Specific Range (Select on graph above)
+            Exclude Specific Range (Select on graph above)&nbsp;
           </label>
           <br />
         </div>

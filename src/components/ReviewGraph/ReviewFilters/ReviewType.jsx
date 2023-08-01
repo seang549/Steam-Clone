@@ -1,3 +1,4 @@
+
 const ReviewType = ({
   setFilters,
   totalReviewCount,
@@ -69,4 +70,5 @@ const ReviewType = ({
   );
 };
 
-export default ReviewType;
+
+export default ReviewType
