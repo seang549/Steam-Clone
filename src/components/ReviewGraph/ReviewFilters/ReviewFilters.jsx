@@ -7,13 +7,7 @@ import ReviewDisplayAs from "./ReviewDisplayAs.jsx";
 import ExpandBtns from "./ExpandBtns.jsx";
 import { useState } from "react";
 
-const ReviewFilters = ({
-  fullData,
-  filters,
-  setFilters,
-  expanded,
-  toggleExpanded,
-}) => {
+const ReviewFilters = ({ filters, setFilters, expanded, toggleExpanded }) => {
   const totalReviewCount = "";
   const posReviewCount = "";
   const negReviewCount = "";
@@ -48,13 +42,7 @@ const ReviewFilters = ({
           yourLanguageReviewCount={yourLanguageReviewCount}
         />
 
-        <ReviewDateRange
-          expanded={expanded}
-          toggleExpanded={toggleExpanded}
-          fullData={fullData}
-          filters={filters}
-          setFilters={setFilters}
-        />
+        <ReviewDateRange filters={filters} setFilters={setFilters} />
 
         <PlayTime filters={filters} setFilters={setFilters} />
 
@@ -66,4 +54,3 @@ const ReviewFilters = ({
 };
 
 export default ReviewFilters;
-//

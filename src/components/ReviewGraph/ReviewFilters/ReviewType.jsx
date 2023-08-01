@@ -67,4 +67,3 @@ const ReviewType = ({
 };
 
 export default ReviewType;
-//

@@ -182,4 +182,3 @@ const RecentReviewsChart = ({ data }) => {
 };
 
 export default RecentReviewsChart;
-//

@@ -184,4 +184,3 @@ const AllReviewsChart = ({ data }) => {
 };
 
 export default AllReviewsChart;
-//

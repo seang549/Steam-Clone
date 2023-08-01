@@ -39,4 +39,3 @@ const AllReviews = ({ data }) => {
 };
 
 export default AllReviews;
-//
