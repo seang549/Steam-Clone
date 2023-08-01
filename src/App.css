@@ -16,6 +16,7 @@
   text-align: left;
   z-index: 500;
 
+
 }
 
 .dropdown-header {
@@ -24,6 +25,7 @@
   margin: 0;
   display: none;
 }
+
 
 .dropdown-item-header a{
   position: relative;
@@ -36,6 +38,7 @@
   justify-content: center;
   font-size: 12px;
 }
+
 
 .dropdown-item-header:hover, .dropdown-item-header:hover a {
   color: #3D4450;
@@ -60,12 +63,15 @@
   height: 72.5px;
   width: 334.95px;
 
+
 }
+
 
 
 .float-a-tag {
   position: relative;
   right: 400px;
+  
   
 }
 
@@ -154,6 +160,8 @@
   background-color: #f0f0f0;
 }
 
+
+
 .footer-content {
   display: flex;
   justify-content: center;
@@ -181,6 +189,14 @@
   height: 500px;
 }
 
+.carousel-games::-webkit-scrollbar {
+  width: 10px;
+}
+
+.carousel-games::-webkit-scrollbar-track {
+  /* background-color: #0e1c29; */
+  visibility: visible;
+}
 
 .carousel-games::-webkit-scrollbar-thumb {
   /* background-color: #070e14;
@@ -195,8 +211,9 @@
 } */
 
 /* .other-game */
-.has_tooltip {
 
+.other-game {
+  position: relative;
   display: inline;
   height: 150px;
 
@@ -262,7 +279,6 @@
   flex-direction: row;
 }
 
-
 .display_title {
   color: #8f98a0;
   font-size: 13px;
@@ -285,6 +301,7 @@
   background-color: #2a475e;
 }
 
+
 .login, .language-toggle {
   color: #b8b6b4;
   font-size: 11px;
@@ -306,6 +323,7 @@
   bottom: -770px
 }
 
+
 .language-items a{
   padding-top: 10px;
   padding-right: 12px;
@@ -326,6 +344,7 @@
 .login:hover {
   color:white
 }
+
 
 .language-items:hover{
   background-color: #dcdedf;
