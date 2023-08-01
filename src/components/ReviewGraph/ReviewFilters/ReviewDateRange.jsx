@@ -63,10 +63,9 @@ const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilte
                 <label htmlFor="review_date_range_exclude_histogram">Exclude Specific Range (Select on graph above)&nbsp;</label><br />
 
             </div>
-
+          </div>
         </div>
-      </div>
-    </div>
+
   );
 };
 
