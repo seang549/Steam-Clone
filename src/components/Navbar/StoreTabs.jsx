@@ -1,9 +1,10 @@
 import Dropdown from "./Dropdown";
 import { useState } from "react";
-
 const StoreTabs = ({ items, index }) => {
+
+
   return (
-    <div className='menu-items'>
+    <div className={`menu-items menu${index}`}>
       {items.submenu ? (
         <>
           <a href={items.url}>{items.title} </a>
