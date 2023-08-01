@@ -176,7 +176,11 @@ const AllReviewsChart = ({ data }) => {
     };
   }, [data]);
 
-  return <canvas id="allChart" ref={chartRef} />;
+  return (
+    <div>
+      <canvas id="allChart" ref={chartRef} />;
+    </div>
+  );
 };
 
 export default AllReviewsChart;
