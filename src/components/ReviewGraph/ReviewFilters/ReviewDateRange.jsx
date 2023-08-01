@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewDateRange = ({ filters, setFilters }) => {
+const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilters }) => {
     const handleDateRangeChange = (event) => {
         const selectedDateRange = event.target.value;
         setFilters((prevFilters) => ({
@@ -9,6 +9,12 @@ const ReviewDateRange = ({ filters, setFilters }) => {
         }));
     };
 
+    const handleClick = () => {
+        if (!expanded) {
+            toggleExpanded()
+        }
+    }
+
     return (
         <div className='reviewsFilterMenu'>
             <div className="title">Date Range</div>
@@ -16,7 +22,7 @@ const ReviewDateRange = ({ filters, setFilters }) => {
                 <div className="user_reviews_date_range_explanation">
                     To view reviews within a date range, please click and drag a selection on a graph above or click on a specific bar.							<br /><br />
                     <span className="reviewFilterBtn">
-                        <span>Show graph</span>
+                        <span onClick={handleClick}>Show graph</span>
                     </span>
                 </div>
 
@@ -36,7 +42,7 @@ const ReviewDateRange = ({ filters, setFilters }) => {
                     id="review_date_range_histogram"
                     value="include"
                     checked={filters.reviewDateRange === 'include'}
-                    disabled="disabled"
+                    disabled={fullData}
                     onChange={handleDateRangeChange}
                 />
                 <label htmlFor="review_date_range_histogram">Only Specific Range (Select on graph above)&nbsp;</label><br />
@@ -47,7 +53,7 @@ const ReviewDateRange = ({ filters, setFilters }) => {
                     id="review_date_range_exclude_histogram"
                     value="exclude"
                     checked={filters.reviewDateRange === 'exclude'}
-                    disabled="disabled"
+                    disabled={fullData}
                     onChange={handleDateRangeChange}
                 />
                 <label htmlFor="review_date_range_exclude_histogram">Exclude Specific Range (Select on graph above)&nbsp;</label><br />

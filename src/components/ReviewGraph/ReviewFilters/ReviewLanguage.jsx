@@ -23,7 +23,8 @@ const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageRevie
                     onChange={handleLanguageChange}
                 />
                 <label for="review_language_all">
-                    All Languages&nbsp;<span className="user_reviews_count">{englishReviews}</span>
+                    All Languages&nbsp;
+                    <span className="user_reviews_count">{englishReviews}</span>
                 </label>
                 <br />
 
