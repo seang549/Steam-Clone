@@ -10,6 +10,7 @@ const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageRevie
     };
 
     return (
+
         <div className='reviewsFilterMenu filter_dropdown'>
             <div className="title">Language</div>
             <div className="reviewMenuFlyout filter_dropdown_content">
@@ -49,6 +50,7 @@ const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageRevie
                 </div>
             </div>
             </div>
+
 
         </div>
     );

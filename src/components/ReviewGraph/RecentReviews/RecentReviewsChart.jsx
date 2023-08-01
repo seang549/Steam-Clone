@@ -1,13 +1,13 @@
 
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Chart } from "chart.js/auto";
-import moment from "moment";
-import "chartjs-adapter-moment";
-import zoomPlugin from "chartjs-plugin-zoom";
-import { useReviewData, useReviewDataUpdate } from "../../ReviewContext";
-
+import React from 'react';
+import { useEffect, useRef } from 'react'
+import { Chart } from 'chart.js/auto'
+import moment from 'moment'
+import 'chartjs-adapter-moment'
+import zoomPlugin from 'chartjs-plugin-zoom';
+import { useReviewDataUpdate } from '../../ReviewContext';
 Chart.register(zoomPlugin);
+
 
 
 const RecentReviewsChart = ({ data }) => {
@@ -183,9 +183,9 @@ const RecentReviewsChart = ({ data }) => {
         };
     }, [data]);
 
-    return <canvas id='recentChart' ref={chartRef} />
-};
 
+    return <canvas id='recentChart' ref={chartRef} />;
+};
 
 export default RecentReviewsChart;
 

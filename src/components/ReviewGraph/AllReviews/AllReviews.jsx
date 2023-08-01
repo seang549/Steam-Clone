@@ -1,4 +1,5 @@
-import AllReviewsChart from "./AllReviewsChart.jsx";
+import AllReviewsChart from './AllReviewsChart.jsx'
+
 
 
 
@@ -58,3 +59,4 @@ const AllReviews = ({
 };
 
 export default AllReviews;
+

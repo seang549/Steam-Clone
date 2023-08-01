@@ -10,10 +10,12 @@ const PurchaseType = ({ filters, setFilters, totalReviewCount, steamPurchaseCoun
     };
 
     return (
+
         <div className='reviewsFilterMenu filter_dropdown'>
             <div className='title'>Purchase type</div>
             <div className='reviewMenuFlyout'>
                 <div className='reviewMenuFlyoutContent filter_dropdown_content'>
+
                     <input
                         type="radio"
                         name="purchase_type"
