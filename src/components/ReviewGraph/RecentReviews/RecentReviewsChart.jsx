@@ -33,7 +33,7 @@ const RecentReviewsChart = ({ setMinDate, setMaxDate, recentPermData, data }) =>
         }, 1500);
     }
 
-
+   
 
 
     useEffect(() => {
@@ -135,7 +135,6 @@ const RecentReviewsChart = ({ setMinDate, setMaxDate, recentPermData, data }) =>
                     }
                 }
             });
-
         }
 
         return () => {
