@@ -59,3 +59,4 @@ const PurchaseType = ({ filters, setFilters, totalReviewCount, steamPurchaseCoun
 };
 
 export default PurchaseType;
+//
