@@ -1,6 +1,6 @@
 import RecentReviewsChart from './RecentReviewsChart.jsx'
 
-const AllReviews = ({ data }) => {
+const RecentReviews = ({ data }) => {
 
   const reviewSumm = "ChangeMe";
   const tooltipText = "ChangeMe";
@@ -39,4 +39,4 @@ const AllReviews = ({ data }) => {
   );
 };
 
-export default AllReviews;
+export default RecentReviews;
