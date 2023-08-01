@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const HeaderDropdown = ({ submenus, i }) => {
+const HeaderDropdown = ({ submenus }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -51,27 +51,27 @@ const HeaderDropdown = ({ submenus, i }) => {
   }
 
   return (
-    <ul className='dropdown' style={{ display: "flex", flex: "column" }}>
+    <ul style={{ listStyleType: "none" }} className='dropdown-header'>
       {submenus.map((submenu, index) => (
         <li
           key={index}
-          className='dropdown-item-store-and-new'
-          style={{ listStyleType: "none" }}
+          className='dropdown-item-header'
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >
           <a href={submenu.url}>{submenu.title}</a>
           {activeSubmenu === index &&
             submenu.dropdownItems &&
-            submenu.dropdownItems.length > 0 && (
-              <ul className='submenu'>
-                {submenu.dropdownItems.map((item, i) => (
-                  <li key={i}>
-                    <a href={item.url}>{item.title}</a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            submenu.dropdownItems.length >
+              0(
+                <ul className='submenu'>
+                  {submenu.dropdownItems.map((item, i) => (
+                    <li key={i}>
+                      <a href={item.url}>{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
         </li>
       ))}
     </ul>
