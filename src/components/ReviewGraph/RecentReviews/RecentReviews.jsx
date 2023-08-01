@@ -1,6 +1,7 @@
+
 import RecentReviewsChart from "./RecentReviewsChart.jsx";
 
-const RecentReviews = ({ data, expanded }) => {
+const RecentReviews = ({ expanded, setMinDate, setMaxDate, recentPermData, setRecentPermData, data  }) => {
   const reviewSumm = "ChangeMe";
   const tooltipText = "ChangeMe";
   const reviewNumText = "changeMe";
@@ -36,7 +37,7 @@ const RecentReviews = ({ data, expanded }) => {
           className="review_histogram"
         >
           <div className={expandingClass}>
-            <RecentReviewsChart data={data} />
+             <RecentReviewsChart setMinDate={setMinDate} setMaxDate={setMaxDate} recentPermData={recentPermData} setRecentPermData={setRecentPermData} data={data} />
           </div>
         </div>
       </div>
@@ -44,4 +45,5 @@ const RecentReviews = ({ data, expanded }) => {
   );
 };
 
-export default RecentReviews;
+
+export default RecentReviews

@@ -1,14 +1,12 @@
 import Dropdown from "./Dropdown";
 import { useState } from "react";
-const StoreTabs = ({ items, index }) => {
-
-
+const StoreTabs = ({ items }) => {
   return (
-    <div className={`menu-items menu${index}`}>
+    <div className='menu-items'>
       {items.submenu ? (
         <>
           <a href={items.url}>{items.title} </a>
-          <Dropdown submenus={items.submenu} i={index} />
+          <Dropdown submenus={items.submenu}  />
         </>
       ) : (
         <a href={items.url}>{items.title}</a>
