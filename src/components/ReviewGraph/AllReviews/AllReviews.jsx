@@ -1,7 +1,5 @@
-import AllReviewsChart from './AllReviewsChart.jsx'
 
-
-
+import AllReviewsChart from "./AllReviewsChart.jsx";
 
 const AllReviews = ({
   setMinDate,
@@ -11,14 +9,19 @@ const AllReviews = ({
   expanded,
   data,
 }) => {
-
   const reviewSumm = "ChangeMe";
   const tooltipText = "ChangeMe";
   const reviewNumText = "changeMe";
 
+  let expandingClass;
+
+  expanded
+    ? (expandingClass = "review_histogram_rollup")
+    : (expandingClass = "");
+
   return (
     <>
-      <div className="user_reviews_summary_bar">
+      <div className="user_reviews_summary_bar" style={{ width: "605px" }}>
         <div className="summary_section">
           <div className="title">Overall Reviews:</div>
           <span
@@ -40,17 +43,14 @@ const AllReviews = ({
           id="review_histogram_rollup_container"
           className="review_histogram"
         >
-          <div className="review_histogram_rollup">
-
+          <div className={expandingClass}>
             <AllReviewsChart
               setMinDate={setMinDate}
               setMaxDate={setMaxDate}
               permData={permData}
               setPermData={setPermData}
-              expanded={expanded}
               data={data}
             />
-
           </div>
         </div>
       </div>
@@ -59,4 +59,3 @@ const AllReviews = ({
 };
 
 export default AllReviews;
-

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useEffect, useRef } from 'react'
 import { Chart } from 'chart.js/auto'
@@ -10,29 +9,12 @@ Chart.register(zoomPlugin);
 
 
 
-const RecentReviewsChart = ({ data }) => {
+const RecentReviewsChart = ({ setMinDate, setMaxDate, recentPermData, data }) => {
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
     let modifiedData;
-    const setReviewData = useReviewDataUpdate(); // Call the hook inside the component directly
-    const reviewData = useReviewData();
-    const [permData, setPermData] = useState([]);
     let timer;
-    useEffect(() => {
-        const getReviews = async () => {
-            const result = await fetch('https://steam-clone-zf6a.onrender.com/reviews')
-            const data = await result.json()
-            const currentDate = new Date();
-            const oneMonthAgo = new Date();
-            oneMonthAgo.setDate(currentDate.getDate() - 30)
-            const recentData = data.filter(entry => {
-                const datePosted = new Date(entry.date_posted);
-                return datePosted >= oneMonthAgo
-            })
-            setPermData(recentData)
-        }
-        getReviews()
-    }, [reviewData])
+    
 
     function startFetch({ chart }) {
         if (timer) {
@@ -40,42 +22,18 @@ const RecentReviewsChart = ({ data }) => {
         }
         const { min, max } = chart.scales.x;
         timer = setTimeout(() => {
-            const startDate = moment(min).format('YYYY-MM-DD');
-            const endDate = moment(max).format('YYYY-MM-DD');
+            setMinDate(moment(min).format('YYYY-MM-DD'));
+            setMaxDate(moment(max).format('YYYY-MM-DD'));
             chart.data.datasets[0].data = modifiedData.map((entry) => entry.posSum);
             chart.data.datasets[1].data = modifiedData.map((entry) => entry.negSum);
-            chart.stop(); // make sure animations are not running
+            chart.stop(); 
             chart.update('none');
-            timeFilter(startDate, endDate)
             chart.resetZoom()
             clearTimeout(timer)
         }, 1500);
     }
 
-    const timeFilter = (min, max) => {
-        const newData = []
-        permData.map((entry) => {
-            let minArr = min.split('-')
-            let maxArr = max.split('-')
-            let smallArr = entry['date_posted'].split('T')[0].split('-')
-            if (parseInt(minArr[0]) <= parseInt(smallArr[0])) {
-                if (parseInt(maxArr[0]) >= parseInt(smallArr[0])) {
-                    if (parseInt(minArr[1]) <= parseInt(smallArr[1])) {
-                        if (parseInt(maxArr[1]) >= parseInt(smallArr[1])) {
-                            if (parseInt(minArr[2]) <= parseInt(smallArr[2])) {
-                                if (parseInt(maxArr[2]) >= parseInt(smallArr[2])) {
-                                    newData.push(entry)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        })
-        setReviewData(newData)
-    }
-
-
+   
 
 
     useEffect(() => {
@@ -86,7 +44,7 @@ const RecentReviewsChart = ({ data }) => {
 
             const ctx = chartRef.current.getContext('2d');
 
-            const groupedData = permData.reduce((acc, item) => {
+            const groupedData = recentPermData.reduce((acc, item) => {
                 if (!acc[item.date_posted]) {
                     acc[item.date_posted] = { posSum: 0, negSum: 0 };
                 }
@@ -132,10 +90,14 @@ const RecentReviewsChart = ({ data }) => {
                     scales: {
                         x: {
                             stacked: true,
+                            isoWeekday: true,
                             type: 'time',
+                            unitStepSize: 1,
                             time: {
-                                parser: 'YYYY-MM-DD',
-                                unit: 'day',
+                                displayFormats: {
+                                    'week': 'MMM DD'
+                                },
+                                unit: 'week',
                             },
                         },
                         y: {
@@ -173,7 +135,6 @@ const RecentReviewsChart = ({ data }) => {
                     }
                 }
             });
-
         }
 
         return () => {
@@ -183,9 +144,7 @@ const RecentReviewsChart = ({ data }) => {
         };
     }, [data]);
 
-
     return <canvas id='recentChart' ref={chartRef} />;
 };
 
 export default RecentReviewsChart;
-

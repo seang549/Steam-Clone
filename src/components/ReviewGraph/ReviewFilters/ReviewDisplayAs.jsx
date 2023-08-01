@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const ReviewDisplayAs = ({ filters, setFilters }) => {
-    const [selectedDisplayAs, setSelectedDisplayAs] = useState('summary');
+  const [selectedDisplayAs, setSelectedDisplayAs] = useState("summary");
 
-    const handleDisplayAsChange = (event) => {
-        const selectedDisplayAs = event.target.value;
-        setSelectedDisplayAs(selectedDisplayAs);
-        setFilters((prevFilters) => ({
-            ...prevFilters,
-            displayAs: selectedDisplayAs,
-        }));
-    };
+  const handleDisplayAsChange = (event) => {
+    const selectedDisplayAs = event.target.value;
+    setSelectedDisplayAs(selectedDisplayAs);
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      displayAs: selectedDisplayAs,
+    }));
+  };
 
-    useEffect(() => {
-        // Update the selected display mode whenever filters.displayAs changes
-        setSelectedDisplayAs(filters.displayAs);
-    }, [filters.displayAs]);
-
+  useEffect(() => {
+    // Update the selected display mode whenever filters.displayAs changes
+    setSelectedDisplayAs(filters.displayAs);
+  }, [filters.displayAs]);
 
   return (
     <div className="reviewDisplayAs">
@@ -33,7 +32,6 @@ const ReviewDisplayAs = ({ filters, setFilters }) => {
       </select>
     </div>
   );
-
 };
 
 export default ReviewDisplayAs;

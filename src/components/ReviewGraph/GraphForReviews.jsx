@@ -4,12 +4,6 @@ import RecentReviews from './RecentReviews/RecentReviews.jsx'
 import ReviewFilters from './ReviewFilters/ReviewFilters.jsx'
 import { useReviewData, useReviewDataUpdate } from '../ReviewContext';
 
-import {useState, useEffect} from 'react'
-import AllReviews from './AllReviews/AllReviews.jsx'
-import RecentReviews from './RecentReviews/RecentReviews.jsx'
-import ReviewFilters from './ReviewFilters/ReviewFilters.jsx'
-import { useReviewData, useReviewDataUpdate } from '../ReviewContext';
-
 
 const GraphForReviews = () => {
     const reviewData = useReviewData();

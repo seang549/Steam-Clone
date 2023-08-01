@@ -1,3 +1,4 @@
+
 import ReviewType from './ReviewType.jsx'
 import PurchaseType from './PurchaseType.jsx'
 import ReviewLanguage from './ReviewLanguage.jsx'
@@ -5,7 +6,6 @@ import ReviewDateRange from './ReviewDateRange.jsx'
 import PlayTime from './PlayTime.jsx'
 import ReviewDisplayAs from './ReviewDisplayAs.jsx'
 import ExpandBtns from './ExpandBtns.jsx'
-import {useState} from 'react'
 
 const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded }) => {
     const totalReviewCount = ''
@@ -20,9 +20,6 @@ const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded
    
           return (
         <>
-    
-    
-    
                 <div id='reviewFilterOptions'>
                       <ReviewType filters={filters} setFilters={setFilters} totalReviewCount={totalReviewCount} posReviewCount={posReviewCount} negReviewCount={negReviewCount} />
 
@@ -30,17 +27,18 @@ const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded
                  
                       <ReviewLanguage filters={filters} setFilters={setFilters} englishReviews={englishReviews} yourLanguageReviewCount={yourLanguageReviewCount} />
                     
-                      <ReviewDateRange expanded={expanded} toggleExpanded={toggleExpanded} fullData={fullData} filters={filters} setFilters={setFilters} />
+                      <ReviewDateRange filters={filters} expanded={expanded} toggleExpanded={toggleExpanded} fullData={fullData} setFilters={setFilters} />
 
-                      <PlayTime filters={filters} setFilters={setFilters} />
-                    
-                      <ReviewDisplayAs filters={filters} setFilters={setFilters} />
-                      <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
-                  </div >
 
-        </>
-    )
-}
+        <PlayTime filters={filters} setFilters={setFilters} />
+
+        <ReviewDisplayAs filters={filters} setFilters={setFilters} />
+        <ExpandBtns expanded={expanded} toggleExpanded={toggleExpanded} />
+      </div>
+    </>
+  );
+};
+
 
 export default ReviewFilters
 
