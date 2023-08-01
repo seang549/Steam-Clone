@@ -1,38 +1,18 @@
-import React from "react";
+import React from 'react';
 
-const ReviewLanguage = ({
-  filters,
-  setFilters,
-  englishReviews,
-  yourLanguageReviewCount,
-}) => {
-  const handleLanguageChange = (event) => {
-    const selectedLanguage = event.target.value;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      reviewLanguage: selectedLanguage,
-    }));
-  };
+const ReviewLanguage = ({ filters, setFilters, englishReviews, yourLanguageReviewCount }) => {
+    const handleLanguageChange = (event) => {
+        const selectedLanguage = event.target.value;
+        setFilters((prevFilters) => ({
+            ...prevFilters,
+            reviewLanguage: selectedLanguage,
+        }));
+    };
 
-  return (
-    <div className="reviewsFilterMenu filter_dropdown">
-      <div className="title">Language</div>
-      <div className="reviewMenuFlyout filter_dropdown_content">
-        <div className="reviewMenuFlyoutContent ">
-          <input
-            type="radio"
-            name="review_language"
-            id="review_language_all"
-            value="all"
-            checked={filters.reviewLanguage === "all"}
-            onChange={handleLanguageChange}
-          />
-          <label for="review_language_all">
-            {" "}
-            All Languages
-            <span className="user_reviews_count">{englishReviews}</span>
-          </label>
-          <br />
+    return (
+        <div className='reviewsFilterMenu'>
+            <div className="title">Language</div>
+            <div className="reviewMenuFlyoutContent">
 
                 <input
                     type="radio"
@@ -43,8 +23,7 @@ const ReviewLanguage = ({
                     onChange={handleLanguageChange}
                 />
                 <label for="review_language_all">
-                    All Languages&nbsp;
-                    <span className="user_reviews_count">{englishReviews}</span>
+                    All Languages&nbsp;<span className="user_reviews_count">{englishReviews}</span>
                 </label>
                 <br />
 
@@ -68,12 +47,8 @@ const ReviewLanguage = ({
                     <a href="#">Customize</a>
                 </div>
             </div>
-
-
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ReviewLanguage;
