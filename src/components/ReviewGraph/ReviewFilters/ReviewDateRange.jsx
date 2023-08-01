@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 const ReviewDateRange = ({ filters, setFilters }) => {
   const handleDateRangeChange = (event) => {
@@ -12,7 +11,9 @@ const ReviewDateRange = ({ filters, setFilters }) => {
 
   return (
     <div className="reviewsFilterMenu filter_dropdown">
-      <div className="title">Date Range</div>
+      <div className="title">
+        Date Range <span className="arrow">&#9660;</span>
+      </div>
       <div className="reviewMenuFlyout filter_dropdown_content">
         <div className="reviewMenuFlyoutContent ">
           <div className="user_reviews_date_range_explanation">
@@ -64,11 +65,10 @@ const ReviewDateRange = ({ filters, setFilters }) => {
             Exclude Specific Range (Select on graph above)
           </label>
           <br />
-
         </div>
-        </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ReviewDateRange;

@@ -1,10 +1,15 @@
-import RecentReviewsChart from './RecentReviewsChart.jsx'
+import RecentReviewsChart from "./RecentReviewsChart.jsx";
 
-const RecentReviews = ({ data }) => {
-
+const RecentReviews = ({ data, expanded }) => {
   const reviewSumm = "ChangeMe";
   const tooltipText = "ChangeMe";
   const reviewNumText = "changeMe";
+
+  let expandingClass;
+
+  expanded
+    ? (expandingClass = "review_histogram_rollup")
+    : (expandingClass = "");
 
   return (
     <>
@@ -30,7 +35,7 @@ const RecentReviews = ({ data }) => {
           id="recent_review_histogram_rollup_container"
           className="review_histogram"
         >
-          <div className="review_histogram_rollup">
+          <div className={expandingClass}>
             <RecentReviewsChart data={data} />
           </div>
         </div>
