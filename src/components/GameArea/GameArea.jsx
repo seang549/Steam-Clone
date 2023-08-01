@@ -32,7 +32,7 @@ const GameArea = () => {
         <div id="gameAreaBreadcrumbs">
           <a href="#" className="title-stuff">
             {" "}
-            All games
+            All Games
           </a>{" "}
           &gt;
           <a href="#" className="title-stuff">

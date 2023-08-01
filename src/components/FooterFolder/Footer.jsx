@@ -2,7 +2,9 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer-content">
-                <a href="https://www.valvesoftware.com/en/">image here</a>
+                <a href="https://www.valvesoftware.com/en/">
+                    <img className="valve" src="https://store.akamai.steamstatic.com/public/images/footerLogo_valve_new.png"></img>
+                </a>
                 <div className="footer-text" data-panel='{"flow-children:row"}'>
                     <text>© 2023 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries. <br />
                     VAT included in all prices where applicable.
@@ -18,9 +20,11 @@ const Footer = () => {
                         <a href= "https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_">Cookies</a>
                     </text>
                 </div>
-                <div className="logo-small">Image Here</div>
+                <div className="logo-small">
+                    <img src='https://store.akamai.steamstatic.com/public/images/v6/logo_steam_footer.png'></img>
+                </div>
             </div>
-            <div className="valve_links" >
+            <div className="valve-links" >
                 <a href="http://www.valvesoftware.com/about">About Valve</a>
                 &nbsp; | &nbsp;<a href="http://www.valvesoftware.com">Jobs</a>
                 &nbsp; | &nbsp;<a href="http://www.steampowered.com/steamworks/">Steamworks</a>
@@ -28,8 +32,13 @@ const Footer = () => {
                 &nbsp; | &nbsp;<a href="https://help.steampowered.com/en/?snr=1_44_44_">Support</a>
                 &nbsp; | &nbsp;<a href="https://store.steampowered.com/hardware_recycling/?snr=1_44_44_">Recycling</a>
                 &nbsp; | &nbsp;<a href="https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_">Gift Cards</a>
-		        &nbsp; | &nbsp;<a href="https://steamcommunity.com/linkfilter/?url=http://www.facebook.com/Steam"> FACEBOOK IMAGE Steam</a>
-		        &nbsp; | &nbsp;<a href="http://twitter.com/steam"> TWITTER IMAGE @steam</a>
+		        &nbsp; | &nbsp;<a href="https://steamcommunity.com/linkfilter/?url=http://www.facebook.com/Steam"> 
+                                <img src="https://store.cloudflare.steamstatic.com/public/images/ico/ico_facebook.gif"></img>
+                                Steam</a>
+		        &nbsp; | &nbsp;<a href="http://twitter.com/steam">
+                                <img src="https://store.cloudflare.steamstatic.com/public/images/ico/ico_twitter.gif"></img>
+                                @steam
+                                </a>
             </div>
 
         </div>
