@@ -85,7 +85,7 @@ const MoreLikeThis = ({ gameList }) => {
                 style={{ width: "171px" }}
               />
               <p className="display_title">{game.game_title}</p>
-              <p className="display_price">${game.price}</p>
+              <p className="display_price">{game.price}</p>
             </div>
             <span className="tooltip_wrapper tooltip_right">
               <span className="tooltip ">
