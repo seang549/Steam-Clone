@@ -29,7 +29,8 @@ const PurchaseType = ({
             onChange={handlePurchaseTypeChange}
           />
           <label for="purchase_type_all">
-            "All&nbsp;"
+            {" "}
+            All
             <span className="userReviewCount">{totalReviewCount}</span>
           </label>
           <br />
@@ -43,7 +44,8 @@ const PurchaseType = ({
             onChange={handlePurchaseTypeChange}
           />
           <label for="purchase_type_steam">
-            "Steam&nbsp;"
+            {" "}
+            Steam
             <span className="userReviewCount">{steamPurchaseCount}</span>
           </label>
           <br />
@@ -57,7 +59,8 @@ const PurchaseType = ({
             onChange={handlePurchaseTypeChange}
           />
           <label for="purchase_type_other">
-            "Other&nbsp;"
+            {" "}
+            Other
             <span className="userReviewCount">{otherPurchaseCount}</span>
           </label>
         </div>
