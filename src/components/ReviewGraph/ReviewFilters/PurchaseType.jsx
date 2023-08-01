@@ -70,3 +70,4 @@ const PurchaseType = ({
 };
 
 export default PurchaseType;
+//

@@ -1,19 +1,25 @@
 import React from "react";
 
-const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilters }) => {
-    const handleDateRangeChange = (event) => {
-        const selectedDateRange = event.target.value;
-        setFilters((prevFilters) => ({
-            ...prevFilters,
-            reviewDateRange: selectedDateRange,
-        }));
-    };
+const ReviewDateRange = ({
+  toggleExpanded,
+  expanded,
+  fullData,
+  filters,
+  setFilters,
+}) => {
+  const handleDateRangeChange = (event) => {
+    const selectedDateRange = event.target.value;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      reviewDateRange: selectedDateRange,
+    }));
+  };
 
-    const handleClick = () => {
-        if (!expanded) {
-            toggleExpanded()
-        }
+  const handleClick = () => {
+    if (!expanded) {
+      toggleExpanded();
     }
+  };
 
   return (
     <div className="reviewsFilterMenu filter_dropdown">
@@ -55,8 +61,6 @@ const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilte
           </label>
           <br />
 
-
-
           <input
             type="radio"
             name="review_date_range"
@@ -78,3 +82,4 @@ const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilte
 };
 
 export default ReviewDateRange;
+//
