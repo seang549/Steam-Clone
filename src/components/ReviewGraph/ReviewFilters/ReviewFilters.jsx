@@ -27,7 +27,8 @@ const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded
                  
                       <ReviewLanguage filters={filters} setFilters={setFilters} englishReviews={englishReviews} yourLanguageReviewCount={yourLanguageReviewCount} />
                     
-                      <ReviewDateRange filters={filters} expanded={expanded} toggleExpanded={toggleExpanded} fullData={fullData} setFilters={setFilters} />
+
+                      <ReviewDateRange filters={filters} expanded={expanded} toggleExpanded={toggleExpanded} fullData={fullData} filters={filters} setFilters={setFilters} />
 
 
         <PlayTime filters={filters} setFilters={setFilters} />
