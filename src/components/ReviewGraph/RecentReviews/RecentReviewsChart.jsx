@@ -135,6 +135,7 @@ const RecentReviewsChart = ({ setMinDate, setMaxDate, recentPermData, data }) =>
                     }
                 }
             });
+
         }
 
         return () => {
