@@ -181,8 +181,22 @@
   height: 500px;
 }
 
-.other-game {
-  position: relative;
+
+.carousel-games::-webkit-scrollbar-thumb {
+  /* background-color: #070e14;
+  border-radius: 2px; */
+  visibility: visible;
+}
+
+/* .carousel-games::-webkit-scrollbar-button {
+  width: 38px;
+  height: 18px;
+  background-color: #070e14;
+} */
+
+/* .other-game */
+.has_tooltip {
+
   display: inline;
   height: 150px;
 
@@ -246,6 +260,29 @@
   aspect-ratio: initial;
   display: flex;
   flex-direction: row;
+}
+
+
+.display_title {
+  color: #8f98a0;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.display_price {
+  color: #fff;
+  font-size: 11px;
+  padding: 0px 6px;
+  margin-top: 5px;
+}
+
+.see_all {
+  font-size: 11px;
+  padding: 2px 4px;
+  cursor: pointer;
+  height: 16px;
+  float: top right;
+  background-color: #2a475e;
 }
 
 .login, .language-toggle {
