@@ -22,7 +22,7 @@ const ReviewDisplayAs = ({ filters, setFilters }) => {
             <span className="title">Display As: </span>
             <select id="review_context" value={selectedDisplayAs} onChange={handleDisplayAsChange}>
                 <option value="summary">Summary</option>
-                <option value="all">Most Helpful</option>
+                <option value="helpful">Most Helpful</option>
                 <option value="recent">Recent</option>
                 <option value="funny">Funny</option>
             </select>
