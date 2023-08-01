@@ -17,21 +17,22 @@ const ReviewLanguage = ({
   return (
     <div className="reviewsFilterMenu filter_dropdown">
       <div className="title">Language</div>
-      <div className="reviewMenuFlyoutContent filter_dropdown_content">
-        <input
-          type="radio"
-          name="review_language"
-          id="review_language_all"
-          value="all"
-          checked={filters.reviewLanguage === "all"}
-          onChange={handleLanguageChange}
-        />
-        <label for="review_language_all">
-          All Languages&nbsp;
-          <span className="user_reviews_count">{englishReviews}</span>
-        </label>
-        <br />
-
+      <div className="reviewMenuFlyout filter_dropdown_content">
+        <div className="reviewMenuFlyoutContent ">
+          <input
+            type="radio"
+            name="review_language"
+            id="review_language_all"
+            value="all"
+            checked={filters.reviewLanguage === "all"}
+            onChange={handleLanguageChange}
+          />
+          <label for="review_language_all">
+            {" "}
+            All Languages
+            <span className="user_reviews_count">{englishReviews}</span>
+          </label>
+          <br />
 
                 <input
                     type="radio"
@@ -67,6 +68,7 @@ const ReviewLanguage = ({
                     <a href="#">Customize</a>
                 </div>
             </div>
+
 
         </div>
       </div>

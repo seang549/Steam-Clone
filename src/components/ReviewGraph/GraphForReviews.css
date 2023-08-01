@@ -9,6 +9,7 @@
 
 #reviewFilterOptions {
   display: flex;
+  width: 940px;
 }
 
 #recentChart {
@@ -35,6 +36,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  flex-grow: 1;
 }
 
 .filter_dropdown_content {
@@ -52,6 +54,9 @@
   flex-direction: column;
 }
 
+.reviewDisplayAs {
+  flex-grow: 3;
+}
 /*
 <div class="dropdown">
   <span>Mouse over me</span>

@@ -26,7 +26,8 @@ const ReviewType = ({
             onChange={handleReviewTypeChange}
           />
           <label for="review_type_all">
-            "All&nbsp;"
+            {" "}
+            All
             <span className="userReviewCount">{totalReviewCount}</span>
           </label>
           <br />
@@ -40,7 +41,8 @@ const ReviewType = ({
             onChange={handleReviewTypeChange}
           />
           <label for="review_type_positive">
-            "Positive&nbsp;"
+            {" "}
+            Positive
             <span className="userReviewCount">{posReviewCount}</span>
           </label>
           <br />
@@ -54,7 +56,8 @@ const ReviewType = ({
             onChange={handleReviewTypeChange}
           />
           <label for="review_type_negative">
-            "Negative&nbsp;"
+            {" "}
+            Negative
             <span className="userReviewCount">{negReviewCount}</span>
           </label>
         </div>
