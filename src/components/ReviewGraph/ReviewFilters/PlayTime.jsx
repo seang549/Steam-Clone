@@ -19,9 +19,11 @@ const PlayTime = ({ filters, setFilters }) => {
 
   return (
     <div className="reviewsFilterMenu filter_dropdown">
-      <div className="title">Playtime</div>
+      <div className="title">
+        Playtime <span className="arrow">&#9660;</span>
+      </div>
       <div className="reviewMenuFlyout filter_dropdown_content">
-        <div className="reviewMenuFlyoutContent ">
+        <div className="reviewMenuFlyoutContent">
           <div className="user_reviews_steam_labs_desc">
             <a href="#">
               <img
@@ -83,7 +85,7 @@ const PlayTime = ({ filters, setFilters }) => {
           <div id="app_reviews_playtime_range_text">
             <span id="app_reviews_playtime_range_text_min">No minimum</span>
             to
-            <span id="app_reviews_playtime_range_text_max">No maximum</span>
+            <span id="app_reviews_playtime_range_text_max"> No maximum</span>
           </div>
           <input type="hidden" id="app_reviews_playtime_range_min" value="0" />
           <input type="hidden" id="app_reviews_playtime_range_max" value="0" />

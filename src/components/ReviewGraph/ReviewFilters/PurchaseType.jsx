@@ -17,9 +17,11 @@ const PurchaseType = ({
 
   return (
     <div className="reviewsFilterMenu filter_dropdown">
-      <div className="title">Purchase type</div>
+      <div className="title">
+        Purchase type <span className="arrow">&#9660;</span>
+      </div>
       <div className="reviewMenuFlyout filter_dropdown_content">
-        <div className="reviewMenuFlyoutContent">
+        <div className="reviewMenuFlyoutContent ">
           <input
             type="radio"
             name="purchase_type"

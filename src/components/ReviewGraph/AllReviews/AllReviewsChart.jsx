@@ -42,6 +42,7 @@ const AllReviewsChart = ({
     if (timer) {
       clearTimeout(timer);
     }
+
     const { min, max } = chart.scales.x;
     timer = setTimeout(() => {
       setMinDate(moment(min).format("YYYY-MM-DD"));
@@ -159,3 +160,4 @@ const AllReviewsChart = ({
 // return <canvas id='allChart' ref={chartRef} />;
 
 export default AllReviewsChart;
+

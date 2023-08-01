@@ -1,23 +1,23 @@
-import React from "react";
+
+import React from 'react';
 
 const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilters }) => {
-    const handleDateRangeChange = (event) => {
-        const selectedDateRange = event.target.value;
-        setFilters((prevFilters) => ({
-            ...prevFilters,
-            reviewDateRange: selectedDateRange,
-        }));
-    };
 
-    const handleClick = () => {
-        if (!expanded) {
-            toggleExpanded()
-        }
-    }
+  const handleDateRangeChange = (event) => {
+    const selectedDateRange = event.target.value;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      reviewDateRange: selectedDateRange,
+    }));
+  };
+
+
 
   return (
     <div className="reviewsFilterMenu filter_dropdown">
-      <div className="title">Date Range</div>
+      <div className="title">
+        Date Range <span className="arrow">&#9660;</span>
+      </div>
       <div className="reviewMenuFlyout filter_dropdown_content">
         <div className="reviewMenuFlyoutContent ">
           <div className="user_reviews_date_range_explanation">
@@ -29,51 +29,43 @@ const ReviewDateRange = ({ toggleExpanded, expanded, fullData, filters, setFilte
             </span>
           </div>
 
-          <input
-            type="radio"
-            name="review_date_range"
-            id="review_date_range_all"
-            value="all"
-            checked={filters.reviewDateRange === "all"}
-            onChange={handleDateRangeChange}
-          />
-          <label htmlFor="review_date_range_all"> Lifetime</label>
-          <br />
-
-          <input
-            type="radio"
-            name="review_date_range"
-            id="review_date_range_histogram"
-            value="include"
-            checked={filters.reviewDateRange === "include"}
-            disabled="disabled"
-            onChange={handleDateRangeChange}
-          />
-          <label htmlFor="review_date_range_histogram">
-            {" "}
-            Only Specific Range (Select on graph above)
-          </label>
-          <br />
+                <input
+                    type="radio"
+                    name="review_date_range"
+                    id="review_date_range_all"
+                    value="all"
+                    checked={filters.reviewDateRange === 'all'}
+                    onChange={handleDateRangeChange}
+                />
+                <label htmlFor="review_date_range_all">Lifetime</label><br />
 
 
+                <input
+                    type="radio"
+                    name="review_date_range"
+                    id="review_date_range_histogram"
+                    value="include"
+                    checked={filters.reviewDateRange === 'include'}
+                    disabled={fullData}
+                    onChange={handleDateRangeChange}
+                />
+                <label htmlFor="review_date_range_histogram">Only Specific Range (Select on graph above)&nbsp;</label><br />
 
-          <input
-            type="radio"
-            name="review_date_range"
-            id="review_date_range_exclude_histogram"
-            value="exclude"
-            checked={filters.reviewDateRange === "exclude"}
-            disabled="disabled"
-            onChange={handleDateRangeChange}
-          />
-          <label htmlFor="review_date_range_exclude_histogram">
-            {" "}
-            Exclude Specific Range (Select on graph above)
-          </label>
-          <br />
+                <input
+                    type="radio"
+                    name="review_date_range"
+                    id="review_date_range_exclude_histogram"
+                    value="exclude"
+                    checked={filters.reviewDateRange === 'exclude'}
+                    disabled={fullData}
+                    onChange={handleDateRangeChange}
+                />
+                <label htmlFor="review_date_range_exclude_histogram">Exclude Specific Range (Select on graph above)&nbsp;</label><br />
+
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
   );
 };
 

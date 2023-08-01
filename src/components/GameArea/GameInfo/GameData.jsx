@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AllReviews from "./AllReviews.jsx";
-
+import { Link } from "react-router-dom";
 const GameData = ({ infoData }) => {
   const [date, setDate] = useState("");
   const [reviews, setReviews] = useState([]);
@@ -28,9 +28,11 @@ const GameData = ({ infoData }) => {
   }, []);
   return (
     <div id='gameData'>
+      <Link to='#jumpToReviews'>
       <div className='gameDataRow-reviews'>
         <AllReviews reviews={reviews} />
       </div>
+      </Link>
       <div className='gameDataRow-releaseData'>
         <p className='release-p-tag'>RELEASE DATE:</p>
         <p className='release-p-tag2'>{date}</p>

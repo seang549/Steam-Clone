@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
@@ -5,6 +6,7 @@ import moment from "moment";
 import "chartjs-adapter-moment";
 import zoomPlugin from "chartjs-plugin-zoom";
 import { useReviewDataUpdate } from "../../ReviewContext";
+
 Chart.register(zoomPlugin);
 
 const RecentReviewsChart = ({
@@ -22,6 +24,7 @@ const RecentReviewsChart = ({
     if (timer) {
       clearTimeout(timer);
     }
+
     const { min, max } = chart.scales.x;
     timer = setTimeout(() => {
       setMinDate(moment(min).format("YYYY-MM-DD"));
@@ -243,3 +246,4 @@ const RecentReviewsChart = ({
 // };
 
 export default RecentReviewsChart;
+

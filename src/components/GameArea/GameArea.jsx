@@ -32,7 +32,7 @@ const GameArea = () => {
         <div id="gameAreaBreadcrumbs">
           <a href="#" className="title-stuff">
             {" "}
-            All Games
+            All games
           </a>{" "}
           &gt;
           <a href="#" className="title-stuff">
@@ -48,9 +48,7 @@ const GameArea = () => {
         <div id="lowerGameHeader">
           <div id="gameAreaTitle">Spider</div>
           <div id="communityHubDiv">
-            <button className="communityHub community_Hub">
-              Community Hub
-            </button>
+            <button className="communityHub">Community Hub</button>
           </div>
         </div>
       </div>

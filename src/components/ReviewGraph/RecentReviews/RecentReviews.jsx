@@ -1,4 +1,6 @@
+
 import RecentReviewsChart from "./RecentReviewsChart.jsx";
+
 
 const AllReviews = ({
   setMinDate,
@@ -7,9 +9,11 @@ const AllReviews = ({
   setRecentPermData,
   data,
 }) => {
+
   const reviewSumm = "ChangeMe";
   const tooltipText = "ChangeMe";
   const reviewNumText = "changeMe";
+
 
   //   return (
   //     <>
@@ -44,6 +48,7 @@ const AllReviews = ({
   //   );
   // };
 
+
   return (
     <>
       <div className='user_reviews_summary_bar'>
@@ -68,6 +73,7 @@ const AllReviews = ({
           id='recent_review_histogram_rollup_container'
           className='review_histogram'
         >
+
           <div className='review_histogram_rollup'>
             <RecentReviewsChart
               setMinDate={setMinDate}
@@ -76,6 +82,7 @@ const AllReviews = ({
               setRecentPermData={setRecentPermData}
               data={data}
             />
+
           </div>
         </div>
       </div>
@@ -83,4 +90,7 @@ const AllReviews = ({
   );
 };
 
-export default AllReviews;
+
+
+export default RecentReviews
+

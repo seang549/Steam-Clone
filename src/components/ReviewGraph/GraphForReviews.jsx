@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import AllReviews from "./AllReviews/AllReviews.jsx";
-import RecentReviews from "./RecentReviews/RecentReviews.jsx";
-import ReviewFilters from "./ReviewFilters/ReviewFilters.jsx";
-import { useReviewData, useReviewDataUpdate } from "../ReviewContext";
+import {useState, useEffect} from 'react'
+import AllReviews from './AllReviews/AllReviews.jsx'
+import RecentReviews from './RecentReviews/RecentReviews.jsx'
+import ReviewFilters from './ReviewFilters/ReviewFilters.jsx'
+import { useReviewData, useReviewDataUpdate } from '../ReviewContext';
+
 
 const GraphForReviews = () => {
   const reviewData = useReviewData();
@@ -26,6 +27,7 @@ const GraphForReviews = () => {
     const toggleFullData = () => {
       console.log(minDate);
       console.log(maxDate);
+
 
       if (reviewData.length === permData.length) {
         setFullData(false);
@@ -156,6 +158,7 @@ const GraphForReviews = () => {
     applyFilters();
   }, [filters]);
 
+
   if (expanded) {
     return (
       <>
@@ -207,4 +210,5 @@ const GraphForReviews = () => {
   }
 };
 
-export default GraphForReviews;
+
+export default GraphForReviews
