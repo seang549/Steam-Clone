@@ -39,7 +39,7 @@ const ReviewDateRange = ({
             checked={filters.reviewDateRange === "all"}
             onChange={handleDateRangeChange}
           />
-          <label htmlFor="review_date_range_all">Lifetime</label>
+          <label htmlFor="review_date_range_all"> Lifetime</label>
           <br />
 
           <input

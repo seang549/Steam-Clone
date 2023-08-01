@@ -38,5 +38,3 @@ const HeaderDropdown = ({ submenus }) => {
 };
 
 export default HeaderDropdown;
-
-

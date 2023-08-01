@@ -1,5 +1,6 @@
 #graphForReviews {
   width: 940px;
+  display: flex;
 }
 
 .user_reviews_summary_bar {
