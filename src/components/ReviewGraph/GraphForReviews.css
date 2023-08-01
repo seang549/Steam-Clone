@@ -7,6 +7,11 @@
   width: 335px;
 }
 
+#reviewFilterOptions{
+  display:flex;
+width:940px;
+}
+
 
 .review_histogram_rollup,
 #allChart {

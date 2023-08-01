@@ -66,6 +66,8 @@ const ReviewDateRange = ({ filters, setFilters }) => {
           <br />
 
         </div>
+        </div>
+        </div>
     );
 };
 

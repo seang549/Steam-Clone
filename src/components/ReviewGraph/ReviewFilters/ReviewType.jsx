@@ -8,9 +8,9 @@ const ReviewType = ({ setFilters, totalReviewCount, posReviewCount, negReviewCou
     };
 
     return (
-        <div id='reviewType' className='reviewsFilterMenu'>
+        <div id='reviewType' className='reviewsFilterMenu filter_dropdown'>
             <div className='title'>Review type</div>
-            <div className='reviewMenuFlyout'>
+            <div className='reviewMenuFlyout filter_dropdown_content'>
                 <div className='reviewMenuFlyoutContent'>
                     <input
                         type="radio"
