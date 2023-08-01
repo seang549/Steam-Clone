@@ -1,12 +1,11 @@
-import ReviewType from "./ReviewType.jsx";
-import PurchaseType from "./PurchaseType.jsx";
-import ReviewLanguage from "./ReviewLanguage.jsx";
-import ReviewDateRange from "./ReviewDateRange.jsx";
-import PlayTime from "./PlayTime.jsx";
-import ReviewDisplayAs from "./ReviewDisplayAs.jsx";
-import ExpandBtns from "./ExpandBtns.jsx";
-import { useState } from "react";
-
+import ReviewType from './ReviewType.jsx'
+import PurchaseType from './PurchaseType.jsx'
+import ReviewLanguage from './ReviewLanguage.jsx'
+import ReviewDateRange from './ReviewDateRange.jsx'
+import PlayTime from './PlayTime.jsx'
+import ReviewDisplayAs from './ReviewDisplayAs.jsx'
+import ExpandBtns from './ExpandBtns.jsx'
+import {useState} from 'react'
 
 const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded }) => {
     const totalReviewCount = ''
@@ -44,4 +43,3 @@ const ReviewFilters = ({ fullData, filters, setFilters, expanded, toggleExpanded
 }
 
 export default ReviewFilters
-

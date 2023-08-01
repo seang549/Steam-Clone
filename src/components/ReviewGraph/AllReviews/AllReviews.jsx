@@ -1,5 +1,4 @@
-import AllReviewsChart from "./AllReviewsChart.jsx";
-
+import AllReviewsChart from './AllReviewsChart.jsx'
 
 const AllReviews = ({setMinDate, setMaxDate, permData, setPermData, expanded, data}) => {
     const reviewSumm = 'ChangeMe'
@@ -28,5 +27,4 @@ const AllReviews = ({setMinDate, setMaxDate, permData, setPermData, expanded, da
     )
 }
 
-
-export default AllReviews;
+export default AllReviews

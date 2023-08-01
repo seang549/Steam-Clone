@@ -23,17 +23,15 @@ const GameBody = () => {
     }
   }, []);
 
-  let paraOne,
-    features,
-    paraTwo,
-    abilities,
-    mins,
-    osOne,
-    osTwo,
-    storeOne,
-    storeTwo,
-    rec;
-  let os, store;
+  let paraOne;
+  let features;
+  let paraTwo;
+  let abilities;
+
+  let mins;
+  let os;
+  let store;
+  let rec;
 
   if (gameList[0]) {
     const gameInfo = gameList[0].about_this_game.split("\\");
@@ -44,14 +42,9 @@ const GameBody = () => {
     abilities = gameInfo[3];
 
     mins = sysReqs[0];
-    os = sysReqs[1].split(":");
-    store = sysReqs[2].split(":");
+    os = sysReqs[1];
+    store = sysReqs[2];
 
-    osOne = os[0] + ":";
-    osTwo = os[1];
-
-    storeOne = store[0] + ":";
-    storeTwo = store[1];
     rec = sysReqs[3];
   }
 
@@ -87,11 +80,14 @@ const GameBody = () => {
             >
               <div className="sysReq">
                 <div>{mins}</div>
-                <div className="flex" style={{ fontSize: "12px", gap: "5px" }}>
-                  <p>{osOne}</p> {osTwo}
+                <div style={{ fontSize: "12px" }} data-highlightword="OS:">
+                  {os}
                 </div>
-                <div className="flex" style={{ fontSize: "12px", gap: "5px" }}>
-                  <p>{storeOne}</p> {storeTwo}
+                <div
+                  style={{ fontSize: "12px" }}
+                  data-highlightword="Storage: "
+                >
+                  {store}
                 </div>
               </div>
               <div className="sysReq">
@@ -104,7 +100,7 @@ const GameBody = () => {
                 </div>
               </div>
             </div>
-            <MoreLikeThis gameList={gameList} />
+            <MoreLikeThis gameList={gameList}/>
           </div>
           <ColumnTwo />
         </>

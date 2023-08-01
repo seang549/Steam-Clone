@@ -13,7 +13,7 @@ const StoreNav = () => {
               <div className='tab'>
                 <span className='pulldown'>
                   <a className='pulldown-desktop'>
-                    <StoreTabs items={menu} key={index} index={index} />
+                    <StoreTabs items={menu} key={index} />
                   </a>
                 </span>
               </div>
