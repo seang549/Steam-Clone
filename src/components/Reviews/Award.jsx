@@ -50,6 +50,7 @@ const Award = ({ id, awards, i }) => {
         {individualAward.map((IA) => {
           return (
             <>
+              
               <img id='reaction-icons' src={IA["icon"]} onMouseEnter={handleMouseEnter} onClick={handleClick}
           onMouseLeave={handleMouseLeave}></img>
             

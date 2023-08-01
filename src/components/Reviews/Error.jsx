@@ -3,6 +3,7 @@ const Error = ({ handleClose, show}) => {
   
     return (
       <div className={showHideClassName}>
+        <div className="TOPBAR"></div>
         <section className="modal-main">
         <div className="ErrorHeader">
         <button className="X" type="button" onClick={handleClose}>
