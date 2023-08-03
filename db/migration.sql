@@ -1,0 +1,9 @@
+\i Languages.sql;
+\i Games.sql;
+\i Users.sql;
+\i Reviews.sql;
+\i Awards.sql;
+\i Assets.sql;
+\i Tags.sql
+\i Record.sql;
+\i Awarded.sql;

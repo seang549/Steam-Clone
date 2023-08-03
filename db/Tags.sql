@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS Tags;
+CREATE TABLE Tags(
+    id SERIAL PRIMARY KEY,
+    title TEXT,
+    link TEXT
+);
