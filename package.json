@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"vite\"",
+    "test": "vitest",
+    "deploy": "npm run server",
     "build": "vite build",
     "server": "nodemon server.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
