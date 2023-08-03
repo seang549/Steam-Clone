@@ -1,19 +1,8 @@
-#use the node orb
-#create jobs (build test and deploy)
-#create a workflow
-#add jobs to workflow
-
-# specify a version of circle ci being used
 version: 2.1
 setup: true
 
-workflows:
-  test-deploy:
-    jobs:
-      - test
-
 jobs:
-  test:
+  run_test:
     docker:
       - image: cimg/node:18.16.0
     steps:
@@ -22,5 +11,5 @@ jobs:
           name: Install Dependencies
           command: npm install
       - run:
-          name: Run Tests
+          name: Run Unit Tests
           command: npm run test
