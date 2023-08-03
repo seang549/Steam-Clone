@@ -5,6 +5,7 @@
 
 # specify a version of circle ci being used
 version: 2.1
+setup: true
 
 workflows:
   test-deploy:
