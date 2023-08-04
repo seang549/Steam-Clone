@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS Games CASCADE;
 CREATE TABLE Games (
 
     id SERIAL PRIMARY KEY,
+    systems_requirements TEXT,
     title TEXT,
     genre TEXT,
     release DATE,
