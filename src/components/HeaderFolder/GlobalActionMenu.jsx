@@ -1,4 +1,6 @@
 import Language from './Language'
+import {Link} from 'react-router-dom'
+import { useAuthData } from '../../AuthContext'
 const GlobalActionMenu = () => {
     return (
     <div className="global-action">
@@ -8,7 +10,9 @@ const GlobalActionMenu = () => {
                 Install Steam
             </div>        
         </a>
-        <a href="https://store.steampowered.com/login/?redir=app%2F2433830%2FSpider%2F&redir_ssl=1&snr=1_5_9__global-header" className="login">login</a>
+        <Link to='login'>
+            <a className="login">login</a>
+        </Link>
         &nbsp;|&nbsp;&nbsp;
         <Language />
         

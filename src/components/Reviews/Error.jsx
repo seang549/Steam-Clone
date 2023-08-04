@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 const Error = ({ handleClose, show}) => {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
   
@@ -13,9 +14,11 @@ const Error = ({ handleClose, show}) => {
         <div className="ErrorBody">
             <p className="Message">You must be logged in to perform that action.</p>
             <div className="buttonContainer">
+              <Link to='login'>
               <div>
           <button className="SignIn" type="button">sign in</button>
           </div>
+              </Link>
           <div>
           <button className="Close" type="button" onClick={handleClose}>cancel</button>
           </div>
