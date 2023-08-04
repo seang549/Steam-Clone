@@ -18,7 +18,7 @@ const Register = ({ setAuth }) => {
     try {
       const body = { email, password, name };
       const response = await fetch(
-        "http://localhost:8004/authentication/register",
+        "https://steam-clone-zf6a.onrender.com/api/auth/register",
         {
           method: "POST",
           headers: {
