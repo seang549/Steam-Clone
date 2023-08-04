@@ -15,6 +15,7 @@ import "./App.css";
 import "./components/GameBodyFolder/GameBody.css";
 import "./components/ReviewGraph/GraphForReviews.css";
 import ScrollToAnchor from "./ScrollToAnchor";
+import Register from "./components/Register/Register.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           element={
             <>
               <ScrollToAnchor />
+              <Register />
               <div>
                 <div className="header-area">
                   <Header />
