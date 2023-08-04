@@ -39,4 +39,4 @@ COST 100;
 
 CREATE TRIGGER Reviews_trigger
 BEFORE INSERT ON Parent
-FOR EACH ROW EXECUTE PROCEDURE partition_function();
+FOR EACH ROW EXECUTE PROCEDURE Reviews_function();

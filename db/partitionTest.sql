@@ -1,20 +1,21 @@
 
-DROP TABLE parent;
-CREATE TABLE parent(assetsTEST INT, gamesTEST INT);
+CREATE TABLE parent(review_id INT, date DATE);
+
+Next we need to create a function that will automatically create our partitions with CREATE FUNCTION:
 
 CREATE OR REPLACE FUNCTION partition_function() RETURNS trigger AS
 $BODY$
 DECLARE
-partition_id INT;
+partition_date TEXT;
 partition TEXT;
 BEGIN
-partition_id := NEW.gamesTEST;
-partition := TG_RELNAME || '_' || partition_id;
+partition_date := to_char(NEW.date,'YYYY_MM_DD');
+partition := TG_RELNAME || '_' || partition_date;
 IF NOT EXISTS(SELECT relname FROM pg_class WHERE relname=partition) THEN
 RAISE NOTICE 'A partition has been created %',partition;
-EXECUTE 'CREATE TABLE ' || partition || ' (check (gamesTEST = ''' || NEW.gamesTEST || ''')) INHERITS (' || TG_RELNAME || ');';
+EXECUTE 'CREATE TABLE ' || partition || ' (check (date = ''' || NEW.date || ''')) INHERITS (' || TG_RELNAME || ');';
 END IF;
-EXECUTE 'INSERT INTO ' || partition || ' SELECT(' || TG_RELNAME || ' ' || quote_literal(NEW) || ').* RETURNING gamesTEST;';
+EXECUTE 'INSERT INTO ' || partition || ' SELECT(' || TG_RELNAME || ' ' || quote_literal(NEW) || ').* RETURNING review_id;';
 RETURN NULL;
 END;
 $BODY$
@@ -22,24 +23,9 @@ LANGUAGE plpgsql VOLATILE
 COST 100;
 
 
+Finally we need to create a trigger that will run the function each time an insert action is executed on the table.
+
+
 CREATE TRIGGER partition_trigger
 BEFORE INSERT ON Parent
 FOR EACH ROW EXECUTE PROCEDURE partition_function();
-
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (1,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (1,2);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (1,3);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (2,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (2,2);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (2,3);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (2,4);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (3,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (3,2);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (3,3);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (3,4);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (5,5);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (5,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (6,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (8,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (17,1);
-INSERT INTO parent (assetsTEST, gamesTEST) VALUES (18,1);
