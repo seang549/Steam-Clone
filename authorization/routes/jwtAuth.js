@@ -14,7 +14,7 @@ router.post("/register", validInfo, async (req, res) => {
     ]);
 
     if (user.rows.length !== 0) {
-      res.status(402).send("User already exists");
+      return res.status(402).send("User already exists");
     }
 
     const saltRounds = 10;
