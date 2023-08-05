@@ -1,15 +1,21 @@
 version: 2.1
 setup: true
 
-jobs:
-  run_test:
-    docker:
-      - image: cimg/node:18.16.0
-    steps:
-      - checkout
-      - run:
+workflows:
+  build_test_deploy: # this can be any name you choose
+    jobs:
+      run_test:
+      docker:
+        - image: cimg/node:18.16.0
+      steps:
+        - checkout
+        - run:
           name: Install Dependencies
           command: npm install
-      - run:
+        - run:
           name: Run Unit Tests
           command: npm run test
+# build_and_test
+#   deploy:
+#       requires:
+# build_and_test # only deploy if the build_and_test job has completed

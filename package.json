@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "@testing-library/jest-dom": "^5.17.0",
     "axios": "^1.4.0",
     "chart.js": "^4.3.2",
     "chartjs-adapter-moment": "^1.0.1",
