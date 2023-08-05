@@ -1,21 +1,61 @@
 version: 2.1
 setup: true
 
+#sequential workflow, where build, test, and deploy run only if their precedecessor finishes
 workflows:
-  build_test_deploy: # this can be any name you choose
+  build_test_deploy:
     jobs:
-      run_test:
       docker:
-        - image: cimg/node:18.16.0
-      steps:
-        - checkout
-        - run:
-          name: Install Dependencies
-          command: npm install
-        - run:
-          name: Run Unit Tests
+        - image: cimg/deploy:2023.08-node
+
+jobs:
+  build_and_test:
+    executor:
+      docker: cimg/deploy:2023.08-node
+    steps:
+      - checkout             
+      - run: node --version
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Run unit tests
           command: npm run test
-# build_and_test
-#   deploy:
-#       requires:
-# build_and_test # only deploy if the build_and_test job has completed
+      - run:
+          name: Build server
+          command: npm run build
+      - run:
+          name: Start server
+          command: npm run deploy
+          background: true
+
+    deploy:
+      docker:
+        - image: cimg/deploy:2023.08-node
+      steps:
+        requires: 
+          - build_and_test
+        - run:
+            name: Deploy API to Render
+            command: |
+              const fetch = require('node-fetch');
+              const deployUri = process.env.DEPLOY_URI;
+
+              fetch(deployUri)
+                .then((response) => {
+                  if (response.status === 200) {
+                    console.log('Deployment successful!');
+                  } else {
+                    console.error('Deployment failed with response code:', response.status);
+                    response.text().then((text) => console.error(text));
+                    process.exit(1);
+                  }
+                })
+                .catch((error) => {
+                  console.error('Error during deployment:', error.message);
+                  process.exit(1);
+                });
+
+
+
+
+
