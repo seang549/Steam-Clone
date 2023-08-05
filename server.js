@@ -1,21 +1,13 @@
+import router from "./authorization/routes/jwtAuth.js";
+import * as dotenv from "dotenv";
 import express from "express";
-import dotenv from "dotenv";
+import pool from "./db/db.js";
 import cors from "cors";
-import pkg from "pg";
-
-const app = express();
 dotenv.config();
 
-//new pool instance
-const { Pool } = pkg;
-
-const dbString = process.env.DATABASE_URL;
+const app = express();
 
 const port = process.env.PORT;
-
-const pool = new Pool({
-  connectionString: dbString,
-});
 
 //middleware
 //body parser
@@ -24,6 +16,9 @@ app.use(cors({ origin: "*" }));
 app.use(express.static("dist"));
 
 //routes
+//authentification
+app.use("/api/auth", router);
+
 //get all
 app.get("/game_info", async (req, res) => {
   try {
