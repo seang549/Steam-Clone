@@ -23,6 +23,7 @@ use in our routes
     */
 
     const payload = jwt.verify(jwtToken, process.env.secret);
+    console.log("1", payload);
 
     /*
     remember, in our jwtGenerator, we set a value of 'user' = to the value of
@@ -34,6 +35,7 @@ user_id, and we can use that in our routes.
     next();
   } catch (err) {
     console.error(err.message);
+    console.log("2", err.message);
     console.log("there was a problem");
     return res.status(403).send("not authorized");
   }
