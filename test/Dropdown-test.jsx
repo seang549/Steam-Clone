@@ -5,8 +5,8 @@ import {
   waitFor,
   getByTestId,
 } from "@testing-library/react";
-import Dropdown from "../components/Navbar/Dropdown.jsx";
-import StoreTabs from "../components/Navbar/StoreTabs.jsx";
+import Dropdown from "../src/components/Navbar/Dropdown.jsx";
+import StoreTabs from "../src/components/Navbar/StoreTabs.jsx";
 import "@testing-library/jest-dom";
 
 describe("dropdown test", () => {
