@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"vite\"",
-    "test": "vitest ./test/Dropdown-test/jsx",
+    "test": "vitest",
     "build": "vite build",
     "server": "nodemon server.js",
     "deploy": "nodemon server.js",
