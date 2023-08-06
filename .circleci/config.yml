@@ -8,9 +8,7 @@ jobs:
     working_directory: ~/public
     docker:
       - image: cimg/node:18.16.0
-        # environment:
-        #   DATABASE_URL: $DATABASE_URL
-      # - image: cimg/postgres:15.3.0
+
     steps:
       - checkout
       - node/install-packages:
@@ -26,11 +24,10 @@ jobs:
   test:
     docker:
       - image: cimg/node:18.16.0
-    dependencies:
-      override:
-        - npm install vitest
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           name: Test Code
           command: npm test
