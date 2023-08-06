@@ -12,6 +12,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
+        working_directory: ~/FEC
   test:
     docker:
       - image: cimg/node:18.16.0
@@ -19,6 +20,7 @@ jobs:
       - run:
           name: Test Code
           command: npm run test
+        working_directory: ~/FEC
 
   # deploy:
   #   docker:
