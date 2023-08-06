@@ -8,10 +8,10 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   test: {
-    include: ["./src/test/Dropdown-test.jsx"],
+    include: ["./test/Dropdown-test.jsx"],
     globals: true,
     environment: "jsdom",
     css: true,
-    setupFiles: "./src/test/setup.js",
+    setupFiles: "./test/setup.js",
   },
 });

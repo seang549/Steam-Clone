@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"vite\"",
-    "test": "vitest",
+    "test": "vitest ./test/Dropdown-test/jsx",
     "build": "vite build",
+    "server": "nodemon server.js",
     "deploy": "nodemon server.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
