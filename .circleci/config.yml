@@ -33,13 +33,14 @@ jobs:
           command: npm test
 
   deploy:
-    requires:
-      - test
-    filters:
-      branches:
-        only:
-          - QA-Branch
+    # requires:
+    #   - test
+    # filters:
+    #   branches:
+    #     only:
+    #       - QA-Branch
     steps:
+      - checkout
       - run:
           name: Setting Up Git
           command: |
