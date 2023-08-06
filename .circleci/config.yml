@@ -41,7 +41,7 @@ jobs:
           command: |
             git config --global user.email "yaguilar2001@gmail.com"
             git config --global user.name "circleci"
-            git remote -set-url origin https://github.com/VIBING-GOON-SQUAD/FEC.git
+            git remote set-url origin https://github.com/VIBING-GOON-SQUAD/FEC.git
       - run:
           name: Pushing to Main
           command: |
