@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-        working_directory: ~/project/package.json
+        working_directory: /
   # test:
   #   docker:
   #     - image: cimg/node:18.16.0
