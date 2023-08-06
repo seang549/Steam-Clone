@@ -24,29 +24,29 @@ jobs:
       - run:
           name: Deploy API to Render
           command: |
-              const fetch = require('node-fetch');
-              const deployUri = process.env.DEPLOY_URI;
+            const fetch = require('node-fetch');
+            const deployUri = process.env.DEPLOY_URI;
 
-              fetch(deployUri)
-                .then((response) => {
-                  if (response.status === 200) {
-                    console.log('Deployment successful!');
-                  } else {
-                    console.error('Deployment failed with response code:', response.status);
-                    response.text().then((text) => console.error(text));
-                    process.exit(1);
-                  }
-                })
-                .catch((error) => {
-                  console.error('Error during deployment:', error.message);
+            fetch(deployUri)
+              .then((response) => {
+                if (response.status === 200) {
+                  console.log('Deployment successful!');
+                } else {
+                  console.error('Deployment failed with response code:', response.status);
+                  response.text().then((text) => console.error(text));
                   process.exit(1);
-                });
-         
+                }
+              })
+              .catch((error) => {
+                console.error('Error during deployment:', error.message);
+                process.exit(1);
+              });
+
+
 workflows:
   build_test_deploy:
     jobs:
       - build
       - test
       - deploy
-
 

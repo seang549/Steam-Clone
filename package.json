@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"vite\"",
     "test": "vitest",
-    "deploy": "npm run server",
     "build": "vite build",
-    "server": "nodemon server.js",
+    "deploy": "nodemon server.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "@testing-library/jest-dom": "^5.17.0",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "chart.js": "^4.3.2",
@@ -25,6 +25,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "moment": "^2.29.4",
+    "node-fetch": "^3.3.2",
     "pg": "^8.11.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",

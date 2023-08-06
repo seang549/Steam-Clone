@@ -16,6 +16,7 @@ const Dropdown = ({ submenus, i }) => {
       <ul className='categories' style={{ display: "flex", flex: "column" }}>
         {submenus.map((submenu, index) => (
           <li
+            data-testid='item'
             key={index}
             className='dropdown-item'
             style={{ listStyleType: "none" }}
@@ -48,9 +49,14 @@ const Dropdown = ({ submenus, i }) => {
   }
 
   return (
-    <ul className='dropdown' style={{ display: "flex", flex: "column" }}>
+    <ul
+      data-testid='Tab'
+      className='dropdown'
+      style={{ display: "flex", flex: "column" }}
+    >
       {submenus.map((submenu, index) => (
         <li
+          // data-testid='item'
           key={index}
           className='dropdown-item-store-and-new'
           style={{ listStyleType: "none" }}
