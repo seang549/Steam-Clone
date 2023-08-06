@@ -4,9 +4,9 @@ jobs:
   build:
     docker:
       - image: cimg/base:latest
-        environment:
-          DATABASE_URL: $DATABASE_URL
-      - image: cimg/postgres:15.3.0
+        # environment:
+        #   DATABASE_URL: $DATABASE_URL
+      # - image: cimg/postgres:15.3.0
     steps:
       - checkout
       - run:
@@ -20,33 +20,33 @@ jobs:
           name: Test Code
           command: npm run test
 
-  deploy:
-    docker:
-      - image: cimg/base:latest
-    steps:
-      - run:
-          name: Deploy API to Render
-          command: |
-            import fetch from 'node-fetch';
+  # deploy:
+  #   docker:
+  #     - image: cimg/base:latest
+  #   steps:
+  #     - run:
+  #         name: Deploy API to Render
+  #         command: |
+  #           import fetch from 'node-fetch';
 
-            fetch(https://api.render.com/deploy/srv-cj7atesl975s73f1t060?key=-kVzJ7Mu5Og)
-              .then((response) => {
-                if (response.status === 200) {
-                  console.log('Deployment successful!');
-                } else {
-                  console.error('Deployment failed with response code:', response.status);
-                  response.text().then((text) => console.error(text));
-                  process.exit(1);
-                }
-              })
-              .catch((error) => {
-                console.error('Error during deployment:', error.message);
-                process.exit(1);
-              });
+  #           fetch(https://api.render.com/deploy/srv-cj7atesl975s73f1t060?key=-kVzJ7Mu5Og)
+  #             .then((response) => {
+  #               if (response.status === 200) {
+  #                 console.log('Deployment successful!');
+  #               } else {
+  #                 console.error('Deployment failed with response code:', response.status);
+  #                 response.text().then((text) => console.error(text));
+  #                 process.exit(1);
+  #               }
+  #             })
+  #             .catch((error) => {
+  #               console.error('Error during deployment:', error.message);
+  #               process.exit(1);
+  #             });
 
 workflows:
   build_test_deploy:
     jobs:
       - build
       - test
-      - deploy
+      # - deploy
