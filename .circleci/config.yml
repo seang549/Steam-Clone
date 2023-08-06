@@ -12,13 +12,13 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-  # test:
-  #   docker:
-  #     - image: cimg/node:18.16.0
-  #   steps:
-  #     - run:
-  #         name: Test Code
-  #         command: npm run test
+  test:
+    docker:
+      - image: cimg/node:18.16.0
+    steps:
+      - run:
+          name: Test Code
+          command: npm run test
 
   # deploy:
   #   docker:
