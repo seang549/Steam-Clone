@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export default async (req, res, next) => {
+  console.log(req);
   try {
     const jwtToken = req.header("token");
 
