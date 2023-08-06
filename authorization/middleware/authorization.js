@@ -9,7 +9,6 @@ export default async (req, res, next) => {
     const jwtToken = req.header("token");
 
     if (!jwtToken) {
-      console.log("token does not exist");
       return res.status(403).send("not authorized");
     }
 
@@ -35,8 +34,6 @@ user_id, and we can use that in our routes.
     next();
   } catch (err) {
     console.error(err.message);
-    console.log("2", err.message);
-    console.log("there was a problem");
     return res.status(403).send("not authorized");
   }
 };
