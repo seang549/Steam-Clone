@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/deploy:2023.08-node
+      - image: cimg/node:2023.08
         environment:
           DATABASE_URL: $DATABASE_URL
       - image: cimg/postgres:15.3.0
@@ -14,7 +14,7 @@ jobs:
           command: npm install
   test:
     docker:
-      - image: cimg/deploy:2023.08-node
+      - image: cimg/node:2023.08
     steps:
       - run:
           name: Test Code
@@ -22,7 +22,7 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/deploy:2023.08-node
+      - image: cimg/node:2023.08
     steps:
       - run:
           name: Deploy API to Render
