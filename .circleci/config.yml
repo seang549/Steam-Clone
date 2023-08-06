@@ -14,7 +14,7 @@ jobs:
           command: npm install
   test:
     docker:
-      - image: cimg/base:latest
+      - image: cimg/node:18.16.0
     steps:
       - run:
           name: Test Code
