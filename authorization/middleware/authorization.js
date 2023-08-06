@@ -34,6 +34,7 @@ user_id, and we can use that in our routes.
     next();
   } catch (err) {
     console.error(err.message);
+    console.log("there was a problem");
     return res.status(403).send("not authorized");
   }
 };
