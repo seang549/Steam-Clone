@@ -56,7 +56,7 @@ router.post("/login", validInfo, async (req, res) => {
       return res.status(401).send("Incorrect name or email...");
     }
 
-    const token = jwtGenerator(newUser.rows[0].user_id);
+    const token = jwtGenerator(user.rows[0].user_id);
 
     return res.json({ token });
   } catch (err) {
