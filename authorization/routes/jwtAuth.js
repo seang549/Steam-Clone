@@ -22,7 +22,7 @@ router.post("/register", validInfo, async (req, res) => {
     const bcryptPassword = await bcrypt.hash(password, salt);
 
     const newUser = await pool.query(
-      `INSERT INTO auth(user_name, user_email, user_password) VALUES($1, $2, $3) RETURNING *`,
+      "INSERT INTO auth(user_name, user_email, user_password) VALUES($1, $2, $3) RETURNING *",
       [name, email, bcryptPassword]
     );
 
@@ -30,8 +30,8 @@ router.post("/register", validInfo, async (req, res) => {
 
     return res.json({ token });
   } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error...");
+    console.error(err.message);
+    res.status(500).send(err.message);
   }
 });
 
@@ -39,9 +39,9 @@ router.post("/login", validInfo, async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await pool.query(
-      `SELECT * FROM auth WHERE user_email = ${email}`
-    );
+    const user = await pool.query("SELECT * FROM auth WHERE user_email = $1", [
+      email,
+    ]);
 
     if (user.rows.length < 1) {
       return res.status(404).send("User not found...");
@@ -56,7 +56,7 @@ router.post("/login", validInfo, async (req, res) => {
       return res.status(401).send("Incorrect name or email...");
     }
 
-    const token = jwtGenerator(newUser.rows[0].user_id);
+    const token = jwtGenerator(user.rows[0].user_id);
 
     return res.json({ token });
   } catch (err) {
@@ -71,7 +71,7 @@ router.get("/verify", authorization, async (req, res) => {
     return res.json(true);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Server Error");
+    res.status(500).send(error.message);
   }
 });
 
