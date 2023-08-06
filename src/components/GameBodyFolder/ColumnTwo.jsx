@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 const ColumnTwo = () => {
   return (
     <div className='flexGap' style={{ flexDirection: "column", gap: "8px" }}>
@@ -13,9 +14,11 @@ const ColumnTwo = () => {
             </p>
           </div>
           <div>
-            <button className='communityHub sign_in' style={{ height: "30px" }}>
-              Sign In
-            </button>{" "}
+            <Link to='login'>
+              <button className='communityHub sign_in' style={{ height: "30px" }}>
+                Sign In
+              </button>{" "}
+            </Link>
             or{" "}
             <button
               className='communityHub open_in_steam'

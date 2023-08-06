@@ -17,7 +17,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { email, password };
       const response = await fetch(
-        "http://localhost:8004/authentication/login",
+        "https://steam-clone-zf6a.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: {
@@ -29,13 +29,11 @@ const Login = ({ setAuth }) => {
 
       const parseRes = await response.json();
 
-      if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
         setAuth(true);
-        toast.success("Logged in Successfully");
       } else {
         setAuth(false);
-        toast.error(parseRes);
       }
     } catch (err) {
       console.error(err.message);
@@ -60,9 +58,11 @@ const Login = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
           className="form-control my-3"
         />
-        <button class="btn btn-success btn-block">Submit</button>
+        <Link to="../">
+          <button class="btn btn-success btn-block">Submit</button>
+        </Link>
       </form>
-      <Link to="/register">register</Link>
+      <Link to="../register">Register</Link>
     </>
   );
 };

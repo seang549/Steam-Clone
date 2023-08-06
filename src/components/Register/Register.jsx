@@ -29,8 +29,8 @@ const Register = ({ setAuth }) => {
       );
       const parseRes = await response.json();
 
-      if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
         setAuth(true);
         toast.success("Register Successfully");
       } else {
@@ -72,7 +72,7 @@ const Register = ({ setAuth }) => {
         />
         <button className="btn btn-success btn-block">Submit</button>
       </form>
-      <Link to="/login">login</Link>
+      <Link to="../login">login</Link>
     </>
   );
 };
