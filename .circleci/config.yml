@@ -15,14 +15,20 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+      - restore_cache:
+          key: dependency-cache-{{ test "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
-      - restore_cache:
+      - save_cache:
           key: dependency-cache-{{ test "package.json" }}
+          paths: ./node_modules
   test:
     docker:
       - image: cimg/node:18.16.0
+    dependencies:
+      override:
+        - npm install vitest
     steps:
       - checkout
       - run:
