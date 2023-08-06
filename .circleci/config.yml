@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: cimg/deploy:2023.08-node
         environment:
-          DATABASE_URL: process.env.DATABASE_URL
+          DATABASE_URL: $DATABASE_URL
     steps:
       - checkout
       - run:
@@ -27,7 +27,7 @@ jobs:
           name: Deploy API to Render
           command: |
             const fetch = require('node-fetch');
-            const deployUri = process.env.DEPLOY_URI;
+            const deployUri = $DEPLOY_URI;
 
             fetch(deployUri)
               .then((response) => {
@@ -49,4 +49,8 @@ workflows:
     jobs:
       - build
       - test
+          requires:
+            - build
       - deploy
+          requires:
+            - build
