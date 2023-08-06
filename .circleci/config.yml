@@ -33,6 +33,8 @@ jobs:
           command: npm test
 
   deploy:
+    docker:
+      - image: cimg/node:18.16.0
     # requires:
     #   - test
     # filters:
