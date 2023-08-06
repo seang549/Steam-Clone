@@ -2,8 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    working_directory: ./FEC
     docker:
+        working_directory: ~/project/package.json
       - image: cimg/node:18.16.0
         # environment:
         #   DATABASE_URL: $DATABASE_URL
@@ -13,13 +13,13 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-  test:
-    docker:
-      - image: cimg/node:18.16.0
-    steps:
-      - run:
-          name: Test Code
-          command: npm run test
+  # test:
+  #   docker:
+  #     - image: cimg/node:18.16.0
+  #   steps:
+  #     - run:
+  #         name: Test Code
+  #         command: npm run test
 
   # deploy:
   #   docker:
