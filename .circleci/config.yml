@@ -6,6 +6,7 @@ jobs:
       - image: cimg/deploy:2023.08-node
         environment:
           DATABASE_URL: $DATABASE_URL
+      - image: cimg/postgres:15.3.0
     steps:
       - checkout
       - run:
