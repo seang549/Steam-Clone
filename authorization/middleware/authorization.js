@@ -7,7 +7,7 @@ export default async (req, res, next) => {
   try {
     const jwtToken = req.header("token");
 
-    if (!token) {
+    if (!jwtToken) {
       return res.status(403).send("not authorized");
     }
 
