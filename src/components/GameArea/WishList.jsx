@@ -3,6 +3,7 @@ import { useAuthData } from '../../AuthContext';
 const WishList = () => {
   
   let authenticated = useAuthData()
+  console.log(authenticated)
 
   if(!authenticated) {
     return (

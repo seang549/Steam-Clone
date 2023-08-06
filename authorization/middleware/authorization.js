@@ -5,9 +5,10 @@ dotenv.config();
 
 export default async (req, res, next) => {
   try {
-    const jwtToken = req.header("token");
+    const token = req.header("token");
 
     if (!token) {
+      console.log('not authed')
       return res.status(403).send("not authorized");
     }
 
@@ -27,7 +28,7 @@ use in our routes
 our user_id. So really this is just giving us back the correct, now authorized
 user_id, and we can use that in our routes.
     */
-
+    console.log('verified')
     req.user = payload.user;
     next();
   } catch (err) {

@@ -61,12 +61,13 @@ router.post("/login", validInfo, async (req, res) => {
     return res.json({ token });
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server Error");
+    res.status(500).send(err.message);
   }
 });
 
 router.get("/verify", authorization, async (req, res) => {
   try {
+    console.log(req)
     return res.json(true);
   } catch (error) {
     console.error(error.message);

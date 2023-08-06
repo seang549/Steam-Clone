@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
-const Register = ({ setAuth }) => {
+
+const Register = () => {
+
+
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -10,33 +14,18 @@ const Register = ({ setAuth }) => {
 
   const { email, password, name } = inputs;
 
-  const onChange = (e) =>
+  const onChange = (e) => 
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
   const onSubmitForm = async (e) => {
-    e.preventDefault();
+      e.preventDefault();
+      console.log(inputs)
     try {
       const body = { email, password, name };
-      const response = await fetch(
-        "https://steam-clone-zf6a.onrender.com/api/auth/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(body),
-        }
-      );
-      const parseRes = await response.json();
+      const response = await axios.post(
+        "https://steam-clone-zf6a.onrender.com/api/auth/register", body);
+      // const parseRes = await response.data;
 
-      if (parseRes.token) {
-        localStorage.setItem("token", parseRes.token);
-        setAuth(true);
-        toast.success("Register Successfully");
-      } else {
-        setAuth(false);
-        toast.error(parseRes);
-      }
     } catch (err) {
       console.error(err.message);
     }
@@ -70,7 +59,9 @@ const Register = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
           className="form-control my-3"
         />
-        <button className="btn btn-success btn-block">Submit</button>
+        <Link to="../login">
+        <button type='submit' className="btn btn-success btn-block">Submit</button>
+        </Link>
       </form>
       <Link to="../login">login</Link>
     </>
