@@ -26,10 +26,9 @@ jobs:
       - run:
           name: Deploy API to Render
           command: |
-            const fetch = require('node-fetch');
-            const deployUri = $DEPLOY_URI;
+            import fetch from 'node-fetch';
 
-            fetch(deployUri)
+            fetch(https://api.render.com/deploy/srv-cj7atesl975s73f1t060?key=-kVzJ7Mu5Og)
               .then((response) => {
                 if (response.status === 200) {
                   console.log('Deployment successful!');
@@ -49,8 +48,4 @@ workflows:
     jobs:
       - build
       - test
-          requires:
-            - build
       - deploy
-          requires:
-            - build
