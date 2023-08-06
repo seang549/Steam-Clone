@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: cimg/deploy:2023.08-node
         environment:
-          DATABASE_URL: postgres://steam_clone_fec_user:mK3Q1M96eV11yc0yAfXxqibkjZzaBmxp@dpg-citeehh5rnuhcntjlc90-a.oregon-postgres.render.com/steam_clone_fec?ssl=true
+          DATABASE_URL: process.env.DATABASE_URL
     steps:
       - checkout
       - run:
