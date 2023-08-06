@@ -9,7 +9,6 @@ export default async (req, res, next) => {
     const jwtToken = req.header("token");
 
     if (!jwtToken) {
-      console.log("token does not exist");
       return res.status(403).send("not authorized");
     }
 
@@ -30,7 +29,7 @@ use in our routes
 our user_id. So really this is just giving us back the correct, now authorized
 user_id, and we can use that in our routes.
     */
-
+    console.log('verified')
     req.user = payload.user;
     next();
   } catch (err) {
