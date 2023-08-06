@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const secret = process.env.secret;
-console.log(secret);
+
 const jwtGenerator = (user_id) => {
   const payload = {
-    user: user_id,
+    id: user_id,
   };
 
   return jwt.sign(payload, secret, { expiresIn: "1hr" });

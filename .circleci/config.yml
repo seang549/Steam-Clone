@@ -1,15 +1,52 @@
 version: 2.1
-setup: true
 
 jobs:
-  run_test:
+  build:
     docker:
-      - image: cimg/node:18.16.0
+      - image: cimg/deploy:2023.08-node
     steps:
       - checkout
       - run:
           name: Install Dependencies
           command: npm install
+  test:
+    docker:
+      - image: cimg/deploy:2023.08-node
+    steps:
       - run:
-          name: Run Unit Tests
+          name: Test Code
           command: npm run test
+
+  deploy:
+    docker:
+      - image: cimg/deploy:2023.08-node
+    steps:
+      - run:
+          name: Deploy API to Render
+          command: |
+            const fetch = require('node-fetch');
+            const deployUri = process.env.DEPLOY_URI;
+
+            fetch(deployUri)
+              .then((response) => {
+                if (response.status === 200) {
+                  console.log('Deployment successful!');
+                } else {
+                  console.error('Deployment failed with response code:', response.status);
+                  response.text().then((text) => console.error(text));
+                  process.exit(1);
+                }
+              })
+              .catch((error) => {
+                console.error('Error during deployment:', error.message);
+                process.exit(1);
+              });
+
+
+workflows:
+  build_test_deploy:
+    jobs:
+      - build
+      - test
+      - deploy
+
