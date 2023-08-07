@@ -58,6 +58,16 @@ const Footer = () => {
         <a href='https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_'>
           Gift Cards
         </a>
+        &nbsp; | &nbsp;
+        <a href='https://steamcommunity.com/linkfilter/?url=http://www.facebook.com/Steam'>
+          <img src="	https://store.cloudflare.steamstatic.com/public/images/ico/ico_facebook.gif"></img>
+          &nbsp;Steam
+        </a>
+        &nbsp; | &nbsp;
+        <a href = 'http://twitter.com/steam'>
+          <img src='	https://store.cloudflare.steamstatic.com/public/images/ico/ico_twitter.gif'></img>
+          &nbsp;@steam
+        </a>
       </div>
     </div>
   );
