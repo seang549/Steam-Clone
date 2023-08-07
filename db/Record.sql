@@ -4,6 +4,6 @@ CREATE TABLE Record(
     game_id INT,
     FOREIGN KEY (game_id) REFERENCES Games(id) ON DELETE CASCADE,
     user_id INT,
-    FOREIGN KEY (User_id) REFERENCES Users(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE,
     recordMinutes INT
 );

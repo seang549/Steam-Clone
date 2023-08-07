@@ -1,5 +1,5 @@
 -- Game more like this ICON first, then info title image, then videos, then images
-DROP TABLE IF EXISTS Assets;
+DROP TABLE IF EXISTS Assets CASCADE;
 CREATE TABLE Assets (
     id SERIAL PRIMARY KEY,
     link TEXT,
