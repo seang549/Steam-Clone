@@ -413,3 +413,16 @@
   width: 88;
   aspect-ratio: intital;
 }
+
+
+.footer-spacer {
+  height: 209px;
+  width: 100%;
+  position: absolute;
+}
+
+.create-account {
+  height: 742px;
+  width: 100%;
+  position: absolute;
+}
