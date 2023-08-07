@@ -1,35 +1,14 @@
-//module imports
-//keep in mind that nothing is downloaded
-//this is simply for show at the moment
-
+import router from "./authorization/routes/jwtAuth.js";
+import * as dotenv from "dotenv";
 import express from "express";
-import dotenv from "dotenv";
+import pool from "./db/db.js";
 import cors from "cors";
-import pkg from "pg";
-
-const app = express();
 dotenv.config();
 
-//new pool instance
-const { Pool } = pkg;
-
-const dbString = process.env.DATABASE_URL;
+const app = express();
 
 const port = process.env.PORT;
 
-const pool = new Pool({
-  connectionString: dbString,
-});
-
-//example information for local development
-//const pool = new Pool({
-
-// host: "localhost",
-// port: 5432,
-// database: "blog_app_7fno01",
-// user: "Yasmin Aguilar",
-// password: "123",
-//})
 //middleware
 //body parser
 app.use(express.json());
@@ -37,6 +16,9 @@ app.use(cors({ origin: "*" }));
 app.use(express.static("dist"));
 
 //routes
+//authentification
+app.use("/api/auth", router);
+
 //get all
 app.get("/game_info", async (req, res) => {
   try {
@@ -90,9 +72,7 @@ app.get("/reviews", async (req, res) => {
 });
 app.get("/awards", async (req, res) => {
   try {
-    const result = await pool.query(
-      `SELECT * FROM awards`
-    );
+    const result = await pool.query(`SELECT * FROM awards`);
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");
     } else {
@@ -108,9 +88,7 @@ app.get("/awards", async (req, res) => {
 });
 app.get("/helpfull", async (req, res) => {
   try {
-    const result = await pool.query(
-      `SELECT * FROM helpfull`
-    );
+    const result = await pool.query(`SELECT * FROM helpfull`);
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");
     } else {
@@ -126,9 +104,7 @@ app.get("/helpfull", async (req, res) => {
 });
 app.get("/award_reviews", async (req, res) => {
   try {
-    const result = await pool.query(
-      `SELECT * FROM award_reviews`
-    );
+    const result = await pool.query(`SELECT * FROM award_reviews`);
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");
     } else {
@@ -204,9 +180,7 @@ app.get("/reviews/:id", async (req, res) => {
 app.get("/awards/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await pool.query(
-      `SELECT * FROM awards WHERE id = ${id}`
-    );
+    const result = await pool.query(`SELECT * FROM awards WHERE id = ${id}`);
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");
     } else {
@@ -223,9 +197,7 @@ app.get("/awards/:id", async (req, res) => {
 app.get("/helpfull/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const result = await pool.query(
-      `SELECT * FROM helpfull WHERE id = ${id}`
-    );
+    const result = await pool.query(`SELECT * FROM helpfull WHERE id = ${id}`);
     if (result.rowCount === 0) {
       res.status(404).send("No Information Found");
     } else {

@@ -1,6 +1,91 @@
-const Footer = () => {
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import GlobalActionMenu from "../HeaderFolder/GlobalActionMenu.jsx";
+import HeaderNavBar from "../HeaderFolder/HeaderNavBar.jsx";
+
+
+const Register = () => {
+
+
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+    name: "",
+  });
+
+  const { email, password, name } = inputs;
+
+  const onChange = (e) => 
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+
+  const onSubmitForm = async (e) => {
+      e.preventDefault();
+      console.log(inputs)
+    try {
+      const body = { email, password, name };
+      const response = await axios.post(
+        "https://steam-clone-zf6a.onrender.com/api/auth/register", body);
+      // const parseRes = await response.data;
+
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
-    <div className='footer'>
+    <>
+      <header className='header-content'>
+      <div className='nav-area' style={{ display: "flex" }}>
+        <a
+          className='float-a-tag'
+          href='https://store.steampowered.com/?snr=1_5_9__global-header'
+        >
+
+          <img
+            className='logo'
+            src='https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016'
+          ></img>
+        </a>
+        <HeaderNavBar />
+        <GlobalActionMenu />
+      </div>
+    </header>
+    <div className='create-account'>
+      <h1 className="mt-5 text-center">Register</h1>
+      <form onSubmit={onSubmitForm}>
+        <input
+          type="text"
+          name="email"
+          value={email}
+          placeholder="email"
+          onChange={(e) => onChange(e)}
+          className="form-control my-3"
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          placeholder="password"
+          onChange={(e) => onChange(e)}
+          className="form-control my-3"
+        />
+        <input
+          type="text"
+          name="name"
+          value={name}
+          placeholder="name"
+          onChange={(e) => onChange(e)}
+          className="form-control my-3"
+        />
+        <Link to="../login">
+        <button type='submit' className="btn btn-success btn-block">Submit</button>
+        </Link>
+      </form>
+      <Link to="../login">login</Link>
+      </div>
+
+      <div className='footer'>
       <div className='footer-content'>
         <a href='https://www.valvesoftware.com/en/'>
           <img
@@ -70,6 +155,8 @@ const Footer = () => {
         </a>
       </div>
     </div>
+    </>
   );
 };
-export default Footer;
+
+export default Register;
