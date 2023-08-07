@@ -14,6 +14,7 @@ CREATE TABLE Reviews(
     posted DATE,
     yesCount INT,
     funnyCount INT,
+    recordCache INT,
     recomendation BOOLEAN,
     body TEXT
 );
@@ -38,5 +39,5 @@ LANGUAGE plpgsql VOLATILE
 COST 100;
 
 CREATE TRIGGER Reviews_trigger
-BEFORE INSERT ON Parent
+BEFORE INSERT ON Reviews
 FOR EACH ROW EXECUTE PROCEDURE Reviews_function();

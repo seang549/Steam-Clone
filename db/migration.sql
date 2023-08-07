@@ -7,3 +7,14 @@
 \i Tags.sql
 \i Record.sql;
 \i Awarded.sql;
+\i Auth.sql;
+\i AuthSeed.sql;
+\i LanguagesSeed.sql;
+\i GamesSeed.sql;
+\i UsersSeed.sql;
+\i ReviewsSeed.sql;
+\i AwardsSeed.sql;
+\i AssetsSeed.sql;
+\i TagsSeed.sql;
+\i RecordSeed.sql;
+\i AwardedSeed.sql;

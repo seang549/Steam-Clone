@@ -12,5 +12,5 @@ CREATE TABLE Games (
     price DECIMAL,
     languages_id INT ARRAY,
     moreLikeThis_id INT ARRAY,
-    tags_id INT ARRAY
+    tag_id INT ARRAY
 );
