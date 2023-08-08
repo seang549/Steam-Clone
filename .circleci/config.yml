@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Pushing to Main
           command: |
-            git checkout -b main
+            git checkout main
             git commit --allow-empty -m "auto deploy per successful build"
             git push origin main
 
