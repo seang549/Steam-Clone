@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS Languages CASCADE;
+CREATE TABLE Languages (
+    id SERIAL PRIMARY KEY,
+    title TEXT
+);

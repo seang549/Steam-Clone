@@ -1,52 +1,81 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@5.1.0
+
 jobs:
   build:
+    working_directory: ~/public
     docker:
-      - image: cimg/deploy:2023.08-node
+      - image: cimg/node:18.16.0
+
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - restore_cache:
+          key: dependency-cache-{{ test "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
+      - save_cache:
+          key: dependency-cache-{{ test "package.json" }}
+          paths: ./node_modules
   test:
     docker:
-      - image: cimg/deploy:2023.08-node
+      - image: cimg/node:18.16.0
     steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           name: Test Code
-          command: npm run test
-
+          command: npm test
   deploy:
     docker:
-      - image: cimg/deploy:2023.08-node
+      - image: cimg/node:18.16.0
     steps:
+      - checkout
       - run:
-          name: Deploy API to Render
+          name: Setting Up Git
           command: |
-            const fetch = require('node-fetch');
-            const deployUri = process.env.DEPLOY_URI;
-
-            fetch(deployUri)
-              .then((response) => {
-                if (response.status === 200) {
-                  console.log('Deployment successful!');
-                } else {
-                  console.error('Deployment failed with response code:', response.status);
-                  response.text().then((text) => console.error(text));
-                  process.exit(1);
-                }
-              })
-              .catch((error) => {
-                console.error('Error during deployment:', error.message);
-                process.exit(1);
-              });
-
+            git config --global user.email "yaguilar2001@gmail.com"
+            git config --global user.name "circleci"
+            git remote set-url origin git@github.com:VIBING-GOON-SQUAD/FEC.git
+      - run:
+          name: Pushing to Main
+          command: |
+            git checkout main
+            git commit --allow-empty -m "auto deploy per successful build"
+            git push origin main
 
 workflows:
   build_test_deploy:
     jobs:
       - build
       - test
-      - deploy
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - QA-Branch
 
+        # command: |
+        #   import fetch from 'node-fetch';
+
+        #   fetch(https://api.render.com/deploy/srv-cj7atesl975s73f1t060?key=-kVzJ7Mu5Og)
+        #     .then((response) => {
+        #       if (response.status === 200) {
+        #         console.log('Deployment successful!');
+        #       } else {
+        #         console.error('Deployment failed with response code:', response.status);
+        #         response.text().then((text) => console.error(text));
+        #         process.exit(1);
+        #       }
+        #     })
+        #     .catch((error) => {
+        #       console.error('Error during deployment:', error.message);
+        #       process.exit(1);
+        #     });

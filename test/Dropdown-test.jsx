@@ -5,8 +5,8 @@ import {
   waitFor,
   getByTestId,
 } from "@testing-library/react";
-import Dropdown from "../components/Navbar/Dropdown.jsx";
-import StoreTabs from "../components/Navbar/StoreTabs.jsx";
+import Dropdown from "../src/components/Navbar/Dropdown.jsx";
+import StoreTabs from "../src/components/Navbar/StoreTabs.jsx";
 import "@testing-library/jest-dom";
 
 describe("dropdown test", () => {
@@ -28,7 +28,7 @@ describe("dropdown test", () => {
   test("should show the content at the start", () => {
     expect(screen.getByTestId("Tab")).toBeVisible();
   });
-
+  //added just to push for nothing
   // test("should not show the content at the start", () => {
   //   let items = screen.queryAllByTestId("item");
   //   expect(items).not.toBeVisible();

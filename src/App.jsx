@@ -21,48 +21,41 @@ import {useAuthData, useAuthDataUpdate} from "./AuthContext.jsx"
 import axios from 'axios'
 
 function App() {
-
+  const setAuthData = useAuthDataUpdate()
   const checkAuthenticated = async () => {
     try {
       const config = {
-        headers: {
-          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIwMGQxNmFiLTA3NWQtNDNiMy1iOTUyLTdiMGMxNmEwYmE2MyIsImlhdCI6MTY5MTE5MjM4MiwiZXhwIjoxNjkxMTk1OTgyfQ.yIo-wkfypo3Zp1gGLjg0zwarumi4nX4-dE5tTmveOO8'
+        headers:{
+          token: localStorage.token 
         }
       }
       const res = await axios.get("https://steam-clone-zf6a.onrender.com/api/auth/verify", config);
-      console.log(res.data)
       const parseRes = await res.data;
-
-      return parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+      console.log(parseRes)
+      
+      return parseRes === true ? setAuthData(true) : setAuthData(false);
     } catch (err) {
       console.error(err.message);
     }
   };
-
+  
   useEffect(() => {
     checkAuthenticated();
-  }, []);
-
-
-
-  const setAuth = (boolean) => {
-    useAuthDataUpdate(boolean);
-  };
-
-
+  }, [useAuthData]);
+  
   return (
     <Router>
       <Routes>
         <Route 
           exact path="/login"
           element={
-            <Login setAuth={setAuth}/>
+            <Login />
           }
           ></Route>
         <Route 
           exact path="/register"
           element={
-            <Register setAuth={setAuth}/>
+            <Register />
           }
           ></Route>
         <Route

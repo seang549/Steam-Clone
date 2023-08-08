@@ -14,7 +14,7 @@ export function useAuthDataUpdate() {
     return useContext(AuthUpdateContext)
 }
 
-export function DataProvider({ children }) {
+export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
   
 
@@ -24,7 +24,7 @@ export function DataProvider({ children }) {
 
 
     return (
-        <AuthContext.Provider value={AuthData}>
+        <AuthContext.Provider value={isAuthenticated}>
             <AuthUpdateContext.Provider value={updateAuthData}>
                 {children}
             </AuthUpdateContext.Provider>
