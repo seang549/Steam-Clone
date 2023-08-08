@@ -17,7 +17,15 @@ const WishList = () => {
   }
   else {
     return (
-      <p>authenitcated boiii</p>
+      <div className="auth-wishList">
+        <button className='wishlist-btn communityHub'>Add to your wishlist</button>
+        <button className="wishlist-btn communityHub">Follow</button>
+        <button className="wishlist-btn communityHub">Ignore</button>
+        <button className='wishlist-btn communityHub'><img src='	https://store.cloudflare.steamstatic.com/public/images/v6/btn_arrow_down_padded.png'></img></button>
+        <button className='wishlist-btn-view communityHub'>View Your Queue	
+        <div className="arrow_next"></div>
+        </button>
+      </div>
     );
   }
 };

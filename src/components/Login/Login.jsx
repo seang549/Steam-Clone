@@ -27,6 +27,7 @@ const Login = () => {
         "https://steam-clone-zf6a.onrender.com/api/auth/login", body);
 
       const parseRes = await response.data;
+      console.log(parseRes)
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
@@ -34,6 +35,7 @@ const Login = () => {
       } else {
         setAuthData(false);
       }
+      window.location.href = '../'
     } catch (err) {
       console.error(err.message);
     }
@@ -74,9 +76,7 @@ const Login = () => {
           onChange={(e) => onChange(e)}
           className="form-control my-3"
         />
-        <Link to="../">
-          <button className="btn btn-success btn-block">Submit</button>
-        </Link>
+          <button onClick={onSubmitForm} className="btn btn-success btn-block">Submit</button>
       </form>
       <Link to="../register">Register</Link>
 
