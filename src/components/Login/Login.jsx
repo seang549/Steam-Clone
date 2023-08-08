@@ -28,6 +28,7 @@ const Login = () => {
       );
 
       const parseRes = await response.data;
+      console.log(parseRes)
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
@@ -35,6 +36,7 @@ const Login = () => {
       } else {
         setAuthData(false);
       }
+      window.location.href = '../'
     } catch (err) {
       console.error(err.message);
     }
@@ -48,10 +50,12 @@ const Login = () => {
         <div className="login_ctn">
           <h1 className="login_h1">SIGN IN</h1>
 
+
           <div className="login_form_ctn">
             <div className="login_left">
               <form className="login_form" onSubmit={onSubmitForm}>
                 <div className="sign_in_title">SIGN IN WITH ACCOUNT NAME</div>
+
 
                 <div>
                   <input

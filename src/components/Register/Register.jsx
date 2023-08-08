@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../HeaderFolder/Header.jsx";
 import Footer from "../FooterFolder/Footer.jsx";
 
 const Register = () => {
+
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -21,15 +22,16 @@ const Register = () => {
     console.log(inputs);
     try {
       const body = { email, password, name };
-      const response = await axios.post(
-        "https://steam-clone-zf6a.onrender.com/api/auth/register",
-        body
-      );
-      // const parseRes = await response.data;
+
+      await axios.post(
+        "https://steam-clone-zf6a.onrender.com/api/auth/register", body);
+		window.location.href = '../'
+
     } catch (err) {
       console.error(err.message);
     }
   };
+
 
   return (
     <div className="register-page">
@@ -71,6 +73,7 @@ const Register = () => {
                 className="register-input"
               />
             </div>
+
 
             <div className="register-dropdown">
               Country of Residence
@@ -340,19 +343,10 @@ const Register = () => {
               </select>
             </div>
 
-            <div className="reCaptcha">
-              <iframe
-                title="reCAPTCHA"
-                src="https://google.com/recaptcha/enterprise/anchor?ar=2&amp;k=6LdIFr0ZAAAAAO3vz0O0OQrtAefzdJcWQM2TMYQH&amp;co=aHR0cHM6Ly9zdG9yZS5zdGVhbXBvd2VyZWQuY29tOjQ0Mw..&amp;hl=en&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;theme=dark&amp;size=normal&amp;s=5I8CmBGpexw3e6uv-HsAq50UkMLzw6tzsKxthOPuYamjz-uaD8V_-CUftbiajigLTHY7atVoQUDy6qJAR5FrJX8Vss3jGsnCvzhdkxUoGDLQ6MzBfQkC2UKieo4zR_hws9isozeEzCNA-IIP_S7uxB6y-37pa5x5onu4-ZQiHUUyGZd07ilvi9JhjmnckMGWozm1J0q8MlWat8ZvjRL6Mu4g-tg94--poY7k0hxpJurAgzrDCgar2AkoDCDey45e94joDqL3vOigAHOQjU4&amp;cb=x2s2mkbsh5i3"
-                width="304"
-                height="78"
-                role="presentation"
-                name="a-osyahk636xf8"
-                frameborder="0"
-                scrolling="no"
-                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
-              ></iframe>
-            </div>
+          <div className="reCaptcha">
+            <ReCAPTCHA theme='dark' className='recaptcha' sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm" />
+          </div>
+ </div>
 
             <div className="checkbox">
               <input type="checkbox" /> I am 13 years of age or older and agree
@@ -367,14 +361,11 @@ const Register = () => {
               .
             </div>
 
-            <Link to="../login">
-              <button type="submit" className="continue">
-                Continue
-              </button>
-            </Link>
-          </form>
-        </div>
+
+          <button type='submit' onClick={onSubmitForm} className="continue">Continue</button>
+        </form>
       </div>
+    </div>
 
       <Footer />
     </div>

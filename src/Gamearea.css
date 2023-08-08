@@ -441,3 +441,46 @@
   font-size: 15px;
   line-height: 30px;
 }
+
+
+.auth-wishList {
+  height: 68px;
+  width: 940px;
+  display: flex;
+  padding: 15px;
+  background-image: linear-gradient(90deg, #18222f, #1a2431) 
+}
+
+.wishlist-btn {
+  border-radius: 2px;
+  border: none;
+  padding: 8px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.arrow_next {
+  background-image: url(https://store.cloudflare.steamstatic.com/public/shared/images/buttons/icons_16.png?v=5);
+  background-position: -176px 0px;
+  height: 16px;
+  width: 16px;
+  margin-left: 7px;
+}
+
+.wishlist-btn-view {
+  border-radius: 2px;
+  border: none;
+  padding: 8px;
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+  font-size: 16px;
+  margin-left: 45%;
+}
