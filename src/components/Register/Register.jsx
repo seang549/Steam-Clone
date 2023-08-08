@@ -8,17 +8,6 @@ import ReCAPTCHA from 'react-google-recaptcha'
 
 const Register = () => {
   
-  const [isVerified, setIsVerified] = useState(false)
-  const handleRecaptchaChange = (response) => {
-    if(resposne) {
-      setIsVerified(true)
-    }
-    else {
-      setIsVerified(false)
-    }
-  }
-
-  
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -35,10 +24,9 @@ const Register = () => {
       console.log(inputs)
     try {
       const body = { email, password, name };
-      const response = await axios.post(
+      await axios.post(
         "https://steam-clone-zf6a.onrender.com/api/auth/register", body);
-      // const parseRes = await response.data;
-
+		window.location.href = '../'
     } catch (err) {
       console.error(err.message);
     }
@@ -356,7 +344,7 @@ const Register = () => {
           </div>
 
           <div className="reCaptcha">
-            <ReCAPTCHA theme='dark' className='recaptcha' sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm" onChange={handleRecaptchaChange} />
+            <ReCAPTCHA theme='dark' className='recaptcha' sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm" />
           </div>
 
           <div className="checkbox">
@@ -364,9 +352,8 @@ const Register = () => {
             I am 13 years of age or older and agree to the terms of the <a href="https://store.steampowered.com/subscriber_agreement/">Steam Subscriber Agreement</a> and the <a href="https://store.steampowered.com/privacy_agreement/">Valve Privacy Policy</a>.
           </div>
 
-          <Link to="../login">
-          <button type='submit' className="continue">Continue</button>
-          </Link>
+
+          <button type='submit' onClick={onSubmitForm} className="continue">Continue</button>
         </form>
       </div>
     </div>
