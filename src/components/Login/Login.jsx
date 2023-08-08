@@ -80,9 +80,7 @@ const Login = () => {
                   <input type="checkbox" className="remember_check" /> Remember
                   me
                 </div>
-                <Link to="../">
                   <button className="sign_in_btn">Sign in</button>
-                </Link>
               </form>
               <a href="https://help.steampowered.com/wizard/HelpWithLogin?redir=https%3A%2F%2Fstore.steampowered.com%2Flogin%2F%3Fredir%3Dlogin%252F%253Fredir%253Dapp%25252F2433830%25252FSpider%25252F%2526redir_ssl%253D1%2526snr%253D1_5_9__global-header%26redir_ssl%3D1%26snr%3D1_60_4__global-header">
                 Help, I can't sign in
