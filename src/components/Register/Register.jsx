@@ -36,7 +36,6 @@ const Register = () => {
   return (
     <div className="register-page">
       <Header />
-
       <div className="create-account">
         <div className="create-account-form">
           <h1 className="create-your-account">Create Your Account</h1>
@@ -346,30 +345,25 @@ const Register = () => {
           <div className="reCaptcha">
             <ReCAPTCHA theme='dark' className='recaptcha' sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm" />
           </div>
- </div>
-
-            <div className="checkbox">
-              <input type="checkbox" /> I am 13 years of age or older and agree
-              to the terms of the{" "}
-              <a href="https://store.steampowered.com/subscriber_agreement/">
-                Steam Subscriber Agreement
-              </a>{" "}
-              and the{" "}
-              <a href="https://store.steampowered.com/privacy_agreement/">
-                Valve Privacy Policy
-              </a>
-              .
-            </div>
-
-
-          <button type='submit' onClick={onSubmitForm} className="continue">Continue</button>
-        </form>
+		  <div className="checkbox">
+			<input type="checkbox" /> I am 13 years of age or older and agree
+			to the terms of the{" "}
+			<a href="https://store.steampowered.com/subscriber_agreement/">
+				Steam Subscriber Agreement
+			</a>{" "}
+			and the{" "}
+			<a href="https://store.steampowered.com/privacy_agreement/">
+				Valve Privacy Policy
+			</a>
+			.
+		  </div>
+		  <button type='submit' onClick={onSubmitForm} className="continue">Continue</button>
+          </form>
+      	</div>
       </div>
-    </div>
-
       <Footer />
     </div>
-  );
+);
 };
 
 export default Register;
