@@ -7,6 +7,8 @@
   height: 667px;
   justify-content: center;
   background-image: url(https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg);
+  padding-top: 80px;
+  padding-bottom: 150px;
 }
 
 .login_h1 {
@@ -17,9 +19,7 @@
 }
 
 .login_ctn {
-  padding-top: 80px;
   width: 700px;
-  padding-bottom: 150px;
   display: flex;
   flex-direction: column;
 }
@@ -57,6 +57,7 @@
   background-color: #32353c;
   border: transparent;
   border-radius: 2px;
+  color: #e9e9e9;
 }
 
 .remember_check {
@@ -88,4 +89,34 @@
   font-size: 16px;
   align-self: center;
   margin-bottom: 20px;
+}
+
+.upper_footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 48px;
+}
+
+.upper_footer_item {
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.learn_more {
+  margin-top: 10px;
+}
+
+.join_btn {
+  border: 1px solid #74767a;
+  border-radius: 2px;
+  background: transparent;
+  padding: 5px 15px;
+  font-size: 15px;
+  line-height: 30px;
+  width: 109px;
+  align-self: center;
 }

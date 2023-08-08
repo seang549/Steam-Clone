@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../HeaderFolder/Header.jsx";
 import Footer from "../FooterFolder/Footer.jsx";
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Register = () => {
-
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -25,14 +25,14 @@ const Register = () => {
       const body = { email, password, name };
 
       await axios.post(
-        "https://steam-clone-zf6a.onrender.com/api/auth/register", body);
-		window.location.href = '../'
-
+        "https://steam-clone-zf6a.onrender.com/api/auth/register",
+        body
+      );
+      window.location.href = "../";
     } catch (err) {
       console.error(err.message);
     }
   };
-
 
   return (
     <div className="register-page">
@@ -73,7 +73,6 @@ const Register = () => {
                 className="register-input"
               />
             </div>
-
 
             <div className="register-dropdown">
               Country of Residence
@@ -343,25 +342,35 @@ const Register = () => {
               </select>
             </div>
 
-          <div className="reCaptcha">
-            <ReCAPTCHA theme='dark' className='recaptcha' sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm" />
-          </div>
-		  <div className="checkbox">
-			<input type="checkbox" /> I am 13 years of age or older and agree
-			to the terms of the{" "}
-			<a href="https://store.steampowered.com/subscriber_agreement/">
-				Steam Subscriber Agreement
-			</a>{" "}
-			and the{" "}
-			<a href="https://store.steampowered.com/privacy_agreement/">
-				Valve Privacy Policy
-			</a>
-			.
-		  </div>
-		  <button type='submit' onClick={onSubmitForm} className="continue">Continue</button>
+            <div className="reCaptcha">
+              <ReCAPTCHA
+                theme="dark"
+                className="recaptcha"
+                sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm"
+              />
+            </div>
+
+            <div className="checkbox">
+              <input type="checkbox" /> I am 13 years of age or older and agree
+              to the terms of the{" "}
+              <a href="https://store.steampowered.com/subscriber_agreement/">
+                Steam Subscriber Agreement
+              </a>{" "}
+              and the{" "}
+              <a href="https://store.steampowered.com/privacy_agreement/">
+                Valve Privacy Policy
+              </a>
+              .
+            </div>
+
+            <button type="submit" onClick={onSubmitForm} className="continue">
+              Continue
+            </button>
           </form>
-      	</div>
+        </div>
       </div>
+
+
       <Footer />
     </div>
 );
