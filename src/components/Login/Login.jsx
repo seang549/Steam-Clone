@@ -93,6 +93,7 @@ const Login = () => {
                   sign in via QR code
                 </p>
               </div>
+
             </div>
           </div>
         </div>

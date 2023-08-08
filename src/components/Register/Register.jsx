@@ -5,6 +5,7 @@ import Header from "../HeaderFolder/Header.jsx";
 import Footer from "../FooterFolder/Footer.jsx";
 import ReCAPTCHA from "react-google-recaptcha";
 
+
 const Register = () => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -36,7 +37,6 @@ const Register = () => {
   return (
     <div className="register-page">
       <Header />
-
       <div className="create-account">
         <div className="create-account-form">
           <h1 className="create-your-account">Create Your Account</h1>
@@ -370,9 +370,10 @@ const Register = () => {
         </div>
       </div>
 
+
       <Footer />
     </div>
-  );
+);
 };
 
 export default Register;
