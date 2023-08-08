@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run server\" \"vite\"",
     "test": "vitest",
     "build": "vite build",
-    "server": "nodemon server.js",
+    "server": "nodemon REDONE.js",
     "deploy": "nodemon server.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
