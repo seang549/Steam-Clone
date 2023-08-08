@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import GlobalActionMenu from "../HeaderFolder/GlobalActionMenu.jsx";
 import HeaderNavBar from "../HeaderFolder/HeaderNavBar.jsx";
+import ReCAPTCHA from 'react-google-recaptcha'
 
 
 const Register = () => {
+  
+  const [isVerified, setIsVerified] = useState(false)
+  const handleRecaptchaChange = (response) => {
+    if(resposne) {
+      setIsVerified(true)
+    }
+    else {
+      setIsVerified(false)
+    }
+  }
 
-
+  
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -32,6 +43,7 @@ const Register = () => {
       console.error(err.message);
     }
   };
+
 
   return (
     <div className="register-page">
@@ -344,7 +356,7 @@ const Register = () => {
           </div>
 
           <div className="reCaptcha">
-            <iframe title="reCAPTCHA" src="https://google.com/recaptcha/enterprise/anchor?ar=2&amp;k=6LdIFr0ZAAAAAO3vz0O0OQrtAefzdJcWQM2TMYQH&amp;co=aHR0cHM6Ly9zdG9yZS5zdGVhbXBvd2VyZWQuY29tOjQ0Mw..&amp;hl=en&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;theme=dark&amp;size=normal&amp;s=5I8CmBGpexw3e6uv-HsAq50UkMLzw6tzsKxthOPuYamjz-uaD8V_-CUftbiajigLTHY7atVoQUDy6qJAR5FrJX8Vss3jGsnCvzhdkxUoGDLQ6MzBfQkC2UKieo4zR_hws9isozeEzCNA-IIP_S7uxB6y-37pa5x5onu4-ZQiHUUyGZd07ilvi9JhjmnckMGWozm1J0q8MlWat8ZvjRL6Mu4g-tg94--poY7k0hxpJurAgzrDCgar2AkoDCDey45e94joDqL3vOigAHOQjU4&amp;cb=x2s2mkbsh5i3" width="304" height="78" role="presentation" name="a-osyahk636xf8" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+            <ReCAPTCHA theme='dark' className='recaptcha' sitekey="6Lex444nAAAAADnYeOXQIJFdHfXfTYNhRUuGd_dm" onChange={handleRecaptchaChange} />
           </div>
 
           <div className="checkbox">
