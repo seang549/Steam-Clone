@@ -67,12 +67,55 @@ body {
   width: 100%;
 }
 
+.footer-bgd {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #171d25;
+}
+
 .footer {
   background-color: #171d25;
   height: 184px;
   padding-top: 16px;
   padding-bottom: 60px;
-  width: 100%;
+  width: 940px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-text {
+  padding-left: 10px;
+}
+
+.footer-content {
+  position: relative;
+  border-bottom: 1px solid #363c44;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  border-top: 1px solid #363c44;
+  width: 940px;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-footer-css {
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+
+.logo-small {
+  position: relative;
+  left: 50px;
+}
+
+.valve-links {
+  position: relative;
+  padding-top: 15px;
+  align-self: start;
 }
 
 .store_nav_bar {

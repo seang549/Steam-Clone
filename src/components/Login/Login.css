@@ -1,0 +1,91 @@
+.login_page {
+  font-family: "Motiva Sans", sans-serif;
+}
+
+.login_for_account {
+  display: flex;
+  height: 667px;
+  justify-content: center;
+  background-image: url(https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg);
+}
+
+.login_h1 {
+  font-size: 32px;
+  font-weight: 200;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.login_ctn {
+  padding-top: 80px;
+  width: 700px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_form_ctn {
+  height: 667px;
+  display: flex;
+  gap: 2rem;
+  background-color: #181a21;
+  padding: 24px 32px;
+  border-radius: 4px;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_left,
+.login_right {
+  padding-top: 10px;
+}
+
+.login_left {
+  width: 396px;
+}
+
+.login_right {
+  width: 304px;
+}
+
+.login_input {
+  width: 396px;
+  padding: 10px;
+  background-color: #32353c;
+  border: transparent;
+  border-radius: 2px;
+}
+
+.remember_check {
+  background-color: #32353c;
+}
+
+.sign_in_password {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.sign_in_title {
+  margin-bottom: 5px;
+}
+
+.remember_div {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.sign_in_btn {
+  background-image: linear-gradient(90deg, #06bfff, #2d73ff);
+  border: transparent;
+  border-radius: 2px;
+  color: #fff;
+  width: 270px;
+  height: 48px;
+  padding: 12px;
+  font-size: 16px;
+  align-self: center;
+  margin-bottom: 20px;
+}
