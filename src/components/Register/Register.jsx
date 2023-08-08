@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../HeaderFolder/Header.jsx";
 import Footer from "../FooterFolder/Footer.jsx";
+import ReCAPTCHA from "react-google-recaptcha"
 
 const Register = () => {
 
