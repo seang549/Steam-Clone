@@ -1,22 +1,11 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 Render URL: https://steam-clone-zf6a.onrender.com/
 
 
-<p align="center">
-  <img src="logo.png" alt="Project Logo"/>
-</p>
+# GameFlow
 
-# Steam Clone
-
-Welcome to the Steam Clone README! This document provides an in-depth overview of the project's structure, files, components, and intricacies.
+Welcome to the GameFlow README! This document provides an in-depth overview of the project's structure, files, components, and intricacies.
 
 ## Table of Contents
 
@@ -51,7 +40,7 @@ Welcome to the Steam Clone README! This document provides an in-depth overview o
 
 ## Introduction
 
-The Steam Clone project is a web-based platform inspired by Steam, designed for gamers to discover, purchase, and manage their favorite games. This README provides comprehensive insights into the project's structure, features, components, and testing suites.
+The GameFlow project is a web-based platform inspired by Steam, designed for gamers to discover, purchase, and manage their favorite games. This README provides comprehensive insights into the project's structure, features, components, and testing suites.
 
 ## Features
 
@@ -158,7 +147,7 @@ Feel free to explore the project's components, features, and functionalities. Fo
 
 ## Contributors
 
-| [**Your Name**](https://github.com/yourusername) | [**Contributor 1**](https://github.com/contributor1) |
+| [**Your Name**](https://github.com/seang549) | [**Contributor 1**](https://github.com/contributor1) |
 |--------------------------------------------------|---------------------------------------------------------|
 | [**Contributor 2**](https://github.com/contributor2) | [**Contributor 3**](https://github.com/contributor3) | 
 | [**Contributor 4**](https://github.com/contributor4) |
