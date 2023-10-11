@@ -152,5 +152,3 @@ Feel free to explore the project's components, features, and functionalities. Fo
 | [**Dorion Boesch**](https://github.com/Paz828) | [**Patrick McGinnis**](https://github.com/PatDMcG) | 
 | [**Yasmin Aguilar**](https://github.com/yasminaguilarx) |
 ```
-
-You can replace placeholders like `yourusername`, `Contributor 1`, and so on with actual GitHub profiles or names as needed. Customize this template according to your project's specifics, and don't forget to add detailed content for each section as you work on the project.
