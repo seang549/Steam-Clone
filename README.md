@@ -147,10 +147,10 @@ Feel free to explore the project's components, features, and functionalities. Fo
 
 ## Contributors
 
-| [**seang549**](https://github.com/seang549) | [**Contributor 1**](https://github.com/contributor1) |
+| [**seang549**](https://github.com/seang549) | [**DylanWGordon**](https://github.com/DylanWGordon) |
 |--------------------------------------------------|---------------------------------------------------------|
-| [**Contributor 2**](https://github.com/contributor2) | [**Contributor 3**](https://github.com/contributor3) | 
-| [**Contributor 4**](https://github.com/contributor4) |
+| [**Paz828**](https://github.com/Paz828) | [**PatDMcG**](https://github.com/PatDMcG) | 
+| [**yasminaguilarx**](https://github.com/yasminaguilarx) |
 ```
 
 You can replace placeholders like `yourusername`, `Contributor 1`, and so on with actual GitHub profiles or names as needed. Customize this template according to your project's specifics, and don't forget to add detailed content for each section as you work on the project.
