@@ -10,7 +10,6 @@ Currently, two official plugins are available:
 Render URL: https://steam-clone-zf6a.onrender.com/
 
 
-```
 <p align="center">
   <img src="logo.png" alt="Project Logo"/>
 </p>
