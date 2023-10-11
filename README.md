@@ -151,4 +151,3 @@ Feel free to explore the project's components, features, and functionalities. Fo
 |--------------------------------------------------|---------------------------------------------------------|
 | [**Dorion Boesch**](https://github.com/Paz828) | [**Patrick McGinnis**](https://github.com/PatDMcG) | 
 | [**Yasmin Aguilar**](https://github.com/yasminaguilarx) |
-```
