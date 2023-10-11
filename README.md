@@ -147,7 +147,7 @@ Feel free to explore the project's components, features, and functionalities. Fo
 
 ## Contributors
 
-| [**Your Name**](https://github.com/seang549) | [**Contributor 1**](https://github.com/contributor1) |
+| [**seang549**](https://github.com/seang549) | [**Contributor 1**](https://github.com/contributor1) |
 |--------------------------------------------------|---------------------------------------------------------|
 | [**Contributor 2**](https://github.com/contributor2) | [**Contributor 3**](https://github.com/contributor3) | 
 | [**Contributor 4**](https://github.com/contributor4) |
