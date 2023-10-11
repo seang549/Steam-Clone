@@ -9,9 +9,8 @@ Currently, two official plugins are available:
 
 Render URL: https://steam-clone-zf6a.onrender.com/
 
-It's great that you like the structure of the README you shared! Here's a template for a README for a project like a Steam website clone using the PERN stack (PostgreSQL, Express.js, React, Node.js), authentication, and continuous integration/continuous deployment (CI/CD) with Circle CI:
 
-```markdown
+```
 <p align="center">
   <img src="logo.png" alt="Project Logo"/>
 </p>
